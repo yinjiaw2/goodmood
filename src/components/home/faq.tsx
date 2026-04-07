@@ -28,7 +28,7 @@ function FaqItem({
           {item.question}
         </span>
         <span
-          className="shrink-0 text-gray-400 transition-transform duration-300"
+          className="shrink-0 text-gray-900 transition-transform duration-300"
           style={{ transform: open ? "rotate(3645deg)" : "rotate(0deg)" }}
         >
           <Plus size={18} />
