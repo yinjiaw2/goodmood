@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-
-const FULL_TITLE = "Siddeley Talent Link";
+import content from "@/content/hero.json";
 
 export default function HeroSection() {
   const [displayed, setDisplayed] = useState("");
@@ -11,9 +10,9 @@ export default function HeroSection() {
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
     if (!deleting) {
-      if (displayed.length < FULL_TITLE.length) {
+      if (displayed.length < content.title.length) {
         timeout = setTimeout(() => {
-          setDisplayed(FULL_TITLE.slice(0, displayed.length + 1));
+          setDisplayed(content.title.slice(0, displayed.length + 1));
         }, 80);
       } else {
         timeout = setTimeout(() => setDeleting(true), 1800);
@@ -21,7 +20,7 @@ export default function HeroSection() {
     } else {
       if (displayed.length > 0) {
         timeout = setTimeout(() => {
-          setDisplayed(FULL_TITLE.slice(0, displayed.length - 1));
+          setDisplayed(content.title.slice(0, displayed.length - 1));
         }, 45);
       } else {
         timeout = setTimeout(() => setDeleting(false), 400);
@@ -33,9 +32,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative flex items-center min-h-[80vh] w-full bg-cover bg-center"
-      style={{
-        backgroundImage: "url(/building-background.jpg)",
-      }}
+      style={{ backgroundImage: "url(/building-background.jpg)" }}
     >
       <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
       <div
@@ -54,7 +51,7 @@ export default function HeroSection() {
           {displayed}
           <span
             className={`inline-block w-0.75 h-[1em] ml-1 align-middle bg-orange-400 ${
-              !deleting && displayed.length === FULL_TITLE.length ? "animate-pulse" : ""
+              !deleting && displayed.length === content.title.length ? "animate-pulse" : ""
             }`}
             style={{ verticalAlign: "middle" }}
           />
@@ -66,7 +63,7 @@ export default function HeroSection() {
             letterSpacing: "-0.01em",
           }}
         >
-          在澳洲职场，找到属于你的位置
+          {content.slogan}
         </p>
         <button
           className="px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-200 hover:brightness-110 active:scale-95"
@@ -76,7 +73,7 @@ export default function HeroSection() {
             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
           }}
         >
-          点击咨询
+          {content.cta}
         </button>
       </div>
     </section>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -55,26 +55,14 @@ export default function Header() {
               href={link.href}
               className="px-4 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
               style={{
-                fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                fontFamily:
+                  "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               }}
             >
               {link.label}
             </a>
           ))}
         </nav>
-
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 hover:brightness-110 active:scale-95"
-          style={{
-            backgroundColor: "#FB8C00",
-            color: "#fff",
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
-          }}
-        >
-          点击咨询
-        </a>
       </div>
     </header>
   );
