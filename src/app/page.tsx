@@ -3,6 +3,7 @@ import CoreServices from "@/components/home/CoreServices";
 import OurTeam from "@/components/home/OurTeam";
 import ServiceProcess from "@/components/home/ServiceProcess";
 import SuccessCases from "@/components/home/SuccessCases";
+import FAQ from "@/components/home/faq";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <OurTeam />
       <ServiceProcess />
       <SuccessCases />
+      <FAQ />
     </>
   );
 }

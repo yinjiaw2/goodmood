@@ -1,4 +1,6 @@
-import cases from "@/content/successCases.json";
+import content from "@/content/successCases.json";
+
+const cases = content.cases;
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
@@ -71,15 +73,14 @@ export default function SuccessCases() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {/* sectionLabel hardcoded since json is flat array */}
-              成功案例
+              {content.sectionLabel}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            听听他们怎么说
+            {content.sectionTitle}
           </h2>
         </div>
       </div>
