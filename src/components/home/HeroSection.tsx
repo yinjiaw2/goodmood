@@ -1,34 +1,6 @@
-'use client'
-
-import { useEffect, useState } from "react";
 import content from "@/content/hero.json";
 
 export default function HeroSection() {
-  const [displayed, setDisplayed] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-    if (!deleting) {
-      if (displayed.length < content.title.length) {
-        timeout = setTimeout(() => {
-          setDisplayed(content.title.slice(0, displayed.length + 1));
-        }, 80);
-      } else {
-        timeout = setTimeout(() => setDeleting(true), 1800);
-      }
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayed(content.title.slice(0, displayed.length - 1));
-        }, 45);
-      } else {
-        timeout = setTimeout(() => setDeleting(false), 400);
-      }
-    }
-    return () => clearTimeout(timeout);
-  }, [displayed, deleting]);
-
   return (
     <section
       id="hero"
@@ -60,13 +32,7 @@ export default function HeroSection() {
             letterSpacing: "-0.02em",
           }}
         >
-          {displayed}
-          <span
-            className={`inline-block w-0.75 h-[1em] ml-1 align-middle bg-orange-400 ${
-              !deleting && displayed.length === content.title.length ? "animate-pulse" : ""
-            }`}
-            style={{ verticalAlign: "middle" }}
-          />
+          {content.title}
         </h1>
         <p
           className="text-xl md:text-2xl font-medium text-white mb-8 drop-shadow-lg"

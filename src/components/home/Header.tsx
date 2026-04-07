@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "主页", href: "#hero" },
-  { label: "核心服务", href: "#core-services" },
-  { label: "服务流程", href: "#process" },
-  { label: "成功案例", href: "#cases" },
+  { label: "主页", href: "/#hero" },
+  { label: "核心服务", href: "/#core-services" },
+  { label: "服务流程", href: "/#process" },
+  { label: "成功案例", href: "/#cases" },
   { label: "关于我们", href: "/about" },
-  { label: "联系方式", href: "#contact" },
+  { label: "联系方式", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <a
-            href="#hero"
+            href="/#hero"
             className="flex items-center gap-2 shrink-0"
             style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
           >

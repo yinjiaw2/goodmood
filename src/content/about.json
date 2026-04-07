@@ -2,8 +2,9 @@
   "hero": {
     "tag": "关于我们 • SIDDELEY TALENT LINK",
     "titleLine1": "我们故事的",
-    "titleLine2Plain": "起点，是你的",
-    "titleLine2Accent": "未来"
+    "titleLine2Before": "，是你的",
+    "titleLine2Accent": "未来",
+    "titleLine2AccentFirst": "起点"
   },
   "intro": {
     "label": "我们是谁",
