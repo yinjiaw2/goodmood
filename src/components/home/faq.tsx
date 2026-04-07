@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Plus, X } from "lucide-react";
+import { Plus } from "lucide-react";
 import content from "@/content/faq.json";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
@@ -27,8 +27,11 @@ function FaqItem({
         >
           {item.question}
         </span>
-        <span className="shrink-0 text-gray-400">
-          {open ? <X size={18} /> : <Plus size={18} />}
+        <span
+          className="shrink-0 text-gray-400 transition-transform duration-300"
+          style={{ transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
+        >
+          <Plus size={18} />
         </span>
       </div>
       <div
