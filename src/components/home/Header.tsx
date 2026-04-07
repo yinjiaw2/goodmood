@@ -6,10 +6,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "主页", href: "/#hero" },
   { label: "核心服务", href: "/#core-services" },
-  { label: "服务流程", href: "/#process" },
   { label: "成功案例", href: "/#cases" },
   { label: "关于我们", href: "/about" },
-  { label: "联系方式", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -25,7 +23,9 @@ export default function Header() {
   // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -41,9 +41,15 @@ export default function Header() {
           <a
             href="/#hero"
             className="flex items-center gap-2 shrink-0"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{
+              fontFamily:
+                "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            }}
           >
-            <span className="text-xl font-extrabold tracking-tight" style={{ color: "#FB8C00" }}>
+            <span
+              className="text-xl font-extrabold tracking-tight"
+              style={{ color: "#FB8C00" }}
+            >
               Siddeley
             </span>
             <span className="text-xl font-extrabold tracking-tight text-white">
@@ -58,7 +64,10 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className="px-4 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
-                style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+                style={{
+                  fontFamily:
+                    "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                }}
               >
                 {link.label}
               </a>
@@ -79,7 +88,9 @@ export default function Header() {
       {/* Mobile drawer overlay */}
       <div
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMenuOpen(false)}
       />
@@ -97,7 +108,10 @@ export default function Header() {
             href={link.href}
             onClick={() => setMenuOpen(false)}
             className="py-4 text-base font-medium text-gray-300 border-b border-white/10 hover:text-white transition-colors duration-150"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{
+              fontFamily:
+                "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            }}
           >
             {link.label}
           </a>
