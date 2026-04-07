@@ -106,7 +106,7 @@ export default function Contact() {
                 <div>
                   <input
                     {...register("email", {
-                      validate: (v) =>
+                      validate: (v: string) =>
                         v || mobileNumber || fields.email.errorContact,
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -128,7 +128,7 @@ export default function Contact() {
                 <div>
                   <input
                     {...register("mobileNumber", {
-                      validate: (v) =>
+                      validate: (v: string) =>
                         v || email || fields.mobileNumber.errorContact,
                     })}
                     type="tel"
