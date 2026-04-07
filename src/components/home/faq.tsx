@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
@@ -29,7 +29,7 @@ function FaqItem({
         </span>
         <span
           className="shrink-0 text-gray-400 transition-transform duration-300"
-          style={{ transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
+          style={{ transform: open ? "rotate(3645deg)" : "rotate(0deg)" }}
         >
           <Plus size={18} />
         </span>
