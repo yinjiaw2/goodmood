@@ -4,7 +4,7 @@ const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
 export default function AboutIntro() {
   const t = useTranslations("about.intro");
-  const paragraphs = t.raw("paragraphs") as string[];
+  const paragraphKeys = ["0", "1", "2"] as const;
 
   return (
     <section
@@ -32,13 +32,13 @@ export default function AboutIntro() {
 
         {/* Paragraphs */}
         <div className="flex flex-col gap-6">
-          {paragraphs.map((para, i: number) => (
+          {paragraphKeys.map((paragraphKey) => (
             <p
-              key={i}
+              key={paragraphKey}
               className="text-lg text-gray-700 leading-relaxed"
               style={{ fontFamily: font }}
             >
-              {para}
+              {t(`paragraphs.${paragraphKey}`)}
             </p>
           ))}
         </div>

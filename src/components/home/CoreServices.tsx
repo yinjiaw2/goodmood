@@ -9,13 +9,15 @@ const iconMap: Record<string, LucideIcon> = {
   Handshake,
 };
 
+const serviceKeys = [
+  { key: "0", icon: "GraduationCap" },
+  { key: "1", icon: "FileText" },
+  { key: "2", icon: "Briefcase" },
+  { key: "3", icon: "Handshake" },
+] as const;
+
 export default function CoreServices() {
   const t = useTranslations("coreServices");
-  const services = t.raw("services") as {
-    icon: string;
-    title: string;
-    description: string;
-  }[];
 
   return (
     <section id="core-services" className="w-full min-h-[80vh] flex flex-col justify-center bg-white py-20 px-6 scroll-mt-16">
@@ -39,11 +41,11 @@ export default function CoreServices() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => {
+          {serviceKeys.map((service) => {
             const Icon = iconMap[service.icon];
             return (
               <div
-                key={service.title}
+                key={service.key}
                 className="group flex flex-col rounded-2xl p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-orange-400/60 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer"
               >
                 <Icon size={36} className="mb-6 text-orange-400" />
@@ -53,7 +55,7 @@ export default function CoreServices() {
                     fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                   }}
                 >
-                  {service.title}
+                  {t(`services.${service.key}.title`)}
                 </h3>
                 <p
                   className="text-sm text-gray-500 leading-relaxed flex-1"
@@ -61,7 +63,7 @@ export default function CoreServices() {
                     fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                   }}
                 >
-                  {service.description}
+                  {t(`services.${service.key}.description`)}
                 </p>
                 <div className="mt-6 w-8 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300" />
               </div>

@@ -9,13 +9,15 @@ const iconMap: Record<string, LucideIcon> = {
   ClipboardList,
 };
 
+const memberKeys = [
+  { key: "0", icon: "Search" },
+  { key: "1", icon: "Map" },
+  { key: "2", icon: "Users" },
+  { key: "3", icon: "ClipboardList" },
+] as const;
+
 export default function OurTeam() {
   const t = useTranslations("ourTeam");
-  const members = t.raw("members") as {
-    icon: string;
-    role: string;
-    description: string;
-  }[];
 
   return (
     <section id="our-team" className="w-full min-h-[80vh] flex flex-col justify-center bg-gray-50 py-20 px-6 scroll-mt-16">
@@ -39,11 +41,11 @@ export default function OurTeam() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {members.map((member) => {
+          {memberKeys.map((member) => {
             const Icon = iconMap[member.icon];
             return (
               <div
-                key={member.role}
+                key={member.key}
                 className="flex gap-6 rounded-2xl p-8 bg-white border border-gray-200 hover:border-orange-400/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div
@@ -59,7 +61,7 @@ export default function OurTeam() {
                       fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                     }}
                   >
-                    {member.role}
+                    {t(`members.${member.key}.role`)}
                   </h3>
                   <p
                     className="text-sm text-gray-500 leading-relaxed"
@@ -67,7 +69,7 @@ export default function OurTeam() {
                       fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                     }}
                   >
-                    {member.description}
+                    {t(`members.${member.key}.description`)}
                   </p>
                 </div>
               </div>

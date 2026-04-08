@@ -5,7 +5,7 @@ const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const navLinks = t.raw("navLinks") as { label: string; href: string }[];
+  const navLinkKeys = ["0", "1", "2", "3", "4"] as const;
 
   return (
     <footer style={{ backgroundColor: "#0D1B2A", fontFamily: font }}>
@@ -32,13 +32,13 @@ export default function Footer() {
               {t("navLabel")}
             </p>
             <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinkKeys.map((linkKey) => (
+                <li key={linkKey}>
                   <Link
-                    href={link.href}
+                    href={t(`navLinks.${linkKey}.href`)}
                     className="text-sm text-gray-400 hover:text-white transition-colors duration-150"
                   >
-                    {link.label}
+                    {t(`navLinks.${linkKey}.label`)}
                   </Link>
                 </li>
               ))}
