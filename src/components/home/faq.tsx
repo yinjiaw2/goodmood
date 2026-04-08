@@ -2,22 +2,13 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
 type FaqEntry = {
   question: string;
   answer: string;
-};
-
-type FaqMessages = {
-  faq: {
-    sectionLabel: string;
-    titleBefore: string;
-    titleAccent: string;
-    items: FaqEntry[];
-  };
 };
 
 function FaqItem({
@@ -64,9 +55,9 @@ function FaqItem({
 }
 
 export default function FAQ() {
-  const { faq: content } = useMessages() as FaqMessages;
+  const t = useTranslations("faq");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const items = content.items;
+  const items = t.raw("items") as FaqEntry[];
   const col1 = items.filter((_: FaqEntry, i: number) => i % 2 === 0);
   const col2 = items.filter((_: FaqEntry, i: number) => i % 2 === 1);
 
@@ -86,15 +77,15 @@ export default function FAQ() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.titleBefore}
-            <span style={{ color: "#FB8C00" }}>{content.titleAccent}</span>
+            {t("titleBefore")}
+            <span style={{ color: "#FB8C00" }}>{t("titleAccent")}</span>
           </h2>
         </div>
 

@@ -1,6 +1,6 @@
 import { Search, Map, Users, ClipboardList } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, LucideIcon> = {
   Search,
@@ -9,22 +9,13 @@ const iconMap: Record<string, LucideIcon> = {
   ClipboardList,
 };
 
-type TeamMember = {
-  icon: string;
-  role: string;
-  description: string;
-};
-
-type OurTeamMessages = {
-  ourTeam: {
-    sectionLabel: string;
-    sectionTitle: string;
-    members: TeamMember[];
-  };
-};
-
 export default function OurTeam() {
-  const { ourTeam: content } = useMessages() as OurTeamMessages;
+  const t = useTranslations("ourTeam");
+  const members = t.raw("members") as {
+    icon: string;
+    role: string;
+    description: string;
+  }[];
 
   return (
     <section id="our-team" className="w-full min-h-[80vh] flex flex-col justify-center bg-gray-50 py-20 px-6 scroll-mt-16">
@@ -34,7 +25,7 @@ export default function OurTeam() {
             className="text-sm font-semibold tracking-widest uppercase mb-3"
             style={{ color: "#FB8C00" }}
           >
-            {content.sectionLabel}
+            {t("sectionLabel")}
           </p>
           <h2
             className="text-4xl md:text-5xl font-extrabold text-gray-900"
@@ -43,12 +34,12 @@ export default function OurTeam() {
               letterSpacing: "-0.02em",
             }}
           >
-            {content.sectionTitle}
+            {t("sectionTitle")}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {content.members.map((member: TeamMember) => {
+          {members.map((member) => {
             const Icon = iconMap[member.icon];
             return (
               <div

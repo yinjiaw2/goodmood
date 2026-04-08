@@ -5,7 +5,7 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, LucideIcon> = {
   MessageCircle,
@@ -16,25 +16,15 @@ const iconMap: Record<string, LucideIcon> = {
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
-type ProcessStep = {
-  number: string;
-  icon: string;
-  titleBefore: string;
-  titleAccent: string;
-  description: string;
-};
-
-type ServiceProcessMessages = {
-  serviceProcess: {
-    sectionLabel: string;
+export default function ServiceProcess() {
+  const t = useTranslations("serviceProcess");
+  const steps = t.raw("steps") as {
+    number: string;
+    icon: string;
     titleBefore: string;
     titleAccent: string;
-    steps: ProcessStep[];
-  };
-};
-
-export default function ServiceProcess() {
-  const { serviceProcess: content } = useMessages() as ServiceProcessMessages;
+    description: string;
+  }[];
 
   return (
     <section
@@ -50,15 +40,15 @@ export default function ServiceProcess() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.titleBefore}
-            <span style={{ color: "#FB8C00" }}>{content.titleAccent}</span>
+            {t("titleBefore")}
+            <span style={{ color: "#FB8C00" }}>{t("titleAccent")}</span>
           </h2>
         </div>
 
@@ -92,7 +82,7 @@ export default function ServiceProcess() {
                 strokeLinecap="round"
               />
             </svg>
-            {content.steps.map((step: ProcessStep, index: number) => {
+            {steps.map((step, index: number) => {
               const Icon = iconMap[step.icon];
               return (
                 <div
@@ -113,7 +103,7 @@ export default function ServiceProcess() {
 
           {/* Text row aligned to same grid */}
           <div className="grid grid-cols-4">
-            {content.steps.map((step: ProcessStep) => (
+            {steps.map((step) => (
               <div
                 key={step.number}
                 className="flex flex-col items-center text-center px-4"
@@ -139,7 +129,7 @@ export default function ServiceProcess() {
 
         {/* Mobile: vertical list */}
         <div className="md:hidden flex flex-col gap-10">
-          {content.steps.map((step: ProcessStep, index: number) => {
+          {steps.map((step, index: number) => {
             const Icon = iconMap[step.icon];
             return (
               <div key={step.number} className="flex gap-5 items-start">

@@ -1,19 +1,10 @@
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
-type AboutIntroMessages = {
-  about: {
-    intro: {
-      label: string;
-      title: string;
-      paragraphs: string[];
-    };
-  };
-};
-
 export default function AboutIntro() {
-  const { about: content } = useMessages() as AboutIntroMessages;
+  const t = useTranslations("about.intro");
+  const paragraphs = t.raw("paragraphs") as string[];
 
   return (
     <section
@@ -27,7 +18,7 @@ export default function AboutIntro() {
             className="text-xs font-semibold tracking-widest uppercase text-gray-500"
             style={{ fontFamily: font }}
           >
-            {content.intro.label}
+            {t("label")}
           </span>
         </div>
 
@@ -36,12 +27,12 @@ export default function AboutIntro() {
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-10 leading-tight"
           style={{ fontFamily: font, letterSpacing: "-0.03em" }}
         >
-          {content.intro.title}
+          {t("title")}
         </h2>
 
         {/* Paragraphs */}
         <div className="flex flex-col gap-6">
-          {content.intro.paragraphs.map((para: string, i: number) => (
+          {paragraphs.map((para, i: number) => (
             <p
               key={i}
               className="text-lg text-gray-700 leading-relaxed"

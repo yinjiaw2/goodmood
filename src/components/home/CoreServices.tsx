@@ -1,6 +1,6 @@
 import { GraduationCap, FileText, Briefcase, Handshake } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, LucideIcon> = {
   GraduationCap,
@@ -9,22 +9,13 @@ const iconMap: Record<string, LucideIcon> = {
   Handshake,
 };
 
-type ServiceItem = {
-  icon: string;
-  title: string;
-  description: string;
-};
-
-type CoreServicesMessages = {
-  coreServices: {
-    sectionLabel: string;
-    sectionTitle: string;
-    services: ServiceItem[];
-  };
-};
-
 export default function CoreServices() {
-  const { coreServices: content } = useMessages() as CoreServicesMessages;
+  const t = useTranslations("coreServices");
+  const services = t.raw("services") as {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
 
   return (
     <section id="core-services" className="w-full min-h-[80vh] flex flex-col justify-center bg-white py-20 px-6 scroll-mt-16">
@@ -34,7 +25,7 @@ export default function CoreServices() {
             className="text-sm font-semibold tracking-widest uppercase mb-3"
             style={{ color: "#FB8C00" }}
           >
-            {content.sectionLabel}
+            {t("sectionLabel")}
           </p>
           <h2
             className="text-4xl md:text-5xl font-extrabold text-gray-900"
@@ -43,12 +34,12 @@ export default function CoreServices() {
               letterSpacing: "-0.02em",
             }}
           >
-            {content.sectionTitle}
+            {t("sectionTitle")}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {content.services.map((service: ServiceItem) => {
+          {services.map((service) => {
             const Icon = iconMap[service.icon];
             return (
               <div

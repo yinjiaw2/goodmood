@@ -1,31 +1,11 @@
 import Link from "next/link";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 
-type FooterLink = {
-  label: string;
-  href: string;
-};
-
-type FooterMessages = {
-  footer: {
-    brandName1: string;
-    brandName2: string;
-    tagline: string;
-    navLabel: string;
-    navLinks: FooterLink[];
-    contactLabel: string;
-    address: string;
-    email: string;
-    copyrightName: string;
-    copyrightSuffix: string;
-    location: string;
-  };
-};
-
 export default function Footer() {
-  const { footer: content } = useMessages() as FooterMessages;
+  const t = useTranslations("footer");
+  const navLinks = t.raw("navLinks") as { label: string; href: string }[];
 
   return (
     <footer style={{ backgroundColor: "#0D1B2A", fontFamily: font }}>
@@ -35,24 +15,24 @@ export default function Footer() {
           <div className="max-w-xs">
             <Link href="/#hero" className="inline-flex items-center gap-2 mb-4">
               <span className="text-2xl font-extrabold tracking-tight" style={{ color: "#FB8C00" }}>
-                {content.brandName1}
+                {t("brandName1")}
               </span>
               <span className="text-2xl font-extrabold tracking-tight text-white">
-                {content.brandName2}
+                {t("brandName2")}
               </span>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
-              {content.tagline}
+              {t("tagline")}
             </p>
           </div>
 
           {/* Nav links */}
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">
-              {content.navLabel}
+              {t("navLabel")}
             </p>
             <ul className="flex flex-col gap-3">
-              {content.navLinks.map((link: FooterLink) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -68,16 +48,16 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">
-              {content.contactLabel}
+              {t("contactLabel")}
             </p>
             <ul className="flex flex-col gap-3 text-sm text-gray-400">
-              <li>📍 {content.address}</li>
+              <li>📍 {t("address")}</li>
               <li>
                 <a
-                  href={`mailto:${content.email}`}
+                  href={`mailto:${t("email")}`}
                   className="hover:text-white transition-colors duration-150"
                 >
-                  {content.email}
+                  {t("email")}
                 </a>
               </li>
             </ul>
@@ -87,10 +67,10 @@ export default function Footer() {
         {/* Divider + copyright */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} {content.copyrightName}. {content.copyrightSuffix}
+            © {new Date().getFullYear()} {t("copyrightName")}. {t("copyrightSuffix")}
           </p>
           <p className="text-xs text-gray-600">
-            {content.location}
+            {t("location")}
           </p>
         </div>
       </div>

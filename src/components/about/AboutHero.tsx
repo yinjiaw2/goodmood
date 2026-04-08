@@ -1,19 +1,7 @@
-import { useMessages } from "next-intl";
-
-type AboutMessages = {
-  about: {
-    hero: {
-      tag: string;
-      titleLine1: string;
-      titleLine2Before: string;
-      titleLine2Accent: string;
-      titleLine2AccentFirst: string;
-    };
-  };
-};
+import { useTranslations } from "next-intl";
 
 export default function AboutHero() {
-  const { about: content } = useMessages() as AboutMessages;
+  const t = useTranslations("about.hero");
 
   return (
     <section
@@ -34,7 +22,7 @@ export default function AboutHero() {
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
             style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
           >
-            {content.hero.tag}
+            {t("tag")}
           </span>
         </div>
 
@@ -45,11 +33,11 @@ export default function AboutHero() {
             letterSpacing: "-0.03em",
           }}
         >
-          {content.hero.titleLine1}
+          {t("titleLine1")}
           <br />
-          <span style={{ fontFamily: "var(--font-ma-shan-zheng)" }}>{content.hero.titleLine2AccentFirst}</span>
-          {content.hero.titleLine2Before}
-          <span style={{ color: "#FB8C00", fontFamily: "var(--font-ma-shan-zheng)" }}>{content.hero.titleLine2Accent}</span>
+          <span style={{ fontFamily: "var(--font-ma-shan-zheng)" }}>{t("titleLine2AccentFirst")}</span>
+          {t("titleLine2Before")}
+          <span style={{ color: "#FB8C00", fontFamily: "var(--font-ma-shan-zheng)" }}>{t("titleLine2Accent")}</span>
         </h1>
       </div>
     </section>

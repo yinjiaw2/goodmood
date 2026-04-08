@@ -1,22 +1,6 @@
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
-
-type SuccessCase = {
-  name: string;
-  avatarColor: string;
-  stars: number;
-  headline: string;
-  review: string;
-};
-
-type SuccessCasesMessages = {
-  successCases: {
-    sectionLabel: string;
-    sectionTitle: string;
-    cases: SuccessCase[];
-  };
-};
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -36,7 +20,17 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
-function Card({ item }: { item: SuccessCase }) {
+function Card({
+  item,
+}: {
+  item: {
+    name: string;
+    avatarColor: string;
+    stars: number;
+    headline: string;
+    review: string;
+  };
+}) {
   const initial = item.name.charAt(0);
   return (
     <div
@@ -64,10 +58,17 @@ function Card({ item }: { item: SuccessCase }) {
 }
 
 export default function SuccessCases() {
-  const { successCases: content } = useMessages() as SuccessCasesMessages;
-  const mid = Math.ceil(content.cases.length / 2);
-  const row1 = content.cases.slice(0, mid);
-  const row2 = content.cases.slice(mid);
+  const t = useTranslations("successCases");
+  const cases = t.raw("cases") as {
+    name: string;
+    avatarColor: string;
+    stars: number;
+    headline: string;
+    review: string;
+  }[];
+  const mid = Math.ceil(cases.length / 2);
+  const row1 = cases.slice(0, mid);
+  const row2 = cases.slice(mid);
 
   return (
     <section id="cases" className="w-full py-24 bg-white scroll-mt-16">
@@ -88,14 +89,14 @@ export default function SuccessCases() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.sectionTitle}
+            {t("sectionTitle")}
           </h2>
         </div>
       </div>

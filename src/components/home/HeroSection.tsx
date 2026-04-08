@@ -1,16 +1,7 @@
-import { useMessages } from "next-intl";
-
-type HeroMessages = {
-  hero: {
-    tag: string;
-    title: string;
-    slogan: string;
-    cta: string;
-  };
-};
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
-  const { hero: content } = useMessages() as HeroMessages;
+  const t = useTranslations("hero");
 
   return (
     <section
@@ -30,7 +21,7 @@ export default function HeroSection() {
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
             style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
           >
-            {content.tag}
+            {t("tag")}
           </span>
         </div>
 
@@ -43,7 +34,7 @@ export default function HeroSection() {
             letterSpacing: "-0.02em",
           }}
         >
-          {content.title}
+          {t("title")}
         </h1>
         <p
           className="text-xl md:text-2xl font-medium text-white mb-8 drop-shadow-lg"
@@ -52,7 +43,7 @@ export default function HeroSection() {
             letterSpacing: "-0.01em",
           }}
         >
-          {content.slogan}
+          {t("slogan")}
         </p>
         <a
           href="#contact"
@@ -63,7 +54,7 @@ export default function HeroSection() {
             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
           }}
         >
-          {content.cta}
+          {t("cta")}
         </a>
       </div>
     </section>

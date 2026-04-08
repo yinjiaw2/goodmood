@@ -1,23 +1,13 @@
 "use client";
 
 import { Map, AdvancedMarker } from "@vis.gl/react-google-maps";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
 const OFFICE_POSITION = { lat: -37.82243837398955, lng: 144.95363742552018 };
 
-type AboutMapMessages = {
-  about: {
-    map: {
-      label: string;
-      title: string;
-      address: string;
-    };
-  };
-};
-
 export default function AboutMap() {
-  const { about: content } = useMessages() as AboutMapMessages;
+  const t = useTranslations("about.map");
 
   return (
     <section
@@ -31,7 +21,7 @@ export default function AboutMap() {
             className="text-xs font-semibold tracking-widest uppercase text-gray-500"
             style={{ fontFamily: font }}
           >
-            {content.map.label}
+            {t("label")}
           </span>
         </div>
 
@@ -40,12 +30,12 @@ export default function AboutMap() {
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 leading-tight"
           style={{ fontFamily: font, letterSpacing: "-0.03em" }}
         >
-          {content.map.title}
+          {t("title")}
         </h2>
 
         {/* Address */}
         <p className="text-gray-500 mb-8" style={{ fontFamily: font }}>
-          {content.map.address}
+          {t("address")}
         </p>
 
         {/* Map */}
@@ -58,7 +48,7 @@ export default function AboutMap() {
           >
             <AdvancedMarker
               position={OFFICE_POSITION}
-              title={content.map.address}
+              title={t("address")}
             />
           </Map>
         </div>
