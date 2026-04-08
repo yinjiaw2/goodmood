@@ -11,8 +11,7 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
       <div
-        className="relative z-10 flex flex-col items-start justify-center w-full max-w-2xl px-6 py-24"
-        style={{ marginLeft: "8vw" }}
+        className="relative z-10 flex flex-col items-start justify-center w-full max-w-2xl px-6 py-24 mx-auto md:ml-[8vw] md:mr-0"
       >
         {/* Tag */}
         <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">

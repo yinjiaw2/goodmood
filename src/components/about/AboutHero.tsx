@@ -16,8 +16,7 @@ export default function AboutHero() {
     >
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
       <div
-        className="relative z-10 w-full max-w-3xl px-6 pb-20"
-        style={{ marginLeft: "8vw" }}
+        className="relative z-10 w-full max-w-3xl px-6 pb-20 mx-auto md:ml-[8vw] md:mr-0"
       >
         <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">
           <span

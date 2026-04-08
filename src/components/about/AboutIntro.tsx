@@ -11,7 +11,7 @@ export default function AboutIntro() {
       className="w-full py-20 px-6"
       style={{ backgroundColor: "#F2F1EF" }}
     >
-      <div className="max-w-2xl" style={{ marginLeft: "8vw" }}>
+      <div className="max-w-2xl mx-auto md:ml-[8vw] md:mr-0">
         {/* Pill tag */}
         <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-gray-300 bg-white mb-8">
           <span
