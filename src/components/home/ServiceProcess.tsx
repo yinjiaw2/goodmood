@@ -61,12 +61,12 @@ export default function ServiceProcess() {
             <svg
               className="absolute pointer-events-none"
               style={{
-                top: "40px",
+                top: "30px",
                 left: "12.5%",
                 right: "12.5%",
-                height: "20px",
+                height: "32px",
               }}
-              width="74%"
+              width="78%"
               height="20"
               viewBox="0 0 300 20"
               preserveAspectRatio="none"
