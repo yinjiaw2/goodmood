@@ -12,6 +12,8 @@ type ContactFormData = {
   message: string;
 };
 
+const GOOGLE_APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+
 export default function Contact() {
   const t = useTranslations("contact");
   const fields = t.raw("fields") as {
@@ -30,13 +32,14 @@ export default function Contact() {
   const openGoogleMaps = () => {
     window.open(
       "https://www.google.com/maps/search/?api=1&query=Tower+3+Level+9+18-38+Siddeley+St+Docklands+VIC+3005",
-      "_blank"
+      "_blank",
     );
   };
 
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ContactFormData>({ mode: "onBlur" });
@@ -45,8 +48,25 @@ export default function Contact() {
   const mobileNumber = watch("mobileNumber");
 
   const onSubmit = async (data: ContactFormData) => {
-    // TODO: wire up submission
-    console.log(data);
+    if (!GOOGLE_APPS_SCRIPT_URL) {
+      throw new Error("Missing NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL");
+    }
+
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        // `application/json` is not CORS-safelisted in `no-cors` mode.
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify({
+        ...data,
+        submittedAt: new Date().toISOString(),
+      }),
+    });
+    console.log("Form data submitted:", data);
+
+    reset();
   };
 
   const inputBase =
@@ -125,8 +145,14 @@ export default function Contact() {
                 <div>
                   <input
                     {...register("email", {
-                      validate: (v: string) =>
-                        v || mobileNumber || fields.email.errorContact,
+                      validate: (value: string) => {
+                        const hasEmail = value.trim().length > 0;
+                        const hasMobileNumber = mobileNumber.trim().length > 0;
+
+                        return hasEmail || hasMobileNumber
+                          ? true
+                          : fields.email.errorContact;
+                      },
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                         message: fields.email.errorInvalid,
@@ -147,8 +173,14 @@ export default function Contact() {
                 <div>
                   <input
                     {...register("mobileNumber", {
-                      validate: (v: string) =>
-                        v || email || fields.mobileNumber.errorContact,
+                      validate: (value: string) => {
+                        const hasMobileNumber = value.trim().length > 0;
+                        const hasEmail = email.trim().length > 0;
+
+                        return hasMobileNumber || hasEmail
+                          ? true
+                          : fields.mobileNumber.errorContact;
+                      },
                     })}
                     type="tel"
                     placeholder={fields.mobileNumber.placeholder}
@@ -184,9 +216,7 @@ export default function Contact() {
                   className="w-full py-4 rounded-full font-semibold text-white transition hover:opacity-90 disabled:opacity-60"
                   style={{ backgroundColor: "#FB8C00" }}
                 >
-                  {isSubmitting
-                    ? t("submittingButton")
-                    : t("submitButton")}
+                  {isSubmitting ? t("submittingButton") : t("submitButton")}
                 </button>
               </form>
             )}
@@ -229,6 +259,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-
   );
 }
