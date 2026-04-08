@@ -1,8 +1,16 @@
 "use client";
 
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { MapPin, Building2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import {
+  trackContactFormProgress,
+  trackContactFormStart,
+  trackContactFormSubmitSuccess,
+  type ContactFormFieldName,
+} from "@/analytics/contactForm";
 
 type ContactFormData = {
   firstName: string;
@@ -16,18 +24,9 @@ const GOOGLE_APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
 
 export default function Contact() {
   const t = useTranslations("contact");
-  const fields = t.raw("fields") as {
-    firstName: { placeholder: string; errorRequired: string };
-    lastName: { placeholder: string; errorRequired: string };
-    email: {
-      placeholder: string;
-      errorContact: string;
-      errorInvalid: string;
-    };
-    mobileNumber: { placeholder: string; errorContact: string };
-    message: { placeholder: string; errorRequired: string };
-  };
-  const office = t.raw("office") as { imageAlt: string; label: string };
+
+  const pathname = usePathname();
+  const hasTrackedFormStart = useRef(false);
 
   const openGoogleMaps = () => {
     window.open(
@@ -47,6 +46,30 @@ export default function Contact() {
   const email = watch("email");
   const mobileNumber = watch("mobileNumber");
 
+  const handleFieldFocus = (fieldName: ContactFormFieldName) => {
+    if (hasTrackedFormStart.current) return;
+
+    hasTrackedFormStart.current = true;
+    trackContactFormStart({
+      fieldName,
+
+      pagePath: pathname,
+    });
+  };
+
+  const handleFieldProgress = (
+    fieldName: ContactFormFieldName,
+    value: string,
+  ) => {
+    const trimmedValue = value.trim();
+    if (!trimmedValue) return;
+
+    trackContactFormProgress({
+      fieldName,
+      pagePath: pathname,
+    });
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     if (!GOOGLE_APPS_SCRIPT_URL) {
       throw new Error("Missing NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL");
@@ -64,9 +87,13 @@ export default function Contact() {
         submittedAt: new Date().toISOString(),
       }),
     });
-    console.log("Form data submitted:", data);
+
+    trackContactFormSubmitSuccess({
+      pagePath: pathname,
+    });
 
     reset();
+    hasTrackedFormStart.current = false;
   };
 
   const inputBase =
@@ -112,13 +139,29 @@ export default function Contact() {
                 {/* First / Last name */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <input
-                      {...register("firstName", {
-                        required: fields.firstName.errorRequired,
-                      })}
-                      placeholder={fields.firstName.placeholder}
-                      className={errors.firstName ? inputError : inputNormal}
-                    />
+                    {(() => {
+                      const firstNameField = register("firstName", {
+                        required: t("fields.firstName.errorRequired"),
+                      });
+
+                      return (
+                        <input
+                          {...firstNameField}
+                          onFocus={() => handleFieldFocus("firstName")}
+                          onBlur={(event) => {
+                            firstNameField.onBlur(event);
+                            handleFieldProgress(
+                              "firstName",
+                              event.target.value,
+                            );
+                          }}
+                          placeholder={t("fields.firstName.placeholder")}
+                          className={
+                            errors.firstName ? inputError : inputNormal
+                          }
+                        />
+                      );
+                    })()}
                     {errors.firstName && (
                       <p className="text-red-500 text-xs mt-1">
                         {errors.firstName.message}
@@ -126,13 +169,24 @@ export default function Contact() {
                     )}
                   </div>
                   <div>
-                    <input
-                      {...register("lastName", {
-                        required: fields.lastName.errorRequired,
-                      })}
-                      placeholder={fields.lastName.placeholder}
-                      className={errors.lastName ? inputError : inputNormal}
-                    />
+                    {(() => {
+                      const lastNameField = register("lastName", {
+                        required: t("fields.lastName.errorRequired"),
+                      });
+
+                      return (
+                        <input
+                          {...lastNameField}
+                          onFocus={() => handleFieldFocus("lastName")}
+                          onBlur={(event) => {
+                            lastNameField.onBlur(event);
+                            handleFieldProgress("lastName", event.target.value);
+                          }}
+                          placeholder={t("fields.lastName.placeholder")}
+                          className={errors.lastName ? inputError : inputNormal}
+                        />
+                      );
+                    })()}
                     {errors.lastName && (
                       <p className="text-red-500 text-xs mt-1">
                         {errors.lastName.message}
@@ -143,25 +197,36 @@ export default function Contact() {
 
                 {/* Email */}
                 <div>
-                  <input
-                    {...register("email", {
+                  {(() => {
+                    const emailField = register("email", {
                       validate: (value: string) => {
                         const hasEmail = value.trim().length > 0;
                         const hasMobileNumber = mobileNumber.trim().length > 0;
 
                         return hasEmail || hasMobileNumber
                           ? true
-                          : fields.email.errorContact;
+                          : t("fields.email.errorContact");
                       },
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: fields.email.errorInvalid,
+                        message: t("fields.email.errorInvalid"),
                       },
-                    })}
-                    type="email"
-                    placeholder={fields.email.placeholder}
-                    className={errors.email ? inputError : inputNormal}
-                  />
+                    });
+
+                    return (
+                      <input
+                        {...emailField}
+                        type="email"
+                        onFocus={() => handleFieldFocus("email")}
+                        onBlur={(event) => {
+                          emailField.onBlur(event);
+                          handleFieldProgress("email", event.target.value);
+                        }}
+                        placeholder={t("fields.email.placeholder")}
+                        className={errors.email ? inputError : inputNormal}
+                      />
+                    );
+                  })()}
                   {errors.email && (
                     <p className="text-red-500 text-xs mt-1">
                       {errors.email.message}
@@ -171,21 +236,37 @@ export default function Contact() {
 
                 {/* Mobile number */}
                 <div>
-                  <input
-                    {...register("mobileNumber", {
+                  {(() => {
+                    const mobileNumberField = register("mobileNumber", {
                       validate: (value: string) => {
                         const hasMobileNumber = value.trim().length > 0;
                         const hasEmail = email.trim().length > 0;
 
                         return hasMobileNumber || hasEmail
                           ? true
-                          : fields.mobileNumber.errorContact;
+                          : t("fields.mobileNumber.errorContact");
                       },
-                    })}
-                    type="tel"
-                    placeholder={fields.mobileNumber.placeholder}
-                    className={errors.mobileNumber ? inputError : inputNormal}
-                  />
+                    });
+
+                    return (
+                      <input
+                        {...mobileNumberField}
+                        type="tel"
+                        onFocus={() => handleFieldFocus("mobileNumber")}
+                        onBlur={(event) => {
+                          mobileNumberField.onBlur(event);
+                          handleFieldProgress(
+                            "mobileNumber",
+                            event.target.value,
+                          );
+                        }}
+                        placeholder={t("fields.mobileNumber.placeholder")}
+                        className={
+                          errors.mobileNumber ? inputError : inputNormal
+                        }
+                      />
+                    );
+                  })()}
                   {errors.mobileNumber && (
                     <p className="text-red-500 text-xs mt-1">
                       {errors.mobileNumber.message}
@@ -195,14 +276,25 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <textarea
-                    {...register("message", {
-                      required: fields.message.errorRequired,
-                    })}
-                    rows={5}
-                    placeholder={fields.message.placeholder}
-                    className={`${errors.message ? inputError : inputNormal} resize-none`}
-                  />
+                  {(() => {
+                    const messageField = register("message", {
+                      required: t("fields.message.errorRequired"),
+                    });
+
+                    return (
+                      <textarea
+                        {...messageField}
+                        rows={5}
+                        onFocus={() => handleFieldFocus("message")}
+                        onBlur={(event) => {
+                          messageField.onBlur(event);
+                          handleFieldProgress("message", event.target.value);
+                        }}
+                        placeholder={t("fields.message.placeholder")}
+                        className={`${errors.message ? inputError : inputNormal} resize-none`}
+                      />
+                    );
+                  })()}
                   {errors.message && (
                     <p className="text-red-500 text-xs mt-1">
                       {errors.message.message}
@@ -226,7 +318,7 @@ export default function Contact() {
           <div className="hidden md:block rounded-2xl overflow-hidden h-full min-h-120 relative">
             <img
               src="/world-trade-center.jpg"
-              alt={office.imageAlt}
+              alt={t("office.imageAlt")}
               className="w-full h-full object-cover"
             />
             {/* Dark gradient overlay */}
@@ -234,14 +326,14 @@ export default function Contact() {
             {/* Bottom bar */}
             <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-5 py-4">
               <span className="text-white font-semibold text-lg">
-                {office.label}
+                {t("office.label")}
               </span>
               <div className="flex items-center gap-2">
                 <button
                   onClick={openGoogleMaps}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
                   style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label={office.label}
+                  aria-label={t("office.label")}
                 >
                   <MapPin size={18} className="text-white" />
                 </button>
@@ -249,7 +341,7 @@ export default function Contact() {
                   onClick={() => console.log("office info clicked")}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
                   style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label={office.label}
+                  aria-label={t("office.label")}
                 >
                   <Building2 size={18} className="text-white" />
                 </button>
