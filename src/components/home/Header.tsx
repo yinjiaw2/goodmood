@@ -231,7 +231,7 @@ export default function Header() {
         <button
           type="button"
           onClick={handleLocaleChange}
-          className="mt-6 py-3 px-4 text-base font-medium text-gray-300 border border-white/10 rounded-md hover:text-white hover:bg-white/10 transition-colors duration-150"
+          className="w-full py-4 text-left text-base font-medium text-gray-300 border-b border-white/10 hover:text-white transition-colors duration-150"
           style={fontStyle}
           aria-label={t("localeSwitch.ariaLabel")}
         >
