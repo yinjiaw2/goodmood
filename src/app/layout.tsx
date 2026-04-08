@@ -5,6 +5,7 @@ import {
   Ma_Shan_Zheng,
   Outfit,
   Playfair_Display,
+  Open_Sans,
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/home/Header";
