@@ -8,7 +8,7 @@ export default function AboutIntro() {
 
   return (
     <section
-      className="w-full py-44 px-52"
+      className="w-full py-20 px-6"
       style={{ backgroundColor: "#F2F1EF" }}
     >
       <div className="max-w-2xl" style={{ marginLeft: "8vw" }}>
