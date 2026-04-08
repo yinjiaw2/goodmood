@@ -88,7 +88,11 @@ export default function NumberSection() {
   }, [hasAnimated, parsedStats]);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-20 px-6">
+    <section
+      id="numbers"
+      ref={sectionRef}
+      className="w-full bg-white py-20 px-6 scroll-mt-16"
+    >
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-3xl md:text-5xl font-extrabold text-center text-gray-900 mb-14 md:mb-18"
