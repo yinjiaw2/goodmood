@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
-import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 
 const trackedSections = [
@@ -18,7 +17,6 @@ const trackedSections = [
 
 export default function HomeSectionTracker() {
   const pathname = usePathname();
-  const locale = useLocale();
 
   useEffect(() => {
     const seenSections = new Set<string>();
@@ -32,8 +30,9 @@ export default function HomeSectionTracker() {
       .filter(
         (
           section,
-        ): section is (typeof trackedSections)[number] & { element: HTMLElement } =>
-          section !== null,
+        ): section is (typeof trackedSections)[number] & {
+          element: HTMLElement;
+        } => section !== null,
       );
 
     if (sections.length === 0) return;
@@ -55,7 +54,6 @@ export default function HomeSectionTracker() {
             section_name: matchedSection.name,
             page_path: pathname,
             page_type: "home",
-            locale,
           });
         });
       },
@@ -68,7 +66,7 @@ export default function HomeSectionTracker() {
     sections.forEach((section) => observer.observe(section.element));
 
     return () => observer.disconnect();
-  }, [locale, pathname]);
+  }, [pathname]);
 
   return null;
 }
