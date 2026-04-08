@@ -43,7 +43,8 @@ export default function HeroSection() {
         >
           {content.slogan}
         </p>
-        <button
+        <a
+          href="#contact"
           className="px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-200 hover:brightness-110 active:scale-95"
           style={{
             backgroundColor: "#FB8C00",
@@ -52,7 +53,7 @@ export default function HeroSection() {
           }}
         >
           {content.cta}
-        </button>
+        </a>
       </div>
     </section>
   );
