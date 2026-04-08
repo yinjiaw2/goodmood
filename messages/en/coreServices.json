@@ -1,0 +1,26 @@
+{
+  "sectionLabel": "What We Can Do for You",
+  "sectionTitle": "Core Services",
+  "services": [
+    {
+      "icon": "GraduationCap",
+      "title": "Training Centre",
+      "description": "We offer industry-focused practical courses, soft-skill development, and local workplace culture training to align your capabilities with the needs of Australian employers."
+    },
+    {
+      "icon": "FileText",
+      "title": "Resume Enhancement",
+      "description": "Our local industry mentors and HR experts work together to refine your resume, highlight your core strengths, and improve your interview conversion rate through stronger structure and keyword alignment."
+    },
+    {
+      "icon": "Briefcase",
+      "title": "Local Experience Building",
+      "description": "We provide local internships, project-based practice, and volunteer opportunities to help you quickly fill experience gaps and build a credible employment record."
+    },
+    {
+      "icon": "Handshake",
+      "title": "Employer Matching",
+      "description": "Based on your career goals and skill profile, we match you with suitable roles from partner employers and provide priority referral channels so the right opportunities can find you faster."
+    }
+  ]
+}

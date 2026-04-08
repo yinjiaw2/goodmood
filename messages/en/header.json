@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Core Services",
+    "serviceProcess": "Service Process",
+    "successCases": "Success Stories"
+  },
+  "actions": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "localeSwitch": {
+    "zh-CN": "中文",
+    "en": "English",
+    "ariaLabel": "Switch language"
+  }
+}

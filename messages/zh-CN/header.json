@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "主页",
+    "about": "关于我们",
+    "services": "核心服务",
+    "serviceProcess": "服务流程",
+    "successCases": "成功案例"
+  },
+  "actions": {
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "localeSwitch": {
+    "zh-CN": "中文",
+    "en": "English",
+    "ariaLabel": "切换语言"
+  }
+}

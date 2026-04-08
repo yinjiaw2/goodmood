@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Service Process",
+  "titleBefore": "Making your job search",
+  "titleAccent": "simple and effective",
+  "steps": [
+    {
+      "number": "01",
+      "icon": "MessageCircle",
+      "titleBefore": "Free",
+      "titleAccent": "Consultation",
+      "description": "Speak one-on-one with a consultant to discuss your background, goals, and current situation."
+    },
+    {
+      "number": "02",
+      "icon": "ClipboardList",
+      "titleBefore": "Tailored",
+      "titleAccent": "Plan",
+      "description": "We create a personalized career development plan based on your situation, with clear actions for each stage."
+    },
+    {
+      "number": "03",
+      "icon": "TrendingUp",
+      "titleBefore": "Skills",
+      "titleAccent": "Development",
+      "description": "Through training, resume enhancement, and practical projects, we help you close gaps and build local experience."
+    },
+    {
+      "number": "04",
+      "icon": "BadgeCheck",
+      "titleBefore": "Secure Your",
+      "titleAccent": "Offer",
+      "description": "We match you with suitable roles, arrange interviews, and follow through the process until you successfully start your new position."
+    }
+  ]
+}

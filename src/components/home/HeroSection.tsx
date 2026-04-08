@@ -1,6 +1,8 @@
-import content from "@/content/hero.json";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("hero");
+
   return (
     <section
       id="hero"
@@ -9,17 +11,16 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
       <div
-        className="relative z-10 flex flex-col items-start justify-center w-full max-w-2xl px-6 py-24"
-        style={{ marginLeft: "8vw" }}
+        className="relative z-10 flex flex-col items-start justify-center w-full max-w-2xl px-6 py-24 mx-auto md:ml-[8vw] md:mr-0"
       >
         {/* Tag */}
         <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">
           <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#FB8C00" }} />
           <span
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}
           >
-            {content.tag}
+            {t("tag")}
           </span>
         </div>
 
@@ -28,31 +29,32 @@ export default function HeroSection() {
           style={{
             color: "#FB8C00",
             textShadow: "0 2px 24px rgba(0,0,0,0.25)",
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.02em",
           }}
         >
-          {content.title}
+          {t("title")}
         </h1>
         <p
           className="text-xl md:text-2xl font-medium text-white mb-8 drop-shadow-lg"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.01em",
           }}
         >
-          {content.slogan}
+          {t("slogan")}
         </p>
-        <button
+        <a
+          href="#contact"
           className="px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-200 hover:brightness-110 active:scale-95"
           style={{
             backgroundColor: "#FB8C00",
             color: "#fff",
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
           }}
         >
-          {content.cta}
-        </button>
+          {t("cta")}
+        </a>
       </div>
     </section>
   );

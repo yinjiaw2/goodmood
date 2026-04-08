@@ -1,0 +1,19 @@
+{
+  "brandName1": "Siddeley",
+  "brandName2": "Talent Link",
+  "tagline": "Based in Docklands, Melbourne, we provide one-stop Australian career development services for Chinese communities, international students, and the wider East Asian community.",
+  "navLabel": "Navigation",
+  "navLinks": [
+    { "label": "Home", "href": "/#hero" },
+    { "label": "Core Services", "href": "/#core-services" },
+    { "label": "Service Process", "href": "/#process" },
+    { "label": "Success Stories", "href": "/#cases" },
+    { "label": "About Us", "href": "/about" }
+  ],
+  "contactLabel": "Contact Us",
+  "address": "Tower3, Level 9/18-38 Siddeley St, Docklands VIC 3005",
+  "email": "info@siddeleytalentlink.com.au",
+  "copyrightName": "Siddeley Talent Link",
+  "copyrightSuffix": "All rights reserved.",
+  "location": "Melbourne, Australia"
+}

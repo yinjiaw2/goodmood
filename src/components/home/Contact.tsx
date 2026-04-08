@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { MapPin, Building2 } from "lucide-react";
-import content from "@/content/contact.json";
+import { useTranslations } from "next-intl";
 
 type ContactFormData = {
   firstName: string;
@@ -13,6 +13,20 @@ type ContactFormData = {
 };
 
 export default function Contact() {
+  const t = useTranslations("contact");
+  const fields = t.raw("fields") as {
+    firstName: { placeholder: string; errorRequired: string };
+    lastName: { placeholder: string; errorRequired: string };
+    email: {
+      placeholder: string;
+      errorContact: string;
+      errorInvalid: string;
+    };
+    mobileNumber: { placeholder: string; errorContact: string };
+    message: { placeholder: string; errorRequired: string };
+  };
+  const office = t.raw("office") as { imageAlt: string; label: string };
+
   const openGoogleMaps = () => {
     window.open(
       "https://www.google.com/maps/search/?api=1&query=Tower+3+Level+9+18-38+Siddeley+St+Docklands+VIC+3005",
@@ -40,8 +54,6 @@ export default function Contact() {
   const inputNormal = `${inputBase} border-gray-300`;
   const inputError = `${inputBase} border-red-500`;
 
-  const { fields } = content;
-
   return (
     <section
       id="contact"
@@ -52,24 +64,24 @@ export default function Contact() {
         <h2
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
           }}
         >
-          {content.sectionTitle}
+          {t("sectionTitle")}
         </h2>
-        <p className="text-gray-500 mb-12">{content.sectionSubtitle}</p>
+        <p className="text-gray-500 mb-12">{t("sectionSubtitle")}</p>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Form card */}
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-1">
-              {content.formTitle}
+              {t("formTitle")}
             </h3>
-            <p className="text-gray-500 text-sm mb-6">{content.formSubtitle}</p>
+            <p className="text-gray-500 text-sm mb-6">{t("formSubtitle")}</p>
 
             {isSubmitSuccessful ? (
               <p className="text-green-600 font-medium py-8 text-center">
-                {content.successMessage}
+                {t("successMessage")}
               </p>
             ) : (
               <form
@@ -173,8 +185,8 @@ export default function Contact() {
                   style={{ backgroundColor: "#FB8C00" }}
                 >
                   {isSubmitting
-                    ? content.submittingButton
-                    : content.submitButton}
+                    ? t("submittingButton")
+                    : t("submitButton")}
                 </button>
               </form>
             )}
@@ -184,7 +196,7 @@ export default function Contact() {
           <div className="hidden md:block rounded-2xl overflow-hidden h-full min-h-120 relative">
             <img
               src="/world-trade-center.jpg"
-              alt={content.office.imageAlt}
+              alt={office.imageAlt}
               className="w-full h-full object-cover"
             />
             {/* Dark gradient overlay */}
@@ -192,14 +204,14 @@ export default function Contact() {
             {/* Bottom bar */}
             <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-5 py-4">
               <span className="text-white font-semibold text-lg">
-                {content.office.label}
+                {office.label}
               </span>
               <div className="flex items-center gap-2">
                 <button
                   onClick={openGoogleMaps}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
                   style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label="查看地址"
+                  aria-label={office.label}
                 >
                   <MapPin size={18} className="text-white" />
                 </button>
@@ -207,7 +219,7 @@ export default function Contact() {
                   onClick={() => console.log("office info clicked")}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
                   style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label="办公室信息"
+                  aria-label={office.label}
                 >
                   <Building2 size={18} className="text-white" />
                 </button>

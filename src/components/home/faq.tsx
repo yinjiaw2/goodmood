@@ -2,19 +2,21 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import content from "@/content/faq.json";
+import { useTranslations } from "next-intl";
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 function FaqItem({
-  item,
+  itemKey,
   open,
   onToggle,
 }: {
-  item: { question: string; answer: string };
+  itemKey: string;
   open: boolean;
   onToggle: () => void;
 }) {
+  const t = useTranslations("faq");
+
   return (
     <div
       className="rounded-2xl bg-white border border-gray-200 overflow-hidden transition-shadow duration-200 hover:shadow-md cursor-pointer"
@@ -25,7 +27,7 @@ function FaqItem({
           className="text-base font-medium text-gray-900"
           style={{ fontFamily: font }}
         >
-          {item.question}
+          {t(`items.${itemKey}.question`)}
         </span>
         <span
           className="shrink-0 text-gray-900 transition-transform duration-300"
@@ -42,7 +44,7 @@ function FaqItem({
           className="px-6 pb-6 text-sm text-gray-500 leading-relaxed"
           style={{ fontFamily: font }}
         >
-          {item.answer}
+          {t(`items.${itemKey}.answer`)}
         </p>
       </div>
     </div>
@@ -50,10 +52,11 @@ function FaqItem({
 }
 
 export default function FAQ() {
+  const t = useTranslations("faq");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const items = content.items;
-  const col1 = items.filter((_, i) => i % 2 === 0);
-  const col2 = items.filter((_, i) => i % 2 === 1);
+  const itemKeys = ["0", "1", "2", "3", "4", "5", "6", "7"] as const;
+  const col1 = itemKeys.filter((_, i: number) => i % 2 === 0);
+  const col2 = itemKeys.filter((_, i: number) => i % 2 === 1);
 
   const toggle = (index: number) =>
     setOpenIndex(openIndex === index ? null : index);
@@ -71,42 +74,42 @@ export default function FAQ() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.titleBefore}
-            <span style={{ color: "#FB8C00" }}>{content.titleAccent}</span>
+            {t("titleBefore")}
+            <span style={{ color: "#FB8C00" }}>{t("titleAccent")}</span>
           </h2>
         </div>
 
         {/* Two-column accordion */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           <div className="flex flex-col gap-4">
-            {col1.map((item) => {
-              const index = items.indexOf(item);
+            {col1.map((itemKey, index) => {
+              const actualIndex = index * 2;
               return (
                 <FaqItem
-                  key={index}
-                  item={item}
-                  open={openIndex === index}
-                  onToggle={() => toggle(index)}
+                  key={itemKey}
+                  itemKey={itemKey}
+                  open={openIndex === actualIndex}
+                  onToggle={() => toggle(actualIndex)}
                 />
               );
             })}
           </div>
           <div className="flex flex-col gap-4">
-            {col2.map((item) => {
-              const index = items.indexOf(item);
+            {col2.map((itemKey, index) => {
+              const actualIndex = index * 2 + 1;
               return (
                 <FaqItem
-                  key={index}
-                  item={item}
-                  open={openIndex === index}
-                  onToggle={() => toggle(index)}
+                  key={itemKey}
+                  itemKey={itemKey}
+                  open={openIndex === actualIndex}
+                  onToggle={() => toggle(actualIndex)}
                 />
               );
             })}

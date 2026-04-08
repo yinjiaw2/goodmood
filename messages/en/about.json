@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "tag": "About Us • SIDDELEY TALENT LINK",
+    "titleLine1": "The beginning of our story",
+    "titleLine2Before": "is the start of your",
+    "titleLine2Accent": " future",
+    "titleLine2AccentFirst": ""
+  },
+  "map": {
+    "label": "Our Location",
+    "title": "Visit Us",
+    "address": "Tower 3, Level 9 / 18-38 Siddeley St, Docklands VIC 3005"
+  },
+  "intro": {
+    "label": "Our Story",
+    "title": "Starting in Melbourne, shaping your future",
+    "paragraphs": [
+      "Based in Docklands, Melbourne, Siddeley Talent Link is a one-stop career development platform created for Chinese communities, international students, and the wider East Asian community.",
+      "We understand the rules of the local job market as well as the unique strengths and challenges faced by East Asian job seekers. Our mission is to break down language, cultural, and experience barriers so every client can find the right place in the Australian workplace.",
+      "From career planning to resume enhancement, from skills training to job matching, we support you through every stage from campus to career until you secure the offer you want."
+    ]
+  }
+}

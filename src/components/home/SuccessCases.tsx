@@ -1,8 +1,6 @@
-import content from "@/content/successCases.json";
+import { useTranslations } from "next-intl";
 
-const cases = content.cases;
-
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -22,7 +20,17 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
-function Card({ item }: { item: (typeof cases)[0] }) {
+function Card({
+  item,
+}: {
+  item: {
+    name: string;
+    avatarColor: string;
+    stars: number;
+    headline: string;
+    review: string;
+  };
+}) {
   const initial = item.name.charAt(0);
   return (
     <div
@@ -49,11 +57,19 @@ function Card({ item }: { item: (typeof cases)[0] }) {
   );
 }
 
-const mid = Math.ceil(cases.length / 2);
-const row1 = cases.slice(0, mid);
-const row2 = cases.slice(mid);
-
 export default function SuccessCases() {
+  const t = useTranslations("successCases");
+  const cases = t.raw("cases") as {
+    name: string;
+    avatarColor: string;
+    stars: number;
+    headline: string;
+    review: string;
+  }[];
+  const mid = Math.ceil(cases.length / 2);
+  const row1 = cases.slice(0, mid);
+  const row2 = cases.slice(mid);
+
   return (
     <section id="cases" className="w-full py-24 bg-white scroll-mt-16">
       <style>{`
@@ -73,14 +89,14 @@ export default function SuccessCases() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.sectionTitle}
+            {t("sectionTitle")}
           </h2>
         </div>
       </div>

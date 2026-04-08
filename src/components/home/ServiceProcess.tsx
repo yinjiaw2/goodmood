@@ -5,7 +5,7 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import content from "@/content/serviceProcess.json";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, LucideIcon> = {
   MessageCircle,
@@ -14,9 +14,18 @@ const iconMap: Record<string, LucideIcon> = {
   BadgeCheck,
 };
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 export default function ServiceProcess() {
+  const t = useTranslations("serviceProcess");
+  const steps = t.raw("steps") as {
+    number: string;
+    icon: string;
+    titleBefore: string;
+    titleAccent: string;
+    description: string;
+  }[];
+
   return (
     <section
       id="process"
@@ -31,15 +40,16 @@ export default function ServiceProcess() {
               className="text-xs font-semibold tracking-widest uppercase text-gray-500"
               style={{ fontFamily: font }}
             >
-              {content.sectionLabel}
+              {t("sectionLabel")}
             </span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {content.titleBefore}
-            <span style={{ color: "#FB8C00" }}>{content.titleAccent}</span>
+            {t("titleBefore")}
+            <br />
+            <span style={{ color: "#FB8C00" }}>{t("titleAccent")}</span>
           </h2>
         </div>
 
@@ -50,7 +60,12 @@ export default function ServiceProcess() {
             {/* Wavy connector — peaks sit at each icon center */}
             <svg
               className="absolute pointer-events-none"
-              style={{ top: "40px", left: "12.5%", right: "12.5%", height: "20px" }}
+              style={{
+                top: "40px",
+                left: "12.5%",
+                right: "12.5%",
+                height: "20px",
+              }}
               width="100%"
               height="20"
               viewBox="0 0 300 20"
@@ -73,7 +88,7 @@ export default function ServiceProcess() {
                 strokeLinecap="round"
               />
             </svg>
-            {content.steps.map((step, index) => {
+            {steps.map((step, index: number) => {
               const Icon = iconMap[step.icon];
               return (
                 <div
@@ -84,7 +99,10 @@ export default function ServiceProcess() {
                     <Icon
                       size={32}
                       className="animate-float"
-                      style={{ color: "#FB8C00", animationDelay: `${index * 0.4}s` }}
+                      style={{
+                        color: "#FB8C00",
+                        animationDelay: `${index * 0.4}s`,
+                      }}
                     />
                   </div>
                 </div>
@@ -94,7 +112,7 @@ export default function ServiceProcess() {
 
           {/* Text row aligned to same grid */}
           <div className="grid grid-cols-4">
-            {content.steps.map((step) => (
+            {steps.map((step) => (
               <div
                 key={step.number}
                 className="flex flex-col items-center text-center px-4"
@@ -120,17 +138,18 @@ export default function ServiceProcess() {
 
         {/* Mobile: vertical list */}
         <div className="md:hidden flex flex-col gap-10">
-          {content.steps.map((step, index) => {
+          {steps.map((step, index: number) => {
             const Icon = iconMap[step.icon];
             return (
               <div key={step.number} className="flex gap-5 items-start">
-                <div
-                  className="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-md bg-white"
-                >
+                <div className="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-md bg-white">
                   <Icon
                     size={28}
                     className="animate-float"
-                    style={{ color: "#FB8C00", animationDelay: `${index * 0.4}s` }}
+                    style={{
+                      color: "#FB8C00",
+                      animationDelay: `${index * 0.4}s`,
+                    }}
                   />
                 </div>
                 <div>

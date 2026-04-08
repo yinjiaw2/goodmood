@@ -1,6 +1,14 @@
-import content from "@/content/about.json";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function AboutHero() {
+  const t = useTranslations("about.hero");
+  const locale = useLocale();
+  const isEnglish = locale === "en";
+  const accentFont =
+    isEnglish
+      ? "var(--font-playfair-display), Georgia, serif"
+      : "var(--font-ma-shan-zheng)";
+
   return (
     <section
       className="relative flex items-end min-h-[90vh] w-full bg-cover bg-center"
@@ -8,8 +16,7 @@ export default function AboutHero() {
     >
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
       <div
-        className="relative z-10 w-full max-w-3xl px-6 pb-20"
-        style={{ marginLeft: "8vw" }}
+        className="relative z-10 w-full max-w-3xl px-6 pb-20 mx-auto md:ml-[8vw] md:mr-0"
       >
         <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">
           <span
@@ -18,24 +25,34 @@ export default function AboutHero() {
           />
           <span
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{
+              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+            }}
           >
-            {content.hero.tag}
+            {t("tag")}
           </span>
         </div>
 
         <h1
           className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.03em",
           }}
         >
-          {content.hero.titleLine1}
+          <span className={isEnglish ? "inline-block whitespace-nowrap" : undefined}>
+            {t("titleLine1")}
+          </span>
           <br />
-          <span style={{ fontFamily: "var(--font-ma-shan-zheng)" }}>{content.hero.titleLine2AccentFirst}</span>
-          {content.hero.titleLine2Before}
-          <span style={{ color: "#FB8C00", fontFamily: "var(--font-ma-shan-zheng)" }}>{content.hero.titleLine2Accent}</span>
+          <span className={isEnglish ? "inline-block whitespace-nowrap" : undefined}>
+            <span style={{ fontFamily: accentFont }}>
+              {t("titleLine2AccentFirst")}
+            </span>
+            {t("titleLine2Before")}
+            <span style={{ color: "#FB8C00", fontFamily: accentFont }}>
+              {t("titleLine2Accent")}
+            </span>
+          </span>
         </h1>
       </div>
     </section>
