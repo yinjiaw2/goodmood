@@ -6,7 +6,7 @@ import ServiceProcess from "@/components/home/ServiceProcess";
 import SuccessCases from "@/components/home/SuccessCases";
 import FAQ from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
-import HomeSectionTracker from "@/components/home/HomeSectionTracker";
+import HomeSectionTracker from "@/analytics/HomeSectionTracker";
 
 export default function Home() {
   return (
