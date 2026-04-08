@@ -3,29 +3,31 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
-
-const navLinks = [
-  { label: "主页", href: "/#hero" },
-  { label: "关于我们", href: "/about" },
-];
-
-const servicesDropdown = {
-  label: "核心服务",
-  href: "/#core-services",
-  items: [
-    { label: "服务流程", href: "/#process" },
-    { label: "成功案例", href: "/#cases" },
-  ],
-};
+import { useTranslations } from "next-intl";
 
 const fontStyle = { fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" };
 
 export default function Header() {
+  const t = useTranslations("header");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/#hero" },
+    { label: t("nav.about"), href: "/about" },
+  ];
+
+  const servicesDropdown = {
+    label: t("nav.services"),
+    href: "/#core-services",
+    items: [
+      { label: t("nav.serviceProcess"), href: "/#process" },
+      { label: t("nav.successCases"), href: "/#cases" },
+    ],
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -126,7 +128,7 @@ export default function Header() {
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-md text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-150"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? "关闭菜单" : "打开菜单"}
+            aria-label={menuOpen ? t("actions.closeMenu") : t("actions.openMenu")}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -154,7 +156,7 @@ export default function Header() {
           className="py-4 text-base font-medium text-gray-300 border-b border-white/10 hover:text-white transition-colors duration-150"
           style={fontStyle}
         >
-          主页
+          {t("nav.home")}
         </Link>
 
         {/* Mobile services accordion */}
@@ -201,7 +203,7 @@ export default function Header() {
           className="py-4 text-base font-medium text-gray-300 border-b border-white/10 hover:text-white transition-colors duration-150"
           style={fontStyle}
         >
-          关于我们
+          {t("nav.about")}
         </Link>
       </nav>
     </>

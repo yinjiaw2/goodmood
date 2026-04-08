@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     coreServices: (await import(`../../messages/${locale}/coreServices.json`)).default,
     faq: (await import(`../../messages/${locale}/faq.json`)).default,
     footer: (await import(`../../messages/${locale}/footer.json`)).default,
+    header: (await import(`../../messages/${locale}/header.json`)).default,
     hero: (await import(`../../messages/${locale}/hero.json`)).default,
     ourTeam: (await import(`../../messages/${locale}/ourTeam.json`)).default,
     serviceProcess: (await import(`../../messages/${locale}/serviceProcess.json`)).default,
