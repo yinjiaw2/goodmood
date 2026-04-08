@@ -63,6 +63,7 @@ export default function FAQ() {
 
   return (
     <section
+      id="faq"
       className="w-full py-24 px-6 scroll-mt-16"
       style={{ backgroundColor: "#F2F1EF" }}
     >
