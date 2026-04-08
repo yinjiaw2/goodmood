@@ -4,7 +4,8 @@
     "about": "关于我们",
     "services": "核心服务",
     "serviceProcess": "服务流程",
-    "successCases": "成功案例"
+    "successCases": "成功案例",
+    "news": "新闻"
   },
   "actions": {
     "openMenu": "打开菜单",

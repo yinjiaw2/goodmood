@@ -22,6 +22,7 @@ export default function Header() {
   const navLinks = [
     { label: t("nav.home"), href: "/#hero" },
     { label: t("nav.about"), href: "/about" },
+    { label: t("nav.news"), href: "/news" },
   ];
 
   const servicesDropdown = {
