@@ -19,7 +19,7 @@ export default function HeroSection() {
           <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#FB8C00" }} />
           <span
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}
           >
             {t("tag")}
           </span>
@@ -30,7 +30,7 @@ export default function HeroSection() {
           style={{
             color: "#FB8C00",
             textShadow: "0 2px 24px rgba(0,0,0,0.25)",
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.02em",
           }}
         >
@@ -39,7 +39,7 @@ export default function HeroSection() {
         <p
           className="text-xl md:text-2xl font-medium text-white mb-8 drop-shadow-lg"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.01em",
           }}
         >
@@ -51,7 +51,7 @@ export default function HeroSection() {
           style={{
             backgroundColor: "#FB8C00",
             color: "#fff",
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
           }}
         >
           {t("cta")}

@@ -14,7 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
   BadgeCheck,
 };
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 export default function ServiceProcess() {
   const t = useTranslations("serviceProcess");

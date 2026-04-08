@@ -1,7 +1,13 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function AboutHero() {
   const t = useTranslations("about.hero");
+  const locale = useLocale();
+  const isEnglish = locale === "en";
+  const accentFont =
+    isEnglish
+      ? "var(--font-playfair-display), Georgia, serif"
+      : "var(--font-ma-shan-zheng)";
 
   return (
     <section
@@ -20,7 +26,9 @@ export default function AboutHero() {
           />
           <span
             className="text-xs font-semibold tracking-widest uppercase text-white/90"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" }}
+            style={{
+              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+            }}
           >
             {t("tag")}
           </span>
@@ -29,15 +37,23 @@ export default function AboutHero() {
         <h1
           className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
             letterSpacing: "-0.03em",
           }}
         >
-          {t("titleLine1")}
+          <span className={isEnglish ? "inline-block whitespace-nowrap" : undefined}>
+            {t("titleLine1")}
+          </span>
           <br />
-          <span style={{ fontFamily: "var(--font-ma-shan-zheng)" }}>{t("titleLine2AccentFirst")}</span>
-          {t("titleLine2Before")}
-          <span style={{ color: "#FB8C00", fontFamily: "var(--font-ma-shan-zheng)" }}>{t("titleLine2Accent")}</span>
+          <span className={isEnglish ? "inline-block whitespace-nowrap" : undefined}>
+            <span style={{ fontFamily: accentFont }}>
+              {t("titleLine2AccentFirst")}
+            </span>
+            {t("titleLine2Before")}
+            <span style={{ color: "#FB8C00", fontFamily: accentFont }}>
+              {t("titleLine2Accent")}
+            </span>
+          </span>
         </h1>
       </div>
     </section>

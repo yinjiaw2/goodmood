@@ -3,7 +3,7 @@
 import { Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useTranslations } from "next-intl";
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 const OFFICE_POSITION = { lat: -37.82243837398955, lng: 144.95363742552018 };
 
 export default function AboutMap() {

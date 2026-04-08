@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 function FaqItem({
   itemKey,

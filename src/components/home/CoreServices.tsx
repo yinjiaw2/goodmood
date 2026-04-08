@@ -32,7 +32,7 @@ export default function CoreServices() {
           <h2
             className="text-4xl md:text-5xl font-extrabold text-gray-900"
             style={{
-              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
               letterSpacing: "-0.02em",
             }}
           >
@@ -52,7 +52,7 @@ export default function CoreServices() {
                 <h3
                   className="text-xl font-bold mb-4 text-gray-900 group-hover:text-orange-500 transition-colors duration-200"
                   style={{
-                    fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                    fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
                   }}
                 >
                   {t(`services.${service.key}.title`)}
@@ -60,7 +60,7 @@ export default function CoreServices() {
                 <p
                   className="text-sm text-gray-500 leading-relaxed flex-1"
                   style={{
-                    fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                    fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
                   }}
                 >
                   {t(`services.${service.key}.description`)}

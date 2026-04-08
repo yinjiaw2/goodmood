@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-const fontStyle = { fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" };
+const fontStyle = { fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" };
 
 export default function Header() {
   const t = useTranslations("header");

@@ -32,7 +32,7 @@ export default function OurTeam() {
           <h2
             className="text-4xl md:text-5xl font-extrabold text-gray-900"
             style={{
-              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
               letterSpacing: "-0.02em",
             }}
           >
@@ -58,7 +58,7 @@ export default function OurTeam() {
                   <h3
                     className="text-lg font-bold text-gray-900 mb-2"
                     style={{
-                      fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                      fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
                     }}
                   >
                     {t(`members.${member.key}.role`)}
@@ -66,7 +66,7 @@ export default function OurTeam() {
                   <p
                     className="text-sm text-gray-500 leading-relaxed"
                     style={{
-                      fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                      fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
                     }}
                   >
                     {t(`members.${member.key}.description`)}

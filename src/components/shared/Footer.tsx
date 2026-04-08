@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const font = "var(--font-geist-sans), Arial, Helvetica, sans-serif";
+const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 export default function Footer() {
   const t = useTranslations("footer");

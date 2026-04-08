@@ -1,10 +1,10 @@
 {
   "hero": {
     "tag": "About Us • SIDDELEY TALENT LINK",
-    "titleLine1": "The beginning of",
-    "titleLine2Before": " our story is the start of your",
-    "titleLine2Accent": "future",
-    "titleLine2AccentFirst": "journey"
+    "titleLine1": "The beginning of our story",
+    "titleLine2Before": "is the start of your",
+    "titleLine2Accent": " future",
+    "titleLine2AccentFirst": ""
   },
   "map": {
     "label": "Our Location",

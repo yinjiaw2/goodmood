@@ -64,7 +64,7 @@ export default function Contact() {
         <h2
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"
           style={{
-            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
           }}
         >
           {t("sectionTitle")}
