@@ -1,0 +1,29 @@
+{
+  "title": "Tailoring success with a client-centric approach",
+  "stats": [
+    {
+      "id": 1,
+      "number": "43,000",
+      "label": "Professionals we help start their next chapter",
+      "category": "Achievement"
+    },
+    {
+      "id": 2,
+      "number": "35%",
+      "label": "Average salary increase post-coaching",
+      "category": "Growth"
+    },
+    {
+      "id": 3,
+      "number": "1,200+",
+      "label": "Clients placed in Fortune 500 companies",
+      "category": "Placement"
+    },
+    {
+      "id": 4,
+      "number": "92%",
+      "label": "Of clients refer our services to a friend",
+      "category": "Referral"
+    }
+  ]
+}

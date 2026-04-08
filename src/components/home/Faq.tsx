@@ -53,7 +53,7 @@ function FaqItem({
 
 export default function FAQ() {
   const t = useTranslations("faq");
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const itemKeys = ["0", "1", "2", "3", "4", "5", "6", "7"] as const;
   const col1 = itemKeys.filter((_, i: number) => i % 2 === 0);
   const col2 = itemKeys.filter((_, i: number) => i % 2 === 1);
