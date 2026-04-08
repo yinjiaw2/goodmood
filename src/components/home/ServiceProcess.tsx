@@ -66,7 +66,7 @@ export default function ServiceProcess() {
                 right: "12.5%",
                 height: "20px",
               }}
-              width="75%"
+              width="74%"
               height="20"
               viewBox="0 0 300 20"
               preserveAspectRatio="none"
