@@ -48,6 +48,7 @@ export default function ServiceProcess() {
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
             {t("titleBefore")}
+            <br />
             <span style={{ color: "#FB8C00" }}>{t("titleAccent")}</span>
           </h2>
         </div>
@@ -59,7 +60,12 @@ export default function ServiceProcess() {
             {/* Wavy connector — peaks sit at each icon center */}
             <svg
               className="absolute pointer-events-none"
-              style={{ top: "40px", left: "12.5%", right: "12.5%", height: "20px" }}
+              style={{
+                top: "40px",
+                left: "12.5%",
+                right: "12.5%",
+                height: "20px",
+              }}
               width="100%"
               height="20"
               viewBox="0 0 300 20"
@@ -93,7 +99,10 @@ export default function ServiceProcess() {
                     <Icon
                       size={32}
                       className="animate-float"
-                      style={{ color: "#FB8C00", animationDelay: `${index * 0.4}s` }}
+                      style={{
+                        color: "#FB8C00",
+                        animationDelay: `${index * 0.4}s`,
+                      }}
                     />
                   </div>
                 </div>
@@ -133,13 +142,14 @@ export default function ServiceProcess() {
             const Icon = iconMap[step.icon];
             return (
               <div key={step.number} className="flex gap-5 items-start">
-                <div
-                  className="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-md bg-white"
-                >
+                <div className="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-md bg-white">
                   <Icon
                     size={28}
                     className="animate-float"
-                    style={{ color: "#FB8C00", animationDelay: `${index * 0.4}s` }}
+                    style={{
+                      color: "#FB8C00",
+                      animationDelay: `${index * 0.4}s`,
+                    }}
                   />
                 </div>
                 <div>

@@ -1,19 +1,23 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const fontStyle = { fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif" };
 
 export default function Header() {
   const t = useTranslations("header");
+  const locale = useLocale();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const nextLocale = locale === "zh-CN" ? "en" : "zh-CN";
 
   const navLinks = [
     { label: t("nav.home"), href: "/#hero" },
@@ -51,6 +55,14 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const handleLocaleChange = () => {
+    document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+    setMenuOpen(false);
+    setDropdownOpen(false);
+    setMobileServicesOpen(false);
+    router.refresh();
+  };
+
   return (
     <>
       <header
@@ -73,7 +85,7 @@ export default function Header() {
               className="px-4 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
               style={fontStyle}
             >
-              主页
+              {t("nav.home")}
             </Link>
 
             {/* Dropdown */}
@@ -122,6 +134,16 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            <button
+              type="button"
+              onClick={handleLocaleChange}
+              className="ml-2 px-3 py-2 text-sm font-medium text-gray-300 rounded-md border border-white/10 transition-colors duration-150 hover:text-white hover:bg-white/10"
+              style={fontStyle}
+              aria-label={t("localeSwitch.ariaLabel")}
+            >
+              {t(`localeSwitch.${nextLocale}`)}
+            </button>
           </nav>
 
           {/* Mobile hamburger */}
@@ -205,6 +227,16 @@ export default function Header() {
         >
           {t("nav.about")}
         </Link>
+
+        <button
+          type="button"
+          onClick={handleLocaleChange}
+          className="mt-6 py-3 px-4 text-base font-medium text-gray-300 border border-white/10 rounded-md hover:text-white hover:bg-white/10 transition-colors duration-150"
+          style={fontStyle}
+          aria-label={t("localeSwitch.ariaLabel")}
+        >
+          {t(`localeSwitch.${nextLocale}`)}
+        </button>
       </nav>
     </>
   );

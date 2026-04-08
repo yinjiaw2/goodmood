@@ -9,5 +9,10 @@
   "actions": {
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "localeSwitch": {
+    "zh-CN": "中文",
+    "en": "English",
+    "ariaLabel": "Switch language"
   }
 }
