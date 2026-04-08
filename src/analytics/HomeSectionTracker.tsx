@@ -52,7 +52,6 @@ export default function HomeSectionTracker() {
           sendGAEvent("event", "section_view", {
             section_id: matchedSection.id,
             section_name: matchedSection.name,
-            page_path: pathname,
             page_type: "home",
           });
         });
