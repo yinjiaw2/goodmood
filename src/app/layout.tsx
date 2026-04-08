@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Ma_Shan_Zheng, Outfit, Playfair_Display } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Ma_Shan_Zheng,
+  Outfit,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/home/Header";
 import Footer from "@/components/shared/Footer";
 import Providers from "@/components/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,7 +61,10 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Providers>
             <Header />
-            <main className="pt-16 flex-1">{children}</main>
+            <main className="pt-16 flex-1">
+              {children}
+              <GoogleAnalytics gaId="G-H33NR7CXKZ" />
+            </main>
             <Footer />
           </Providers>
         </NextIntlClientProvider>
