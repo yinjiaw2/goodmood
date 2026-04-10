@@ -43,12 +43,6 @@ export default function ProcessSection() {
               {t("process.title")} {t("process.titleHighlight")}
             </h2>
           </div>
-          <p className="max-w-[300px] text-[15px] leading-[1.7] text-[#9A9A9A]">
-            {t("process.summaryLine1")}
-            <br />
-            <br />
-            {t("process.summaryLine2")}
-          </p>
         </div>
 
         {/* Steps */}
