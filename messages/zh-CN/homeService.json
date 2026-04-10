@@ -1,0 +1,45 @@
+{
+  "home": {
+            "services": {
+            "badge": "我们的服务",
+            "title": "全渠道增长解决方案",
+            "subtitle": "悬停查看详情 · 点击了解更多",
+
+            "card1Title": "Google Ads",
+            "card1Desc": "让客户在搜索时找到你。",
+            "card1Tag1": "搜索广告",
+            "card1Tag2": "关键词",
+            "card1Tag3": "转化追踪",
+
+            "card2Title": "Meta Ads",
+            "card2Desc": "通过社交平台获取精准客户。",
+            "card2Tag1": "Facebook",
+            "card2Tag2": "Instagram",
+            "card2Tag3": "再营销",
+
+            "card3Title": "TikTok Ads",
+            "card3Desc": "短视频广告快速吸引注意力。",
+            "card3Tag1": "短视频",
+            "card3Tag2": "创意",
+            "card3Tag3": "扩量",
+
+            "card4Title": "社交媒体运营",
+            "card4Desc": "把粉丝转化为客户。",
+            "card4Tag1": "内容",
+            "card4Tag2": "增长",
+            "card4Tag3": "社群",
+
+            "card5Title": "SEO",
+            "card5Desc": "提升排名，获取自然流量。",
+            "card5Tag1": "站内优化",
+            "card5Tag2": "关键词",
+            "card5Tag3": "流量",
+
+            "card6Title": "邮件营销",
+            "card6Desc": "让客户持续复购。",
+            "card6Tag1": "EDM",
+            "card6Tag2": "自动化",
+            "card6Tag3": "复购"
+            }
+  }
+}
