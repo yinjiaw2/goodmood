@@ -57,12 +57,15 @@ export default function HeroSection() {
   const stat1Value = t("hero.stat1Value");
   const stat2Value = t("hero.stat2Value");
   const stat3Value = t("hero.stat3Value");
+  const stat4Value = t("hero.stat4Value");
 
   const stats = [
     { ...parseStatValue(stat1Value), label: t("hero.stat1Label") },
     { ...parseStatValue(stat2Value), label: t("hero.stat2Label") },
     { ...parseStatValue(stat3Value), label: t("hero.stat3Label") },
+    { ...parseStatValue(stat4Value), label: t("hero.stat4Label") },
   ];
+
   const [animatedValues, setAnimatedValues] = useState(() =>
     stats.map(() => 0),
   );
@@ -75,6 +78,7 @@ export default function HeroSection() {
       parseStatValue(stat1Value),
       parseStatValue(stat2Value),
       parseStatValue(stat3Value),
+      parseStatValue(stat4Value),
     ];
 
     const prefersReducedMotion = window.matchMedia(
@@ -135,7 +139,7 @@ export default function HeroSection() {
       window.cancelAnimationFrame(frameId);
       window.clearTimeout(timeoutId);
     };
-  }, [stat1Value, stat2Value, stat3Value]);
+  }, [stat1Value, stat2Value, stat3Value, stat4Value]);
 
   return (
     <section id="hero" className="relative w-full">
@@ -201,7 +205,7 @@ export default function HeroSection() {
         <div
           id="numbers"
           ref={statsRef}
-          className="rounded-2xl shadow-2xl grid grid-cols-3 overflow-hidden justify-center items-center"
+          className="rounded-2xl shadow-2xl grid grid-cols-4 overflow-hidden justify-center items-center"
           style={{ backgroundColor: "var(--white)" }}
         >
           {stats.map((stat, i) => (

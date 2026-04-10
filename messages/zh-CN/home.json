@@ -15,7 +15,9 @@
     "stat2Value": "5,000+",
     "stat2Label": "关键词优化数量",
     "stat3Value": "94%",
-    "stat3Label": "成功率"
+    "stat3Label": "成功率",
+    "stat4Value": "94%",
+    "stat4Label": "成功率"
   },
   "services": {
     "badge": "我们的服务",
