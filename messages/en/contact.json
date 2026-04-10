@@ -1,0 +1,84 @@
+{
+  "sectionTitle": "Get in Touch",
+  "sectionSubtitle": "We'd love to hear from you. Send us a message and we'll get back to you shortly.",
+  "formTitle": "Send Us a Message",
+  "formSubtitle": "Fill in the form below and we'll be in touch.",
+  "successMessage": "Thank you! We'll be in touch soon.",
+  "submitButton": "Send Message",
+  "submittingButton": "Sending…",
+  "fields": {
+    "firstName": {
+      "placeholder": "First name",
+      "errorRequired": "First name is required"
+    },
+    "lastName": {
+      "placeholder": "Last name",
+      "errorRequired": "Last name is required"
+    },
+    "email": {
+      "placeholder": "Email address",
+      "errorContact": "Please provide an email or phone number",
+      "errorInvalid": "Please enter a valid email address"
+    },
+    "mobileNumber": {
+      "placeholder": "Phone number",
+      "errorContact": "Please provide an email or phone number"
+    },
+    "message": {
+      "placeholder": "How can we help you?",
+      "errorRequired": "Message is required"
+    }
+  },
+  "page": {
+    "heroBadge": "Contact",
+    "heroTitle": "Tell us where",
+    "heroHighlight": "you want to grow next.",
+    "heroSubtitle": "Good Mood helps ambitious brands turn strategy, creative, and digital execution into measurable business growth. If you need a sharper plan or faster movement, this is the place to start the conversation.",
+    "companyTitle": "Company Snapshot",
+    "companyBody": "We are a Melbourne-based digital marketing team focused on practical growth systems. We combine positioning, creative direction, and performance thinking so every campaign has a clear commercial purpose.",
+    "servicesTitle": "Service Overview",
+    "servicesBody": "Our work spans social media marketing, paid ads, ecommerce growth, website design, email marketing, SEO, and creative production. We build the full customer journey instead of treating channels as isolated tasks.",
+    "approachTitle": "How We Work",
+    "approachBody": "Every engagement starts with understanding your goals, current bottlenecks, and revenue priorities. From there we shape an execution plan that is lean, measurable, and realistic for your team.",
+    "connectBadge": "Reach Out",
+    "connectTitle": "Contact details and project inquiry",
+    "connectSubtitle": "Use the form to tell us what you are building, what is blocked, and what outcome you want. If email is easier, you can also reach us directly using the details below.",
+    "details": {
+      "email": {
+        "label": "Email",
+        "value": "hello@goodmood.com.au"
+      },
+      "office": {
+        "label": "Office",
+        "value": "Tower 3, Level 9, 18–38 Siddeley St, Docklands VIC 3005"
+      },
+      "hours": {
+        "label": "Response window",
+        "value": "Monday to Friday, typically within one business day."
+      }
+    },
+    "faqBadge": "Q&A",
+    "faqTitle": "Common questions before we start",
+    "faqSubtitle": "A few practical answers to the questions businesses usually ask before booking a call.",
+    "faq": {
+      "items": {
+        "1": {
+          "question": "What types of businesses do you work with?",
+          "answer": "We usually work with growth-focused service brands, ecommerce businesses, and local companies that want clearer marketing systems and stronger online performance."
+        },
+        "2": {
+          "question": "Can we start with a small scope first?",
+          "answer": "Yes. Many projects begin with a focused audit, campaign sprint, or strategy session before expanding into ongoing execution."
+        },
+        "3": {
+          "question": "What should we prepare before contacting you?",
+          "answer": "A short summary of your business, current marketing channels, key challenges, and your target outcome is enough to begin. We can shape the rest together."
+        },
+        "4": {
+          "question": "Do you only work with Melbourne businesses?",
+          "answer": "No. Melbourne is our base, but we can work with brands across Australia and with teams that are comfortable collaborating remotely."
+        }
+      }
+    }
+  }
+}

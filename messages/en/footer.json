@@ -8,7 +8,7 @@
     "1": { "label": "Services", "href": "/#core-services" },
     "2": { "label": "About Us", "href": "/about" },
     "3": { "label": "News",     "href": "/news" },
-    "4": { "label": "Contact",  "href": "/#contact" }
+    "4": { "label": "Contact",  "href": "/contact" }
   },
   "contactLabel": "Contact",
   "address": "Tower 3, Level 9, 18–38 Siddeley St, Docklands VIC 3005",

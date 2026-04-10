@@ -40,7 +40,8 @@ export default function ProcessSection() {
               {t("process.badge")}
             </div>
             <h2 className="max-w-[540px] text-[40px] font-extrabold leading-none tracking-[-0.03em] text-[#1A1A1A] md:text-[56px]">
-              {t("process.title")} {t("process.titleHighlight")}
+              <span className="block">{t("process.title")}</span>
+              <span className="block">{t("process.titleHighlight")}</span>
             </h2>
           </div>
         </div>

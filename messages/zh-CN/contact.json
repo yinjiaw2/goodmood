@@ -1,0 +1,84 @@
+{
+  "sectionTitle": "联系我们",
+  "sectionSubtitle": "期待您的来信。请发送消息，我们将尽快回复您。",
+  "formTitle": "发送消息",
+  "formSubtitle": "填写以下表单，我们会尽快与您联系。",
+  "successMessage": "感谢您的来信！我们将尽快与您联系。",
+  "submitButton": "发送消息",
+  "submittingButton": "发送中…",
+  "fields": {
+    "firstName": {
+      "placeholder": "名",
+      "errorRequired": "请填写名字"
+    },
+    "lastName": {
+      "placeholder": "姓",
+      "errorRequired": "请填写姓氏"
+    },
+    "email": {
+      "placeholder": "电子邮箱",
+      "errorContact": "请提供邮箱或手机号码",
+      "errorInvalid": "请输入有效的电子邮箱地址"
+    },
+    "mobileNumber": {
+      "placeholder": "手机号码",
+      "errorContact": "请提供邮箱或手机号码"
+    },
+    "message": {
+      "placeholder": "我们能为您做什么？",
+      "errorRequired": "请填写消息内容"
+    }
+  },
+  "page": {
+    "heroBadge": "联系",
+    "heroTitle": "告诉我们，",
+    "heroHighlight": "你下一步想增长什么。",
+    "heroSubtitle": "Good Mood 专注于把策略、创意与数字执行转化为可衡量的业务增长。如果你需要更清晰的方向，或希望团队推进得更快，这里就是开始沟通的地方。",
+    "companyTitle": "公司简介",
+    "companyBody": "我们是一支位于墨尔本的数字营销团队，专注于为品牌搭建务实可落地的增长系统。我们把品牌定位、创意表达与效果增长结合起来，让每一项执行都服务于明确的商业目标。",
+    "servicesTitle": "服务概述",
+    "servicesBody": "我们的服务覆盖社交媒体营销、广告投放、电商增长、网站设计、邮件营销、SEO 与创意制作。我们关注的是完整客户旅程，而不是孤立地运营单一渠道。",
+    "approachTitle": "合作方式",
+    "approachBody": "每一次合作都会先从理解你的业务目标、当前瓶颈与营收优先级开始，再据此制定一个精简、可衡量、适合你团队推进节奏的执行方案。",
+    "connectBadge": "开始联系",
+    "connectTitle": "联系方式与项目咨询",
+    "connectSubtitle": "你可以通过表单告诉我们正在做什么、目前卡在哪里，以及希望达成什么结果。如果你更习惯邮件沟通，也可以直接使用下方联系方式联系我们。",
+    "details": {
+      "email": {
+        "label": "邮箱",
+        "value": "hello@goodmood.com.au"
+      },
+      "office": {
+        "label": "办公地址",
+        "value": "澳大利亚维多利亚州 Docklands Siddeley St 18–38 号 Tower 3 九楼"
+      },
+      "hours": {
+        "label": "回复时间",
+        "value": "周一到周五，通常会在 1 个工作日内回复。"
+      }
+    },
+    "faqBadge": "Q&A",
+    "faqTitle": "合作前常见问题",
+    "faqSubtitle": "这里整理了企业在预约沟通前最常问的几个实际问题。",
+    "faq": {
+      "items": {
+        "1": {
+          "question": "你们通常服务哪些类型的企业？",
+          "answer": "我们主要服务希望持续增长的服务型品牌、电商品牌，以及希望建立更清晰营销系统和更强线上表现的本地企业。"
+        },
+        "2": {
+          "question": "可以先从较小的合作范围开始吗？",
+          "answer": "可以。很多合作一开始会从营销诊断、短期 campaign sprint，或策略咨询开始，再逐步扩展到长期执行。"
+        },
+        "3": {
+          "question": "联系前需要准备哪些信息？",
+          "answer": "准备一份简短的业务介绍、当前营销渠道、主要挑战和目标结果就足够了，剩下的部分我们可以一起梳理。"
+        },
+        "4": {
+          "question": "你们只服务墨尔本本地企业吗？",
+          "answer": "不是。虽然我们位于墨尔本，但也可以为全澳范围内，以及能够接受远程协作的品牌提供服务。"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,13 @@
 "use client";
 
+import {
+  BadgeDollarSign,
+  Mail,
+  MonitorSmartphone,
+  Palette,
+  ShoppingCart,
+  Smartphone,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -9,7 +17,7 @@ export default function ServiceSection() {
   const cards = [
     {
       key: "social",
-      icon: "📱",
+      icon: Smartphone,
       title: t("serviceGrid.card1Title"),
       desc: t("serviceGrid.card1Desc"),
       tags: [
@@ -20,7 +28,7 @@ export default function ServiceSection() {
     },
     {
       key: "ecommerce",
-      icon: "🛒",
+      icon: ShoppingCart,
       title: t("serviceGrid.card2Title"),
       desc: t("serviceGrid.card2Desc"),
       tags: [
@@ -31,7 +39,7 @@ export default function ServiceSection() {
     },
     {
       key: "creative",
-      icon: "🎨",
+      icon: Palette,
       title: t("serviceGrid.card3Title"),
       desc: t("serviceGrid.card3Desc"),
       tags: [
@@ -42,7 +50,7 @@ export default function ServiceSection() {
     },
     {
       key: "email",
-      icon: "✉️",
+      icon: Mail,
       title: t("serviceGrid.card4Title"),
       desc: t("serviceGrid.card4Desc"),
       tags: [
@@ -53,7 +61,7 @@ export default function ServiceSection() {
     },
     {
       key: "web",
-      icon: "💻",
+      icon: MonitorSmartphone,
       title: t("serviceGrid.card5Title"),
       desc: t("serviceGrid.card5Desc"),
       tags: [
@@ -64,7 +72,7 @@ export default function ServiceSection() {
     },
     {
       key: "ads",
-      icon: "📊",
+      icon: BadgeDollarSign,
       title: t("serviceGrid.card6Title"),
       desc: t("serviceGrid.card6Desc"),
       tags: [
@@ -103,9 +111,11 @@ export default function ServiceSection() {
               <div className="absolute inset-0 z-0 origin-bottom scale-y-0 bg-[#F5C400] transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-y-100" />
 
               <div className="relative z-10 flex h-full flex-col">
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-[rgba(245,196,0,0.12)] text-[20px] transition-colors duration-300 group-hover:bg-black/10">
-                  {card.icon}
-                </div>
+                <card.icon
+                  aria-hidden="true"
+                  size={22}
+                  className="mb-5 h-11 w-11 rounded-lg bg-[rgba(245,196,0,0.12)] p-[10px] text-[#F5C400] transition-colors duration-300 group-hover:bg-black/10 group-hover:text-black"
+                />
 
                 <h3 className="mb-3 text-[20px] font-bold tracking-[-0.3px] text-white transition-colors duration-300 group-hover:text-black">
                   {card.title}

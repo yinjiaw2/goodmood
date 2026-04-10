@@ -8,7 +8,7 @@
     "1": { "label": "服务",   "href": "/#core-services" },
     "2": { "label": "关于我们", "href": "/about" },
     "3": { "label": "新闻资讯", "href": "/news" },
-    "4": { "label": "联系我们", "href": "/#contact" }
+    "4": { "label": "联系我们", "href": "/contact" }
   },
   "contactLabel": "联系方式",
   "address": "澳大利亚维多利亚州 Docklands Siddeley St 18–38 号 Tower 3 九楼",
