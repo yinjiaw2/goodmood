@@ -3,16 +3,25 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
+const SCROLL_BY = 340;
+
 export default function ServiceSection() {
   const t = useTranslations("home");
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({
+      left: dir === "left" ? -SCROLL_BY : SCROLL_BY,
+      behavior: "smooth",
+    });
+  };
 
   const cards = [
     {
@@ -56,7 +65,7 @@ export default function ServiceSection() {
   return (
     <section
       id="core-services"
-      className="w-full bg-white py-24 scroll-mt-16 overflow-hidden"
+      className="w-full bg-white py-28 scroll-mt-16 overflow-hidden"
     >
       {/* Header */}
       <div className="max-w-7xl mx-auto px-8 mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
@@ -77,9 +86,13 @@ export default function ServiceSection() {
             style={{ ...fontStyle, letterSpacing: "-0.02em" }}
           >
             {t("services.title")}{" "}
-            <span style={{ color: "#FB8C00" }}>{t("services.titleHighlight")}</span>
+            <span style={{ color: "#FB8C00" }}>
+              {t("services.titleHighlight")}
+            </span>
           </h2>
         </div>
+
+        {/* Subtitle only */}
         <p
           className="text-base text-gray-500 max-w-xs sm:text-right sm:pb-1"
           style={fontStyle}
@@ -88,61 +101,85 @@ export default function ServiceSection() {
         </p>
       </div>
 
-      {/* Scrollable cards */}
-      <div
-        ref={scrollRef}
-        className="flex gap-5 overflow-x-auto px-8 pb-4 snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none" }}
-      >
-        {cards.map((card) => (
-          <Link
-            key={card.href}
-            href={card.href}
-            className="group relative shrink-0 w-72 h-96 rounded-2xl overflow-hidden snap-start"
-            style={{ textDecoration: "none" }}
-          >
-            {/* Background image */}
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+      {/* Carousel wrapper: buttons sit on left/right, cards scroll in between */}
+      <div className="relative">
+        {/* Left button */}
+        <button
+          onClick={() => scroll("left")}
+          aria-label="Scroll left"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#FB8C00] hover:text-[#FB8C00] transition-colors duration-150"
+        >
+          <ChevronLeft size={20} />
+        </button>
 
-            {/* Gradient overlay */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.35) 55%, transparent 100%)",
-              }}
-            />
-
-            {/* Arrow */}
-            <div
-              className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style={{ backgroundColor: "#FB8C00" }}
+        {/* Scrollable cards */}
+        <div
+          ref={scrollRef}
+          className="flex gap-5 overflow-x-auto snap-x snap-mandatory px-16 ml-28"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {cards.map((card) => (
+            <Link
+              key={card.href}
+              href={card.href}
+              className="group relative shrink-0 w-80 h-104 rounded-2xl overflow-hidden snap-start"
+              style={{ textDecoration: "none" }}
             >
-              <ArrowUpRight size={18} className="text-white" />
-            </div>
+              {/* Background image */}
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
 
-            {/* Text */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-1.5">
-              <h3
-                className="text-lg font-bold text-white leading-snug"
-                style={fontStyle}
+              {/* Gradient overlay */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.3) 55%, transparent 100%)",
+                }}
+              />
+
+              {/* Arrow */}
+              <div
+                className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                style={{ backgroundColor: "#FB8C00" }}
               >
-                {card.title}
-              </h3>
-              <p
-                className="text-sm text-gray-300 leading-relaxed"
-                style={fontStyle}
-              >
-                {card.desc}
-              </p>
-            </div>
-          </Link>
-        ))}
+                <ArrowUpRight size={18} className="text-white" />
+              </div>
+
+              {/* Text */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-1.5">
+                <h3
+                  className="text-lg font-bold text-white leading-snug"
+                  style={fontStyle}
+                >
+                  {card.title}
+                </h3>
+                <p
+                  className="text-sm text-gray-300 leading-relaxed"
+                  style={fontStyle}
+                >
+                  {card.desc}
+                </p>
+              </div>
+            </Link>
+          ))}
+
+          {/* Trailing spacer */}
+          <div className="shrink-0 w-4" aria-hidden="true" />
+        </div>
+
+        {/* Right button */}
+        <button
+          onClick={() => scroll("right")}
+          aria-label="Scroll right"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#FB8C00] hover:text-[#FB8C00] transition-colors duration-150"
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
     </section>
   );
