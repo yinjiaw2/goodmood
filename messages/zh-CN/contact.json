@@ -1,0 +1,32 @@
+{
+  "sectionTitle": "联系我们",
+  "sectionSubtitle": "期待您的来信。请发送消息，我们将尽快回复您。",
+  "formTitle": "发送消息",
+  "formSubtitle": "填写以下表单，我们会尽快与您联系。",
+  "successMessage": "感谢您的来信！我们将尽快与您联系。",
+  "submitButton": "发送消息",
+  "submittingButton": "发送中…",
+  "fields": {
+    "firstName": {
+      "placeholder": "名",
+      "errorRequired": "请填写名字"
+    },
+    "lastName": {
+      "placeholder": "姓",
+      "errorRequired": "请填写姓氏"
+    },
+    "email": {
+      "placeholder": "电子邮箱",
+      "errorContact": "请提供邮箱或手机号码",
+      "errorInvalid": "请输入有效的电子邮箱地址"
+    },
+    "mobileNumber": {
+      "placeholder": "手机号码",
+      "errorContact": "请提供邮箱或手机号码"
+    },
+    "message": {
+      "placeholder": "我们能为您做什么？",
+      "errorRequired": "请填写消息内容"
+    }
+  }
+}

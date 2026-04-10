@@ -1,0 +1,32 @@
+{
+  "sectionTitle": "Get in Touch",
+  "sectionSubtitle": "We'd love to hear from you. Send us a message and we'll get back to you shortly.",
+  "formTitle": "Send Us a Message",
+  "formSubtitle": "Fill in the form below and we'll be in touch.",
+  "successMessage": "Thank you! We'll be in touch soon.",
+  "submitButton": "Send Message",
+  "submittingButton": "Sending…",
+  "fields": {
+    "firstName": {
+      "placeholder": "First name",
+      "errorRequired": "First name is required"
+    },
+    "lastName": {
+      "placeholder": "Last name",
+      "errorRequired": "Last name is required"
+    },
+    "email": {
+      "placeholder": "Email address",
+      "errorContact": "Please provide an email or phone number",
+      "errorInvalid": "Please enter a valid email address"
+    },
+    "mobileNumber": {
+      "placeholder": "Phone number",
+      "errorContact": "Please provide an email or phone number"
+    },
+    "message": {
+      "placeholder": "How can we help you?",
+      "errorRequired": "Message is required"
+    }
+  }
+}
