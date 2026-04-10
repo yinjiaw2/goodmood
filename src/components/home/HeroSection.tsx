@@ -1,4 +1,7 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,14 +9,133 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
+type StatDisplay = {
+  label: string;
+  prefix: string;
+  suffix: string;
+  value: number;
+};
+
+function parseStatValue(value: string): Omit<StatDisplay, "label"> {
+  const match = value.match(/\d[\d,.]*/);
+
+  if (!match) {
+    return {
+      prefix: "",
+      suffix: value,
+      value: 0,
+    };
+  }
+
+  const [numericPart] = match;
+  const numericStart = match.index ?? 0;
+  const numericEnd = numericStart + numericPart.length;
+
+  return {
+    prefix: value.slice(0, numericStart),
+    suffix: value.slice(numericEnd),
+    value: Number(numericPart.replace(/,/g, "")),
+  };
+}
+
+function formatStatValue(
+  stat: Omit<StatDisplay, "label">,
+  currentValue: number,
+  locale: string,
+) {
+  const formattedNumber = new Intl.NumberFormat(locale, {
+    maximumFractionDigits: 0,
+  }).format(currentValue);
+
+  return `${stat.prefix}${formattedNumber}${stat.suffix}`;
+}
+
 export default function HeroSection() {
   const t = useTranslations("home");
+  const locale = useLocale();
+  const statsRef = useRef<HTMLDivElement>(null);
+  const stat1Value = t("hero.stat1Value");
+  const stat2Value = t("hero.stat2Value");
+  const stat3Value = t("hero.stat3Value");
 
   const stats = [
-    { value: t("hero.stat1Value"), label: t("hero.stat1Label") },
-    { value: t("hero.stat2Value"), label: t("hero.stat2Label") },
-    { value: t("hero.stat3Value"), label: t("hero.stat3Label") },
+    { ...parseStatValue(stat1Value), label: t("hero.stat1Label") },
+    { ...parseStatValue(stat2Value), label: t("hero.stat2Label") },
+    { ...parseStatValue(stat3Value), label: t("hero.stat3Label") },
   ];
+  const [animatedValues, setAnimatedValues] = useState(() =>
+    stats.map(() => 0),
+  );
+
+  useEffect(() => {
+    const element = statsRef.current;
+    if (!element) return;
+
+    const animationTargets = [
+      parseStatValue(stat1Value),
+      parseStatValue(stat2Value),
+      parseStatValue(stat3Value),
+    ];
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      const reducedMotionFrame = window.requestAnimationFrame(() => {
+        setAnimatedValues(animationTargets.map((stat) => stat.value));
+      });
+
+      return () => window.cancelAnimationFrame(reducedMotionFrame);
+    }
+
+    let frameId = 0;
+    let timeoutId = 0;
+    let hasAnimated = false;
+
+    const animate = () => {
+      const duration = 1400;
+      const startTime = performance.now();
+
+      const tick = (currentTime: number) => {
+        const elapsed = Math.min((currentTime - startTime) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - elapsed, 3);
+
+        setAnimatedValues(
+          animationTargets.map((stat) =>
+            Math.round(stat.value * easedProgress),
+          ),
+        );
+
+        if (elapsed < 1) {
+          frameId = window.requestAnimationFrame(tick);
+        }
+      };
+
+      frameId = window.requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting || hasAnimated) return;
+
+        hasAnimated = true;
+        timeoutId = window.setTimeout(animate, 120);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.45,
+      },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frameId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [stat1Value, stat2Value, stat3Value]);
 
   return (
     <section id="hero" className="relative w-full">
@@ -75,21 +197,23 @@ export default function HeroSection() {
       </div>
 
       {/* Stats card — overlaps into dark section from below */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 -mt-16 pb-0 ">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 -mt-16 pb-0 justify-center items-center">
         <div
-          className="rounded-2xl shadow-2xl grid grid-cols-3 overflow-hidden"
+          id="numbers"
+          ref={statsRef}
+          className="rounded-2xl shadow-2xl grid grid-cols-3 overflow-hidden justify-center items-center"
           style={{ backgroundColor: "var(--white)" }}
         >
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col gap-2 px-10 py-8 border-r border-black/8 last:border-r-0"
+              className="flex flex-col gap-2 px-10 py-8 border-r border-black/8 last:border-r-0 justify-center items-center"
             >
               <span
                 className="text-4xl md:text-5xl font-extrabold"
                 style={{ color: "#F5C400", ...fontStyle }}
               >
-                {stat.value}
+                {formatStatValue(stat, animatedValues[i] ?? 0, locale)}
               </span>
               <span
                 className="text-sm font-medium text-gray-600"
