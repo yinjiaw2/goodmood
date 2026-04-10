@@ -19,6 +19,24 @@
     "stat4Value": "$2M+",
     "stat4Label": "Revenue Generated"
   },
+  "services": {
+    "badge": "What We Do",
+    "title": "Our",
+    "titleHighlight": "Services.",
+    "subtitle": "Everything you need to grow your business online — under one roof.",
+    "card1Title": "Google Ads",
+    "card1Desc": "Show up where your customers are searching. Track every click.",
+    "card2Title": "Meta Ads",
+    "card2Desc": "Targeted social ads that drive real conversions and brand awareness.",
+    "card3Title": "TikTok Ads",
+    "card3Desc": "Reach highly engaged audiences. Built for maximum short-form impact.",
+    "card4Title": "Social Media Marketing",
+    "card4Desc": "Own your audience. Turn followers into leads and leads into sales.",
+    "card5Title": "SEO",
+    "card5Desc": "Rank for searches that drive traffic and revenue. Long-term results.",
+    "card6Title": "Email Marketing",
+    "card6Desc": "Nurture your customers. Drive repeat purchases with precision."
+  },
   "process": {
     "badge": "Our Process",
     "title": "Your Ambition.",

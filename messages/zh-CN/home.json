@@ -19,6 +19,24 @@
     "stat4Value": "$200万+",
     "stat4Label": "创造营收"
   },
+  "services": {
+    "badge": "我们的服务",
+    "title": "专业",
+    "titleHighlight": "服务项目",
+    "subtitle": "一站式数字营销解决方案，助力您的业务全面在线增长。",
+    "card1Title": "Google 广告",
+    "card1Desc": "精准触达正在搜索的潜在客户，每次点击均可追踪。",
+    "card2Title": "Meta 广告",
+    "card2Desc": "精准社交广告，实现真实转化与品牌认知双提升。",
+    "card3Title": "TikTok 广告",
+    "card3Desc": "覆盖高活跃度受众，短视频形式实现最大化传播效果。",
+    "card4Title": "社交媒体营销",
+    "card4Desc": "经营您的私域流量，将粉丝转化为客户，持续驱动销售。",
+    "card5Title": "SEO 搜索优化",
+    "card5Desc": "在关键搜索中排名靠前，带来持续稳定的自然流量。",
+    "card6Title": "邮件营销",
+    "card6Desc": "精准触达客户，促进复购，构建长效客户关系。"
+  },
   "process": {
     "badge": "服务流程",
     "title": "您的目标，",
