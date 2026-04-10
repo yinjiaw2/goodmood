@@ -313,41 +313,6 @@ export default function Contact() {
               </form>
             )}
           </div>
-
-          {/* Office image */}
-          <div className="hidden md:block rounded-2xl overflow-hidden h-full min-h-120 relative">
-            <img
-              src="/world-trade-center.jpg"
-              alt={t("office.imageAlt")}
-              className="w-full h-full object-cover"
-            />
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
-            {/* Bottom bar */}
-            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-5 py-4">
-              <span className="text-white font-semibold text-lg">
-                {t("office.label")}
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={openGoogleMaps}
-                  className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
-                  style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label={t("office.label")}
-                >
-                  <MapPin size={18} className="text-white" />
-                </button>
-                <button
-                  onClick={() => console.log("office info clicked")}
-                  className="w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-white/30"
-                  style={{ backgroundColor: "rgba(255,255,255,0.18)" }}
-                  aria-label={t("office.label")}
-                >
-                  <Building2 size={18} className="text-white" />
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

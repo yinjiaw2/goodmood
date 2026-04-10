@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center min-h-[80vh] w-full bg-gray-300"
+      className="relative flex items-center justify-center min-h-[80vh] w-full bg-[#0D1B2A]"
     >
       {/* Main two-column layout */}
       <div className="relative z-10 flex flex-row w-full max-w-7xl px-8 py-16 gap-12">
