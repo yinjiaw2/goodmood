@@ -75,8 +75,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}
-        style={{ backgroundColor: "#0D1B2A" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-secondary ${scrolled ? "shadow-lg" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
@@ -87,7 +86,7 @@ export default function Header() {
           >
             <span
               className="text-xl font-extrabold tracking-tight"
-              style={{ color: "#FB8C00" }}
+              style={{ color: "#F5C400" }}
             >
               Good
             </span>

@@ -14,7 +14,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <Link href="/#hero" className="inline-flex items-center gap-2 mb-4">
-              <span className="text-2xl font-extrabold tracking-tight" style={{ color: "#FB8C00" }}>
+              <span
+                className="text-2xl font-extrabold tracking-tight"
+                style={{ color: "#F5C400" }}
+              >
                 {t("brandName1")}
               </span>
               <span className="text-2xl font-extrabold tracking-tight text-white">
@@ -67,11 +70,10 @@ export default function Footer() {
         {/* Divider + copyright */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} {t("copyrightName")}. {t("copyrightSuffix")}
+            © {new Date().getFullYear()} {t("copyrightName")}.{" "}
+            {t("copyrightSuffix")}
           </p>
-          <p className="text-xs text-gray-600">
-            {t("location")}
-          </p>
+          <p className="text-xs text-gray-600">{t("location")}</p>
         </div>
       </div>
     </footer>

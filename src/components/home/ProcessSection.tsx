@@ -1,144 +1,80 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { ScanSearch, Lightbulb, Rocket, BarChart2 } from "lucide-react";
-
-const fontStyle = {
-  fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-};
-
-const STEP_ICONS = [
-  <ScanSearch key="audit" size={22} />,
-  <Lightbulb key="strategy" size={22} />,
-  <Rocket key="execute" size={22} />,
-  <BarChart2 key="measure" size={22} />,
-];
-
 export default function ProcessSection() {
-  const t = useTranslations("home");
-
   const steps = [
     {
-      label: t("process.step1Label"),
-      title: t("process.step1Title"),
-      desc: t("process.step1Desc"),
+      number: "01",
+      name: "Audit",
+      desc: "Analyze brand positioning, target audience, and current performance to establish a clear baseline.",
     },
     {
-      label: t("process.step2Label"),
-      title: t("process.step2Title"),
-      desc: t("process.step2Desc"),
+      number: "02",
+      name: "Strategy",
+      desc: "Develop tailored marketing and content strategies aligned with your business objectives.",
     },
     {
-      label: t("process.step3Label"),
-      title: t("process.step3Title"),
-      desc: t("process.step3Desc"),
+      number: "03",
+      name: "Execute",
+      desc: "Implement campaigns across platforms with structured workflows and disciplined execution.",
     },
     {
-      label: t("process.step4Label"),
-      title: t("process.step4Title"),
-      desc: t("process.step4Desc"),
+      number: "04",
+      name: "Measure",
+      desc: "Monthly reporting, strategy refinement, and continuous improvement based on real data.",
     },
   ];
-
   return (
     <section
       id="process"
-      className="relative w-full overflow-hidden py-24 px-8 scroll-mt-16"
+      className="w-full bg-[#fff] py-24 md:py-32 scroll-mt-16"
     >
-      {/* Background image */}
-      <Image
-        src="/process.webp"
-        alt=""
-        fill
-        className="object-cover"
-        aria-hidden="true"
-      />
-
-      {/* Dark overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(13,27,42,0.82)" }}
-        aria-hidden="true"
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        {/* Left: badge + title + subtitle */}
-        <div className="flex flex-col gap-6">
-          <span
-            className="inline-flex w-fit text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
-            style={{
-              color: "#FB8C00",
-              borderColor: "rgba(251,140,0,0.4)",
-              backgroundColor: "rgba(251,140,0,0.1)",
-              ...fontStyle,
-            }}
-          >
-            {t("process.badge")}
-          </span>
-          <h2
-            className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
-            style={{ ...fontStyle, letterSpacing: "-0.02em" }}
-          >
-            {t("process.title")}
-            <br />
-            <span style={{ color: "#FB8C00" }}>
-              {t("process.titleHighlight")}
-            </span>
-          </h2>
-          <p
-            className="text-lg text-gray-300 leading-relaxed max-w-sm"
-            style={fontStyle}
-          >
-            {t("process.subtitle")}
-          </p>
-        </div>
-
-        {/* Right: steps stacked vertically */}
-        <div className="flex flex-col">
-          {steps.map((step, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-6 py-8 border-b border-white/10 last:border-0"
-            >
-              {/* Icon circle */}
-              <div
-                className="relative flex items-center justify-center w-14 h-14 rounded-full shrink-0 text-white"
-                style={{ backgroundColor: "#FB8C00" }}
-              >
-                {STEP_ICONS[i]}
-                <span
-                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center"
-                  style={{ backgroundColor: "#0D1B2A", color: "#FB8C00", ...fontStyle }}
-                >
-                  {i + 1}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col gap-1.5">
-                <span
-                  className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: "#FB8C00", ...fontStyle }}
-                >
-                  {step.label}
-                </span>
-                <h3
-                  className="text-xl font-bold text-white"
-                  style={fontStyle}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className="text-sm text-gray-300 leading-relaxed"
-                  style={fontStyle}
-                >
-                  {step.desc}
-                </p>
-              </div>
+      {" "}
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+        {" "}
+        {/* Header */}{" "}
+        <div className="mb-16 flex flex-col gap-10 lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
+          {" "}
+          <div>
+            {" "}
+            <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9A9A]">
+              {" "}
+              <span className="inline-block h-px w-[30px] bg-[#F5C400]" /> Our
+              Process{" "}
             </div>
-          ))}
+            <h2 className="max-w-[540px] text-[40px] font-extrabold leading-none tracking-[-0.03em] text-[#1A1A1A] md:text-[56px]">
+              {" "}
+              Your Ambition.{" "}
+            </h2>{" "}
+          </div>
+          <p className="max-w-[300px] text-[15px] leading-[1.7] text-[#9A9A9A]">
+            {" "}
+            Conversion-focused systems built to create measurable growth. <br />{" "}
+            <br /> A clear process helps turn creative execution into business
+            outcomes.{" "}
+          </p>{" "}
         </div>
-      </div>
+        {/* Steps */}{" "}
+        <div className="relative grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-4">
+          {" "}
+          {/* top dashed line desktop */}{" "}
+          <div className="absolute left-[calc(12.5%+20px)] right-[calc(12.5%+20px)] top-6 hidden h-px xl:block bg-[repeating-linear-gradient(90deg,#F5C400_0,#F5C400_6px,transparent_6px,transparent_14px)]" />
+          {steps.map((step) => (
+            <div key={step.number} className="relative xl:pr-8">
+              {" "}
+              <div className="relative z-10 mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5C400] text-[13px] font-bold text-[#1A1A1A] transition duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(245,196,0,0.4)]">
+                {" "}
+                {step.number}{" "}
+              </div>
+              <h3 className="mb-3 text-[20px] font-bold text-[#1A1A1A]">
+                {" "}
+                {step.name}{" "}
+              </h3>
+              <p className="text-[14px] leading-[1.7] text-[#9A9A9A]">
+                {" "}
+                {step.desc}{" "}
+              </p>{" "}
+            </div>
+          ))}{" "}
+        </div>{" "}
+      </div>{" "}
     </section>
   );
 }
