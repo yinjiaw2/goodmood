@@ -7,14 +7,13 @@ const fontStyle = {
 
 export default function HeroSection() {
   const t = useTranslations("home");
-  const titleSuffix = t("hero.titleSuffix");
 
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center min-h-screen w-full bg-[#0D1B2A] pt-16"
+      className="relative flex items-center justify-center min-h-screen w-full bg-[#0D1B2A] "
     >
-      <div className="w-full max-w-7xl px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="w-full max-w-7xl px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left column: Badge, headline, subtitle */}
         <div className="flex flex-col gap-8">
           {/* Badge */}
@@ -40,12 +39,6 @@ export default function HeroSection() {
             {t("hero.titlePrefix")}
             {t("hero.titlePrefix") ? " " : ""}
             <span style={{ color: "#FB8C00" }}>{t("hero.titleHighlight")}</span>
-            {titleSuffix ? (
-              <>
-                <br />
-                {titleSuffix}
-              </>
-            ) : null}
           </h1>
 
           {/* Subtitle */}
@@ -58,10 +51,8 @@ export default function HeroSection() {
         </div>
 
         {/* Right column: Contact form */}
-        <div className="flex items-center justify-center">
-          <div className="w-full max-w-lg">
-            <HeroContactForm />
-          </div>
+        <div className="flex items-center justify-center w-full">
+          <HeroContactForm />
         </div>
       </div>
     </section>
