@@ -10,7 +10,7 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-const SCROLL_BY = 340;
+const SCROLL_BY = 400;
 
 export default function ServiceSection() {
   const t = useTranslations("home");
@@ -112,6 +112,20 @@ export default function ServiceSection() {
           <ChevronLeft size={20} />
         </button>
 
+        {/* Left fade mask */}
+        <div
+          className="absolute left-0 top-0 bottom-0 w-24 z-5 pointer-events-none"
+          style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
+          aria-hidden="true"
+        />
+
+        {/* Right fade mask */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-24 z-5 pointer-events-none"
+          style={{ background: "linear-gradient(to left, white 0%, transparent 100%)" }}
+          aria-hidden="true"
+        />
+
         {/* Scrollable cards */}
         <div
           ref={scrollRef}
@@ -122,7 +136,7 @@ export default function ServiceSection() {
             <Link
               key={card.href}
               href={card.href}
-              className="group relative shrink-0 w-80 h-104 rounded-2xl overflow-hidden snap-start"
+              className="group relative shrink-0 w-80 h-120 rounded-2xl overflow-hidden snap-start"
               style={{ textDecoration: "none" }}
             >
               {/* Background image */}
