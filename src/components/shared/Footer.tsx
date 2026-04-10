@@ -8,7 +8,7 @@ export default function Footer() {
   const navLinkKeys = ["0", "1", "2", "3", "4"] as const;
 
   return (
-    <footer style={{ backgroundColor: "#0D1B2A", fontFamily: font }}>
+    <footer style={{ fontFamily: font }} className="bg-secondary">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
           {/* Brand */}

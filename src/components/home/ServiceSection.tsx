@@ -1,67 +1,94 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const cards = [
-  {
-    key: "social",
-    icon: "📱",
-    title: "Social Media Marketing",
-    desc: "账号策划到数据优化，构建可持续增长的社媒矩阵，让每一条内容都在为品牌打工。",
-    tags: ["账号定位", "内容制作", "社群运营"],
-  },
-  {
-    key: "ecommerce",
-    icon: "🛒",
-    title: "Ecommerce",
-    desc: "从落地页设计到 SEO 优化，打通完整电商转化漏斗，让流量变成真实收入。",
-    tags: ["网站设计", "SEO优化", "数据分析"],
-  },
-  {
-    key: "creative",
-    icon: "🎨",
-    title: "Creative",
-    desc: "品牌视觉到视频制作，用创意驱动情感连接，让你的品牌在竞争中不可忽视。",
-    tags: ["品牌设计", "视频制作", "广告素材"],
-  },
-  {
-    key: "email",
-    icon: "✉️",
-    title: "Email Marketing",
-    desc: "自有渠道，最高 ROI。从设计到文案到自动化流程，把邮件列表变成持续营收引擎。",
-    tags: ["图形设计", "文案撰写", "自动化"],
-  },
-  {
-    key: "web",
-    icon: "💻",
-    title: "Website Design",
-    desc: "以转化为核心的网站设计。每一个按钮位置、每一行文案，都经过转化率逻辑的检验。",
-    tags: ["Landing Page", "转化优化", "UX设计"],
-  },
-  {
-    key: "ads",
-    icon: "📊",
-    title: "Paid Ads",
-    desc: "Meta、小红书精准投放，用你的预算获取最高质量客户。数据说话，效果为王。",
-    tags: ["Meta Ads", "小红书", "受众定向"],
-  },
-];
-
 export default function ServiceSection() {
+  const t = useTranslations("home");
+
+  const cards = [
+    {
+      key: "social",
+      icon: "📱",
+      title: t("serviceGrid.card1Title"),
+      desc: t("serviceGrid.card1Desc"),
+      tags: [
+        t("serviceGrid.card1Tag1"),
+        t("serviceGrid.card1Tag2"),
+        t("serviceGrid.card1Tag3"),
+      ],
+    },
+    {
+      key: "ecommerce",
+      icon: "🛒",
+      title: t("serviceGrid.card2Title"),
+      desc: t("serviceGrid.card2Desc"),
+      tags: [
+        t("serviceGrid.card2Tag1"),
+        t("serviceGrid.card2Tag2"),
+        t("serviceGrid.card2Tag3"),
+      ],
+    },
+    {
+      key: "creative",
+      icon: "🎨",
+      title: t("serviceGrid.card3Title"),
+      desc: t("serviceGrid.card3Desc"),
+      tags: [
+        t("serviceGrid.card3Tag1"),
+        t("serviceGrid.card3Tag2"),
+        t("serviceGrid.card3Tag3"),
+      ],
+    },
+    {
+      key: "email",
+      icon: "✉️",
+      title: t("serviceGrid.card4Title"),
+      desc: t("serviceGrid.card4Desc"),
+      tags: [
+        t("serviceGrid.card4Tag1"),
+        t("serviceGrid.card4Tag2"),
+        t("serviceGrid.card4Tag3"),
+      ],
+    },
+    {
+      key: "web",
+      icon: "💻",
+      title: t("serviceGrid.card5Title"),
+      desc: t("serviceGrid.card5Desc"),
+      tags: [
+        t("serviceGrid.card5Tag1"),
+        t("serviceGrid.card5Tag2"),
+        t("serviceGrid.card5Tag3"),
+      ],
+    },
+    {
+      key: "ads",
+      icon: "📊",
+      title: t("serviceGrid.card6Title"),
+      desc: t("serviceGrid.card6Desc"),
+      tags: [
+        t("serviceGrid.card6Tag1"),
+        t("serviceGrid.card6Tag2"),
+        t("serviceGrid.card6Tag3"),
+      ],
+    },
+  ];
+
   return (
     <section className="w-full bg-[#1A1A1A] py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="mb-12">
           <div className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-[#F5C400]">
-            我们的服务
+            {t("serviceGrid.badge")}
           </div>
 
           <h2 className="mb-4 text-[34px] font-extrabold leading-[1.1] tracking-[-1px] text-white md:text-[46px]">
-            全渠道增长解决方案
+            {t("serviceGrid.title")}
           </h2>
 
           <p className="max-w-[520px] text-[16px] leading-[1.6] text-white/50">
-            悬停查看详情 · 点击了解更多
+            {t("serviceGrid.subtitle")}
           </p>
         </div>
 
