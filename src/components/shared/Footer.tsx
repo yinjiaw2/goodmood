@@ -9,11 +9,10 @@ export default function Footer() {
 
   return (
     <footer style={{ fontFamily: font }} className="bg-secondary">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
-          {/* Brand */}
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
-            <Link href="/#hero" className="inline-flex items-center gap-2 mb-4">
+            <Link href="/#hero" className="mb-4 inline-flex items-center gap-2">
               <span
                 className="text-2xl font-extrabold tracking-tight"
                 style={{ color: "#F5C400" }}
@@ -24,14 +23,13 @@ export default function Footer() {
                 {t("brandName2")}
               </span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm leading-relaxed text-gray-400">
               {t("tagline")}
             </p>
           </div>
 
-          {/* Nav links */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
               {t("navLabel")}
             </p>
             <ul className="flex flex-col gap-3">
@@ -39,7 +37,7 @@ export default function Footer() {
                 <li key={linkKey}>
                   <Link
                     href={t(`navLinks.${linkKey}.href`)}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-150"
+                    className="text-sm text-gray-400 transition-colors duration-150 hover:text-white"
                   >
                     {t(`navLinks.${linkKey}.label`)}
                   </Link>
@@ -48,17 +46,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
               {t("contactLabel")}
             </p>
             <ul className="flex flex-col gap-3 text-sm text-gray-400">
-              <li>📍 {t("address")}</li>
+              <li>{t("address")}</li>
               <li>
                 <a
                   href={`mailto:${t("email")}`}
-                  className="hover:text-white transition-colors duration-150"
+                  className="transition-colors duration-150 hover:text-white"
                 >
                   {t("email")}
                 </a>
@@ -67,8 +64,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider + copyright */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} {t("copyrightName")}.{" "}
             {t("copyrightSuffix")}
