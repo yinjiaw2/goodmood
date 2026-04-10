@@ -6,58 +6,35 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex items-center min-h-[80vh] w-full bg-cover bg-center scroll-mt-16"
-      style={{ backgroundImage: "url(/building-background.jpg)" }}
+      className="relative flex items-center justify-center min-h-[80vh] w-full bg-gray-300"
     >
-      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-      <div className="relative z-10 flex flex-col items-start justify-center w-full max-w-2xl px-6 py-24 mx-auto md:ml-[8vw] md:mr-0">
-        {/* Tag */}
-        <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">
-          <span
-            className="w-2 h-2 rounded-full shrink-0"
-            style={{ backgroundColor: "#FB8C00" }}
-          />
-          <span
-            className="text-xs font-semibold tracking-widest uppercase text-white/90"
-            style={{
-              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-            }}
-          >
-            {t("tag")}
-          </span>
+      {/* Main two-column layout */}
+      <div className="relative z-10 flex flex-row w-full max-w-7xl px-8 py-16 gap-12">
+        {/* Left column */}
+        <div className="flex flex-col justify-start w-1/2 gap-8">
+          {/* Title box */}
+          <div className="bg-gray-200 rounded shadow flex items-center justify-center h-44 w-3/4 mx-auto">
+            <span className="text-5xl font-normal text-black">
+              {t("title")}
+            </span>
+          </div>
+          {/* Wide box (subtitle/description) */}
+          <div className="bg-gray-200 rounded shadow h-56 w-full flex items-center px-8">
+            <span className="text-2xl text-black">{t("slogan")}</span>
+          </div>
         </div>
-
-        <h1
-          className="text-5xl md:text-6xl font-extrabold mb-6"
-          style={{
-            color: "#FB8C00",
-            textShadow: "0 2px 24px rgba(0,0,0,0.25)",
-            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          {t("title")}
-        </h1>
-        <p
-          className="text-xl md:text-2xl font-medium text-white mb-8 drop-shadow-lg"
-          style={{
-            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          {t("slogan")}
-        </p>
-        <a
-          href="#contact"
-          className="px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-200 hover:brightness-110 active:scale-95"
-          style={{
-            backgroundColor: "#FB8C00",
-            color: "#fff",
-            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-          }}
-        >
-          {t("cta")}
-        </a>
+        {/* Right column */}
+        <div className="flex flex-col items-center justify-center w-1/2">
+          <div className="bg-gray-200 rounded shadow flex flex-col items-center justify-center w-full h-[420px] relative">
+            <span className="text-5xl text-black mb-8">Form</span>
+            {/* Button at bottom right */}
+            <div className="absolute bottom-8 right-8">
+              <button className="bg-gray-600 rounded-full w-48 h-16 text-white text-xl font-semibold shadow">
+                Button
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

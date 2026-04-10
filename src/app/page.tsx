@@ -11,15 +11,7 @@ import HomeSectionTracker from "@/analytics/HomeSectionTracker";
 export default function Home() {
   return (
     <>
-      <HomeSectionTracker />
       <HeroSection />
-      <NumberSection />
-      <CoreServices />
-      <OurTeam />
-      <ServiceProcess />
-      <SuccessCases />
-      <FAQ />
-      <Contact />
     </>
   );
 }
