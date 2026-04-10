@@ -12,8 +12,6 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <AboutIntro />
-      <AboutMap />
     </>
   );
 }
