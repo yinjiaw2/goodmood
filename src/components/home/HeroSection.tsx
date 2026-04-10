@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
-  const t = useTranslations("hero");
+  const t = useTranslations("home");
 
   return (
     <section
