@@ -6,7 +6,9 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-const fontStyle = { fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" };
+const fontStyle = {
+  fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+};
 
 export default function Header() {
   const t = useTranslations("header");
@@ -23,6 +25,7 @@ export default function Header() {
     { label: t("nav.home"), href: "/#hero" },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.news"), href: "/news" },
+    { label: t("nav.contact"), href: "/#contact" },
   ];
 
   const servicesDropdown = {
@@ -42,13 +45,18 @@ export default function Header() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -72,11 +80,20 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/#hero" className="flex items-center gap-2 shrink-0" style={fontStyle}>
-            <span className="text-xl font-extrabold tracking-tight" style={{ color: "#FB8C00" }}>
-              Siddeley
+          <Link
+            href="/#hero"
+            className="flex items-center gap-2 shrink-0"
+            style={fontStyle}
+          >
+            <span
+              className="text-xl font-extrabold tracking-tight"
+              style={{ color: "#FB8C00" }}
+            >
+              Good
             </span>
-            <span className="text-xl font-extrabold tracking-tight text-white">Talent Link</span>
+            <span className="text-xl font-extrabold tracking-tight text-white">
+              Mood
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -107,7 +124,9 @@ export default function Header() {
               {/* Dropdown panel */}
               <div
                 className={`absolute top-full left-0 mt-1 w-36 rounded-xl border border-white/10 overflow-hidden shadow-xl transition-all duration-200 ${
-                  dropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
+                  dropdownOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-1 pointer-events-none"
                 }`}
                 style={{ backgroundColor: "#0D1B2A" }}
               >
@@ -151,7 +170,9 @@ export default function Header() {
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-md text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-150"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? t("actions.closeMenu") : t("actions.openMenu")}
+            aria-label={
+              menuOpen ? t("actions.closeMenu") : t("actions.openMenu")
+            }
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -161,7 +182,9 @@ export default function Header() {
       {/* Mobile drawer overlay */}
       <div
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMenuOpen(false)}
       />
@@ -209,7 +232,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileServicesOpen(false);
+                  }}
                   className="py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors duration-150"
                   style={fontStyle}
                 >

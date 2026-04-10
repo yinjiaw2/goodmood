@@ -1,5 +1,22 @@
 {
   "title": "Title",
   "slogan": "This is the slogan for the hero section.",
-  "cta": "Contact Us"
+  "cta": "Contact Us",
+  "hero": {
+    "badge": "Digital Marketing Agency · Melbourne",
+    "titlePrefix": "Grow Your",
+    "titleHighlight": "Business",
+    "titleSuffix": "Online",
+    "subtitle": "At SEO Agency Melbourne, we help clients promote their business online and achieve real growth. Our team of experts collaborates with you to craft unique strategies that expand your digital footprint and deliver measurable results.",
+    "cta": "Get Free Consultation",
+    "ctaSecondary": "Learn More",
+    "stat1Value": "500+",
+    "stat1Label": "Clients Served",
+    "stat2Value": "10+",
+    "stat2Label": "Years of Experience",
+    "stat3Value": "98%",
+    "stat3Label": "Client Retention Rate",
+    "stat4Value": "$2M+",
+    "stat4Label": "Revenue Generated"
+  }
 }

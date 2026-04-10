@@ -1,5 +1,22 @@
 {
   "title": "标题",
   "slogan": "这是首页横幅的标语。",
-  "cta": "联系我们"
+  "cta": "联系我们",
+  "hero": {
+    "badge": "数字营销机构 · 墨尔本",
+    "titlePrefix": "让您的业务",
+    "titleHighlight": "在线增长",
+    "titleSuffix": "",
+    "subtitle": "我们是墨尔本 SEO 机构，帮助客户在线推广业务并实现真正的增长。我们的专家团队与您紧密合作，制定独特的数字营销策略，扩大您的网络影响力，带来可量化的实际成果。",
+    "cta": "免费获取咨询",
+    "ctaSecondary": "了解更多",
+    "stat1Value": "500+",
+    "stat1Label": "服务客户",
+    "stat2Value": "10+",
+    "stat2Label": "年行业经验",
+    "stat3Value": "98%",
+    "stat3Label": "客户留存率",
+    "stat4Value": "$200万+",
+    "stat4Label": "创造营收"
+  }
 }
