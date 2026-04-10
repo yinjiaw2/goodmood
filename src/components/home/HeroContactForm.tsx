@@ -83,10 +83,10 @@ export default function HeroContactForm() {
         className="text-xl font-bold text-white mb-1"
         style={fontStyle}
       >
-        {t("formTitle")}
+        {t("contact.formTitle")}
       </h3>
       <p className="text-sm text-gray-400 mb-6" style={fontStyle}>
-        {t("formSubtitle")}
+        {t("contact.formSubtitle")}
       </p>
 
       {isSubmitSuccessful ? (
@@ -94,7 +94,7 @@ export default function HeroContactForm() {
           className="py-10 text-center font-semibold"
           style={{ color: "#FB8C00", ...fontStyle }}
         >
-          {t("successMessage")}
+          {t("contact.successMessage")}
         </p>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
@@ -103,12 +103,12 @@ export default function HeroContactForm() {
             <div>
               {(() => {
                 const field = register("firstName", {
-                  required: t("fields.firstName.errorRequired"),
+                  required: t("contact.fields.firstName.errorRequired"),
                 });
                 return (
                   <input
                     {...field}
-                    placeholder={t("fields.firstName.placeholder")}
+                    placeholder={t("contact.fields.firstName.placeholder")}
                     onFocus={() => handleFieldFocus("firstName")}
                     onBlur={(e) => {
                       field.onBlur(e);
@@ -126,12 +126,12 @@ export default function HeroContactForm() {
             <div>
               {(() => {
                 const field = register("lastName", {
-                  required: t("fields.lastName.errorRequired"),
+                  required: t("contact.fields.lastName.errorRequired"),
                 });
                 return (
                   <input
                     {...field}
-                    placeholder={t("fields.lastName.placeholder")}
+                    placeholder={t("contact.fields.lastName.placeholder")}
                     onFocus={() => handleFieldFocus("lastName")}
                     onBlur={(e) => {
                       field.onBlur(e);
@@ -155,17 +155,17 @@ export default function HeroContactForm() {
                 validate: (value) =>
                   value.trim().length > 0 || mobileNumber?.trim().length > 0
                     ? true
-                    : t("fields.email.errorContact"),
+                    : t("contact.fields.email.errorContact"),
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: t("fields.email.errorInvalid"),
+                  message: t("contact.fields.email.errorInvalid"),
                 },
               });
               return (
                 <input
                   {...field}
                   type="email"
-                  placeholder={t("fields.email.placeholder")}
+                  placeholder={t("contact.fields.email.placeholder")}
                   onFocus={() => handleFieldFocus("email")}
                   onBlur={(e) => {
                     field.onBlur(e);
@@ -188,13 +188,13 @@ export default function HeroContactForm() {
                 validate: (value) =>
                   value.trim().length > 0 || email?.trim().length > 0
                     ? true
-                    : t("fields.mobileNumber.errorContact"),
+                    : t("contact.fields.mobileNumber.errorContact"),
               });
               return (
                 <input
                   {...field}
                   type="tel"
-                  placeholder={t("fields.mobileNumber.placeholder")}
+                  placeholder={t("contact.fields.mobileNumber.placeholder")}
                   onFocus={() => handleFieldFocus("mobileNumber")}
                   onBlur={(e) => {
                     field.onBlur(e);
@@ -214,13 +214,13 @@ export default function HeroContactForm() {
           <div>
             {(() => {
               const field = register("message", {
-                required: t("fields.message.errorRequired"),
+                required: t("contact.fields.message.errorRequired"),
               });
               return (
                 <textarea
                   {...field}
                   rows={4}
-                  placeholder={t("fields.message.placeholder")}
+                  placeholder={t("contact.fields.message.placeholder")}
                   onFocus={() => handleFieldFocus("message")}
                   onBlur={(e) => {
                     field.onBlur(e);
@@ -242,7 +242,7 @@ export default function HeroContactForm() {
             className="w-full py-3.5 rounded-full font-semibold text-white transition hover:opacity-90 disabled:opacity-60 active:scale-95"
             style={{ backgroundColor: "#FB8C00", ...fontStyle }}
           >
-            {isSubmitting ? t("submittingButton") : t("submitButton")}
+            {isSubmitting ? t("contact.submittingButton") : t("contact.submitButton")}
           </button>
         </form>
       )}

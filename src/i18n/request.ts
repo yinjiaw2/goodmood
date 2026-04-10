@@ -49,6 +49,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
         : (browserLocale ?? defaultLocale);
   const messages = {
     home: (await import(`../../messages/${locale}/home.json`)).default,
+    header: (await import(`../../messages/${locale}/header.json`)).default,
   };
 
   return {
