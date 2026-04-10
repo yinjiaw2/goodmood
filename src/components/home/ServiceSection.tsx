@@ -95,7 +95,7 @@ export default function ServiceSection() {
             {t("serviceGrid.title")}
           </h2>
 
-          <p className="max-w-[520px] text-[16px] leading-[1.6] text-white/50">
+          <p className="max-w-[520px] text-[18px] leading-[1.6] text-white font-bold">
             {t("serviceGrid.subtitle")}
           </p>
         </div>
