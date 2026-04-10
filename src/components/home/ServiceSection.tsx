@@ -73,7 +73,7 @@ export default function ServiceSection() {
           <span
             className="inline-flex w-fit text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
             style={{
-              color: "#FB8C00",
+              color: "#F5C400",
               borderColor: "rgba(251,140,0,0.35)",
               backgroundColor: "rgba(251,140,0,0.07)",
               ...fontStyle,
@@ -86,7 +86,7 @@ export default function ServiceSection() {
             style={{ ...fontStyle, letterSpacing: "-0.02em" }}
           >
             {t("services.title")}{" "}
-            <span style={{ color: "#FB8C00" }}>
+            <span style={{ color: "#F5C400" }}>
               {t("services.titleHighlight")}
             </span>
           </h2>
@@ -107,22 +107,17 @@ export default function ServiceSection() {
         <button
           onClick={() => scroll("left")}
           aria-label="Scroll left"
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#FB8C00] hover:text-[#FB8C00] transition-colors duration-150"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#F5C400] hover:text-[#F5C400] transition-colors duration-150"
         >
           <ChevronLeft size={20} />
         </button>
 
-        {/* Left fade mask */}
-        <div
-          className="absolute left-0 top-0 bottom-0 w-24 z-5 pointer-events-none"
-          style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
-          aria-hidden="true"
-        />
-
         {/* Right fade mask */}
         <div
           className="absolute right-0 top-0 bottom-0 w-24 z-5 pointer-events-none"
-          style={{ background: "linear-gradient(to left, white 0%, transparent 100%)" }}
+          style={{
+            background: "linear-gradient(to left, white 0%, transparent 100%)",
+          }}
           aria-hidden="true"
         />
 
@@ -159,7 +154,7 @@ export default function ServiceSection() {
               {/* Arrow */}
               <div
                 className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                style={{ backgroundColor: "#FB8C00" }}
+                style={{ backgroundColor: "#F5C400" }}
               >
                 <ArrowUpRight size={18} className="text-white" />
               </div>
@@ -190,7 +185,7 @@ export default function ServiceSection() {
         <button
           onClick={() => scroll("right")}
           aria-label="Scroll right"
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#FB8C00] hover:text-[#FB8C00] transition-colors duration-150"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-500 hover:border-[#F5C400] hover:text-[#F5C400] transition-colors duration-150"
         >
           <ChevronRight size={20} />
         </button>

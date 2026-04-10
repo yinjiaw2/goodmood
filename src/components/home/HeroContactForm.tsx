@@ -47,7 +47,10 @@ export default function HeroContactForm() {
     trackContactFormStart({ fieldName, pagePath: pathname });
   };
 
-  const handleFieldProgress = (fieldName: ContactFormFieldName, value: string) => {
+  const handleFieldProgress = (
+    fieldName: ContactFormFieldName,
+    value: string,
+  ) => {
     if (!value.trim()) return;
     trackContactFormProgress({ fieldName, pagePath: pathname });
   };
@@ -68,36 +71,36 @@ export default function HeroContactForm() {
   };
 
   const inputBase =
-    "w-full rounded-lg px-4 py-3 text-sm text-white outline-none transition border";
-  const inputNormal = `${inputBase} bg-white/8 border-white/15 placeholder-white/35 focus:border-[#FB8C00]`;
-  const inputErrorCls = `${inputBase} bg-white/8 border-red-500 placeholder-white/35 focus:border-red-400`;
+    "w-full rounded-lg px-4 py-3 text-sm text-gray-900 outline-none transition border";
+  const inputNormal = `${inputBase} bg-white border-gray-200 placeholder-gray-400 focus:border-[#F5C400]`;
+  const inputErrorCls = `${inputBase} bg-white border-red-400 placeholder-gray-400 focus:border-red-400`;
 
   return (
     <div
       id="contact"
-      className="w-full rounded-2xl border border-white/10 p-8"
-      style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+      className="w-full rounded-2xl border border-gray-200 p-8 bg-white shadow-sm"
     >
       {/* Form header */}
-      <h3
-        className="text-xl font-bold text-white mb-1"
-        style={fontStyle}
-      >
+      <h3 className="text-xl font-bold text-[#0D1B2A] mb-1" style={fontStyle}>
         {t("contact.formTitle")}
       </h3>
-      <p className="text-sm text-gray-400 mb-6" style={fontStyle}>
+      <p className="text-sm text-gray-500 mb-6" style={fontStyle}>
         {t("contact.formSubtitle")}
       </p>
 
       {isSubmitSuccessful ? (
         <p
           className="py-10 text-center font-semibold"
-          style={{ color: "#FB8C00", ...fontStyle }}
+          style={{ color: "#F5C400", ...fontStyle }}
         >
           {t("contact.successMessage")}
         </p>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          className="space-y-4"
+        >
           {/* First / Last name */}
           <div className="grid grid-cols-2 gap-3">
             <div>
@@ -120,7 +123,9 @@ export default function HeroContactForm() {
                 );
               })()}
               {errors.firstName && (
-                <p className="text-red-400 text-xs mt-1">{errors.firstName.message}</p>
+                <p className="text-red-400 text-xs mt-1">
+                  {errors.firstName.message}
+                </p>
               )}
             </div>
             <div>
@@ -143,7 +148,9 @@ export default function HeroContactForm() {
                 );
               })()}
               {errors.lastName && (
-                <p className="text-red-400 text-xs mt-1">{errors.lastName.message}</p>
+                <p className="text-red-400 text-xs mt-1">
+                  {errors.lastName.message}
+                </p>
               )}
             </div>
           </div>
@@ -177,7 +184,9 @@ export default function HeroContactForm() {
               );
             })()}
             {errors.email && (
-              <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>
+              <p className="text-red-400 text-xs mt-1">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
@@ -206,7 +215,9 @@ export default function HeroContactForm() {
               );
             })()}
             {errors.mobileNumber && (
-              <p className="text-red-400 text-xs mt-1">{errors.mobileNumber.message}</p>
+              <p className="text-red-400 text-xs mt-1">
+                {errors.mobileNumber.message}
+              </p>
             )}
           </div>
 
@@ -232,7 +243,9 @@ export default function HeroContactForm() {
               );
             })()}
             {errors.message && (
-              <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>
+              <p className="text-red-400 text-xs mt-1">
+                {errors.message.message}
+              </p>
             )}
           </div>
 
@@ -240,9 +253,11 @@ export default function HeroContactForm() {
             type="submit"
             disabled={isSubmitting}
             className="w-full py-3.5 rounded-full font-semibold text-white transition hover:opacity-90 disabled:opacity-60 active:scale-95"
-            style={{ backgroundColor: "#FB8C00", ...fontStyle }}
+            style={{ backgroundColor: "#F5C400", ...fontStyle }}
           >
-            {isSubmitting ? t("contact.submittingButton") : t("contact.submitButton")}
+            {isSubmitting
+              ? t("contact.submittingButton")
+              : t("contact.submitButton")}
           </button>
         </form>
       )}

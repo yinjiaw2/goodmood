@@ -24,7 +24,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="w-full bg-[#F5F2EB] py-24 md:py-32 scroll-mt-16"
+      className="w-full bg-[#fff] py-24 md:py-32 scroll-mt-16"
     >
       {" "}
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
