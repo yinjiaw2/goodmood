@@ -45,7 +45,7 @@ export default function ServiceSection() {
     {
       title: t("services.card4Title"),
       desc: t("services.card4Desc"),
-      image: "/social-media-marketing.jpg",
+      image: "/social-media-marketing.webp",
       href: "/services/social-media-marketing",
     },
     {
