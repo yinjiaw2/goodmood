@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { ScanSearch, Lightbulb, Rocket, BarChart2 } from "lucide-react";
 
 const fontStyle = {
@@ -39,23 +40,43 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="w-full bg-white py-24 px-8 ">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center justify-center">
-        {/* Left: badge + title + subtitle (sticky on large screens) */}
+    <section
+      id="process"
+      className="relative w-full overflow-hidden py-24 px-8 scroll-mt-16"
+    >
+      {/* Background image */}
+      <Image
+        src="/process.webp"
+        alt=""
+        fill
+        className="object-cover"
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: "rgba(13,27,42,0.82)" }}
+        aria-hidden="true"
+      />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        {/* Left: badge + title + subtitle */}
         <div className="flex flex-col gap-6">
           <span
             className="inline-flex w-fit text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
             style={{
               color: "#FB8C00",
-              borderColor: "rgba(251,140,0,0.35)",
-              backgroundColor: "rgba(251,140,0,0.07)",
+              borderColor: "rgba(251,140,0,0.4)",
+              backgroundColor: "rgba(251,140,0,0.1)",
               ...fontStyle,
             }}
           >
             {t("process.badge")}
           </span>
           <h2
-            className="text-5xl md:text-6xl font-extrabold text-[#0D1B2A] leading-tight"
+            className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
             style={{ ...fontStyle, letterSpacing: "-0.02em" }}
           >
             {t("process.title")}
@@ -65,7 +86,7 @@ export default function ProcessSection() {
             </span>
           </h2>
           <p
-            className="text-lg text-gray-500 leading-relaxed max-w-sm"
+            className="text-lg text-gray-300 leading-relaxed max-w-sm"
             style={fontStyle}
           >
             {t("process.subtitle")}
@@ -73,11 +94,11 @@ export default function ProcessSection() {
         </div>
 
         {/* Right: steps stacked vertically */}
-        <div className="flex flex-col gap-0">
+        <div className="flex flex-col">
           {steps.map((step, i) => (
             <div
               key={i}
-              className="flex items-start gap-6 py-8 border-b border-gray-100 last:border-0"
+              className="flex items-start gap-6 py-8 border-b border-white/10 last:border-0"
             >
               {/* Icon circle */}
               <div
@@ -86,8 +107,8 @@ export default function ProcessSection() {
               >
                 {STEP_ICONS[i]}
                 <span
-                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
-                  style={{ backgroundColor: "#0D1B2A", ...fontStyle }}
+                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center"
+                  style={{ backgroundColor: "#0D1B2A", color: "#FB8C00", ...fontStyle }}
                 >
                   {i + 1}
                 </span>
@@ -102,13 +123,13 @@ export default function ProcessSection() {
                   {step.label}
                 </span>
                 <h3
-                  className="text-xl font-bold text-[#0D1B2A]"
+                  className="text-xl font-bold text-white"
                   style={fontStyle}
                 >
                   {step.title}
                 </h3>
                 <p
-                  className="text-sm text-gray-500 leading-relaxed"
+                  className="text-sm text-gray-300 leading-relaxed"
                   style={fontStyle}
                 >
                   {step.desc}
