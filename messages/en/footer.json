@@ -1,0 +1,19 @@
+{
+  "brandName1": "Good",
+  "brandName2": "Mood",
+  "tagline": "We help businesses grow online through tailored SEO, content, and digital marketing strategies.",
+  "navLabel": "Navigation",
+  "navLinks": {
+    "0": { "label": "Home",     "href": "/#hero" },
+    "1": { "label": "Services", "href": "/#core-services" },
+    "2": { "label": "About Us", "href": "/about" },
+    "3": { "label": "News",     "href": "/news" },
+    "4": { "label": "Contact",  "href": "/#contact" }
+  },
+  "contactLabel": "Contact",
+  "address": "Tower 3, Level 9, 18–38 Siddeley St, Docklands VIC 3005",
+  "email": "hello@goodmood.com.au",
+  "copyrightName": "Good Mood Digital",
+  "copyrightSuffix": "All rights reserved.",
+  "location": "Melbourne, Australia"
+}

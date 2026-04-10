@@ -19,6 +19,24 @@
     "stat4Value": "$200万+",
     "stat4Label": "创造营收"
   },
+  "process": {
+    "badge": "服务流程",
+    "title": "您的目标，",
+    "titleHighlight": "我们来实现。",
+    "subtitle": "经过验证的四步框架，将您的愿景转化为清晰策略、系统执行与可量化的业务增长。",
+    "step1Label": "第一步",
+    "step1Title": "审计",
+    "step1Desc": "分析品牌定位、目标受众与当前业绩表现，建立清晰的基准线。",
+    "step2Label": "第二步",
+    "step2Title": "策略",
+    "step2Desc": "制定符合您业务目标的定制化营销与内容策略。",
+    "step3Label": "第三步",
+    "step3Title": "执行",
+    "step3Desc": "通过结构化工作流程，在各平台上系统推进营销活动。",
+    "step4Label": "第四步",
+    "step4Title": "衡量",
+    "step4Desc": "每月汇报分析、策略优化，基于真实数据持续改进。"
+  },
   "contact": {
     "sectionTitle": "联系我们",
     "sectionSubtitle": "期待您的来信。请发送消息，我们将尽快回复您。",
