@@ -11,35 +11,34 @@ export default function Footer() {
   return (
     <footer
       style={{ fontFamily: font, backgroundColor: "#111111" }}
-      className="text-white"
+      className="text-white pt-12 pb-6" // 
     >
-      <div className="h-px w-full bg-white/10 mb-10" />
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6">
+
+        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-[1fr_0.85fr_0.85fr_1fr]">
           {/* Brand */}
           <div className="lg:max-w-xs">
-            <Link href="/#hero" className="mb-4 inline-flex items-center">
+            <Link href="/#hero" className="mb-5 inline-flex items-center">
               <Image
                 src="/white.png"
                 alt={t("logoAlt")}
-                width={150}
-                height={44}
+                width={170}
+                height={50}
                 className="h-auto w-auto object-contain"
-                priority={false}
               />
             </Link>
 
-            <p className="text-sm leading-relaxed text-white/40">
+            <p className="text-sm leading-8 text-white/40">
               {t("tagline")}
             </p>
           </div>
 
           {/* Navigation */}
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
+          <div className="lg:pl-20">
+            <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
               {t("navLabel")}
             </p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4">
               {navLinkKeys.map((linkKey) => (
                 <li key={linkKey}>
                   <Link
@@ -54,11 +53,11 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
+          <div className="lg:pl-24">
+            <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
               {t("companyLabel")}
             </p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4">
               <li>
                 <Link
                   href="/about"
@@ -87,11 +86,11 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
+          <div className="lg:pl-28">
+            <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
               {t("contactLabel")}
             </p>
-            <ul className="flex flex-col gap-3 text-sm text-white/60">
+            <ul className="flex flex-col gap-4 text-sm text-white/60">
               <li>{t("address")}</li>
               <li>
                 <a
@@ -107,7 +106,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/30 md:flex-row md:items-center md:justify-between">
+        {/* Bottom */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/30 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} {t("copyrightName")}.{" "}
             {t("copyrightSuffix")}
