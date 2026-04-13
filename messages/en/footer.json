@@ -1,19 +1,30 @@
 {
-  "brandName1": "Good",
-  "brandName2": "Mood",
-  "tagline": "We help businesses grow online through tailored SEO, content, and digital marketing strategies.",
+  "logoAlt": "Good Mood Logo",
+  "tagline": "Conversion is the only metric that matters. Every strategy, every creative, and every optimisation is built to drive real results.",
+  
   "navLabel": "Navigation",
   "navLinks": {
-    "0": { "label": "Home",     "href": "/#hero" },
-    "1": { "label": "Services", "href": "/#core-services" },
+    "0": { "label": "Home", "href": "/#hero" },
+    "1": { "label": "Our Services", "href": "/#core-services" },
     "2": { "label": "About Us", "href": "/about" },
-    "3": { "label": "News",     "href": "/news" },
-    "4": { "label": "Contact",  "href": "/contact" }
+    "3": { "label": "News", "href": "/news" },
+    "4": { "label": "Contact Us", "href": "/contact" }
   },
+
+  "companyLabel": "Company",
+  "companyLinks": {
+    "about": "About Us",
+    "news": "News",
+    "contact": "Contact Us"
+  },
+
   "contactLabel": "Contact",
-  "address": "Tower 3, Level 9, 18–38 Siddeley St, Docklands VIC 3005",
-  "email": "hello@goodmood.com.au",
-  "copyrightName": "Good Mood Digital",
+  "address": "Melbourne, VIC, Australia",
+  "email": "hello@yourcompany.com",
+  "wechat": "WeChat: your_wechat",
+  "xiaohongshu": "RED: @yourbrand",
+
+  "copyrightName": "Good Mood",
   "copyrightSuffix": "All rights reserved.",
   "location": "Melbourne, Australia"
 }

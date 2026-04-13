@@ -1,19 +1,26 @@
 {
-  "brandName1": "Good",
-  "brandName2": "Mood",
-  "tagline": "我们通过定制化的 SEO、内容营销与数字营销策略，帮助企业实现在线增长。",
+  "logoAlt": "公司标志",
+  "tagline": "转化率是唯一重要的指标。我们用数据驱动每一个营销决策。",
   "navLabel": "导航",
   "navLinks": {
-    "0": { "label": "首页",   "href": "/#hero" },
-    "1": { "label": "服务",   "href": "/#core-services" },
+    "0": { "label": "首页", "href": "/#hero" },
+    "1": { "label": "我们的服务", "href": "/#core-services" },
     "2": { "label": "关于我们", "href": "/about" },
     "3": { "label": "新闻资讯", "href": "/news" },
     "4": { "label": "联系我们", "href": "/contact" }
   },
-  "contactLabel": "联系方式",
-  "address": "澳大利亚维多利亚州 Docklands Siddeley St 18–38 号 Tower 3 九楼",
-  "email": "hello@goodmood.com.au",
-  "copyrightName": "Good Mood Digital",
-  "copyrightSuffix": "保留所有权利。",
-  "location": "澳大利亚 · 墨尔本"
+  "companyLabel": "公司",
+  "companyLinks": {
+    "about": "关于我们",
+    "news": "新闻资讯",
+    "contact": "联系我们"
+  },
+  "contactLabel": "联系",
+  "address": "墨尔本，澳大利亚",
+  "email": "hello@yourcompany.com",
+  "wechat": "微信：your_wechat",
+  "xiaohongshu": "小红书：@yourbrand",
+  "copyrightName": "Your Company",
+  "copyrightSuffix": "版权所有。",
+  "location": "Privacy Policy & Terms and Conditions"
 }
