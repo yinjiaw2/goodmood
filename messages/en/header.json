@@ -1,12 +1,12 @@
 {
   "nav": {
     "home": "Home",
-    "services": "Services",
+    "services": "Our Services",
     "serviceProcess": "Service Process",
     "successCases": "Success Cases",
     "about": "About Us",
     "news": "News",
-    "contact": "Contact"
+    "contact": "Contact Us"
   },
   "localeSwitch": {
     "ariaLabel": "Switch language",

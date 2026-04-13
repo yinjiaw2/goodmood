@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -52,20 +53,17 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <Link
-            href="/#hero"
-            className="flex items-center gap-2 shrink-0"
-            style={fontStyle}
-          >
-            <span
-              className="text-xl font-extrabold tracking-tight"
-              style={{ color: "#F5C400" }}
-            >
-              Good
-            </span>
-            <span className="text-xl font-extrabold tracking-tight text-white">
-              Mood
-            </span>
-          </Link>
+          href="/#hero"
+          className="flex items-center gap-2 shrink-0"
+        >
+          <Image
+            src="/white.png"   
+            alt="logo"
+            width={120}
+            height={40}
+            className="object-contain"
+          />
+        </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
