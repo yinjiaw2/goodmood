@@ -6,5 +6,15 @@
     "subtitle": "We build social media systems that don't just grow your audience — they convert attention into leads, sales, and lasting brand equity.",
     "cta": "Get Free Consultation",
     "ctaSecondary": "View All Services"
+  },
+  "details": {
+    "badge": "Service Overview",
+    "title": "What We Do & Why It Matters",
+    "card1Title": "The Problem",
+    "card1Desc": "Most businesses post content without a strategy — inconsistent, untargeted, and not connected to any sales goal. The result is wasted effort and an audience that never converts.",
+    "card2Title": "What We Do",
+    "card2Desc": "We build end-to-end social media systems: account positioning, content production, community management, and paid amplification — all working together toward a clear commercial outcome.",
+    "card3Title": "What You Get",
+    "card3Desc": "A growing audience that actually buys. Measurable KPIs every month — follower growth, engagement rate, leads generated, and revenue attributed directly to social."
   }
 }
