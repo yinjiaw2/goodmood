@@ -49,6 +49,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
         : (browserLocale ?? defaultLocale);
   const messages = {
     home: (await import(`../../messages/${locale}/home.json`)).default,
+    about: (await import(`../../messages/${locale}/about.json`)).default,
     header: (await import(`../../messages/${locale}/header.json`)).default,
     footer: (await import(`../../messages/${locale}/footer.json`)).default,
     contact: (await import(`../../messages/${locale}/contact.json`)).default,
