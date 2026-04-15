@@ -8,8 +8,12 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-export default function HeroSection() {
-  const t = useTranslations("serviceSocial.hero");
+interface Props {
+  namespace?: string;
+}
+
+export default function HeroSection({ namespace = "serviceSocial" }: Props) {
+  const t = useTranslations(`${namespace}.hero`);
 
   return (
     <section className="relative w-full bg-secondary">

@@ -54,6 +54,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
     contact: (await import(`../../messages/${locale}/contact.json`)).default,
     services: (await import(`../../messages/${locale}/services.json`)).default,
     serviceSocial: (await import(`../../messages/${locale}/service-social.json`)).default,
+    serviceEcommerce: (await import(`../../messages/${locale}/service-ecommerce.json`)).default,
+    serviceCreative: (await import(`../../messages/${locale}/service-creative.json`)).default,
+    serviceEmail: (await import(`../../messages/${locale}/service-email.json`)).default,
+    serviceWeb: (await import(`../../messages/${locale}/service-web.json`)).default,
+    serviceAds: (await import(`../../messages/${locale}/service-ads.json`)).default,
   };
 
   return {
