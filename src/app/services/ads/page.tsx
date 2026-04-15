@@ -22,7 +22,7 @@ const case2Items = [
 export default function ServiceAdsPage() {
   return (
     <>
-      <HeroSection namespace="serviceAds" />
+      <HeroSection namespace="serviceAds" imageSrc="/google-ads.png" />
       <ServiceOverviewSection namespace="serviceAds" />
       <ServiceSubFeaturesSection namespace="serviceAds" />
       <CaseStudySection

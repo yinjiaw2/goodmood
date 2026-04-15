@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -10,14 +11,34 @@ const fontStyle = {
 
 interface Props {
   namespace?: string;
+  /** Optional image shown on the right half of the hero. */
+  imageSrc?: string;
 }
 
-export default function HeroSection({ namespace = "serviceSocial" }: Props) {
+export default function HeroSection({ namespace = "serviceSocial", imageSrc }: Props) {
   const t = useTranslations(`${namespace}.hero`);
 
   return (
-    <section className="relative w-full bg-secondary">
-      <div className="px-16 pt-36 pb-32 w-full">
+    <section className="relative w-full overflow-hidden bg-secondary">
+      {/* Right-side background image */}
+      {imageSrc && (
+        <div className="absolute inset-y-0 right-0 w-[48%]">
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient: fades the image into the dark background on the left */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent" />
+          {/* Subtle dark overlay to keep image from being too bright */}
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+      )}
+
+      {/* Text content */}
+      <div className="relative z-10 px-16 pt-36 pb-32 w-full">
         <div className="max-w-2xl flex flex-col gap-8 ml-14">
           {/* Badge */}
           <div className="inline-flex">
