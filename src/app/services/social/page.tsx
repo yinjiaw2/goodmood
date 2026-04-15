@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/shared/HeroSection";
 import ServiceOverviewSection from "@/components/shared/ServiceOverviewSection";
+import ServiceSubFeaturesSection from "@/components/shared/ServiceSubFeaturesSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function ServiceSocialPage() {
     <>
       <HeroSection />
       <ServiceOverviewSection namespace="serviceSocial" />
+      <ServiceSubFeaturesSection namespace="serviceSocial" />
       <CaseStudySection namespace="serviceSocial" />
     </>
   );

@@ -17,6 +17,24 @@
     "card3Title": "What You Get",
     "card3Desc": "A growing audience that actually buys. Measurable KPIs every month — follower growth, engagement rate, leads generated, and revenue attributed directly to social."
   },
+  "subFeatures": {
+    "badge": "What's Included",
+    "title": "Every Deliverable,",
+    "titleHighlight": "Explained.",
+    "count": "6",
+    "item1Title": "Account Positioning",
+    "item1Desc": "Define your brand's angle, tone, and target audience on each platform so every post works toward a clear identity.",
+    "item2Title": "Content Production",
+    "item2Desc": "From copywriting to video editing, we create platform-native content built to stop the scroll and drive action.",
+    "item3Title": "Community Management",
+    "item3Desc": "Respond to comments, DMs, and mentions in your brand voice — turning passive followers into active advocates.",
+    "item4Title": "Paid Amplification",
+    "item4Desc": "Boost your best-performing content to qualified audiences beyond your existing followers with targeted social spend.",
+    "item5Title": "Platform Strategy",
+    "item5Desc": "Tailored playbooks for Instagram, TikTok, Facebook, and Xiaohongshu — each platform treated on its own terms.",
+    "item6Title": "Monthly Reporting",
+    "item6Desc": "Transparent performance reports every month: follower growth, engagement, reach, leads, and revenue attribution."
+  },
   "caseStudy": {
     "badge": "Case Studies",
     "title": "Real Results for Real Businesses",
