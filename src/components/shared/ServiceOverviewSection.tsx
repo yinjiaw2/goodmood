@@ -10,19 +10,30 @@ interface Props {
   namespace: string;
 }
 
-export default function ServiceDetailsSection({ namespace }: Props) {
+export default function ServiceOverviewSection({ namespace }: Props) {
   const t = useTranslations(namespace);
 
   const cards = [
-    { key: "card1", title: t("details.card1Title"), desc: t("details.card1Desc") },
-    { key: "card2", title: t("details.card2Title"), desc: t("details.card2Desc") },
-    { key: "card3", title: t("details.card3Title"), desc: t("details.card3Desc") },
+    {
+      key: "card1",
+      title: t("details.card1Title"),
+      desc: t("details.card1Desc"),
+    },
+    {
+      key: "card2",
+      title: t("details.card2Title"),
+      desc: t("details.card2Desc"),
+    },
+    {
+      key: "card3",
+      title: t("details.card3Title"),
+      desc: t("details.card3Desc"),
+    },
   ];
 
   return (
     <section className="w-full bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
-
         {/* Header */}
         <div className="mb-14">
           <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9A9A]">
@@ -65,7 +76,6 @@ export default function ServiceDetailsSection({ namespace }: Props) {
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );
