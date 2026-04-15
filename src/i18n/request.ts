@@ -53,6 +53,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     footer: (await import(`../../messages/${locale}/footer.json`)).default,
     contact: (await import(`../../messages/${locale}/contact.json`)).default,
     services: (await import(`../../messages/${locale}/services.json`)).default,
+    serviceSocial: (await import(`../../messages/${locale}/service-social.json`)).default,
   };
 
   return {

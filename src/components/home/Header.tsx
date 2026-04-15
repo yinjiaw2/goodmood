@@ -52,18 +52,15 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-          href="/#hero"
-          className="flex items-center gap-2 shrink-0"
-        >
-          <Image
-            src="/white.png"   
-            alt="logo"
-            width={120}
-            height={40}
-            className="object-contain"
-          />
-        </Link>
+          <Link href="/#hero" className="flex items-center gap-2 shrink-0">
+            <Image
+              src="/white.png"
+              alt="logo"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
