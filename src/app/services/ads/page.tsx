@@ -7,9 +7,9 @@ import FunnelChart from "@/components/charts/FunnelChart";
 import CounterCards from "@/components/charts/CounterCards";
 
 export const metadata: Metadata = {
-  title: "Paid Advertising",
+  title: "Google Ads",
   description:
-    "Targeted campaigns across Meta, Google, TikTok, and Xiaohongshu built to acquire higher-quality customers.",
+    "Search, Shopping, and Performance Max campaigns built to capture high-intent demand and turn clicks into revenue.",
 };
 
 const case2Items = [

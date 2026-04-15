@@ -3,10 +3,10 @@
 import {
   BadgeDollarSign,
   Mail,
-  MonitorSmartphone,
-  Palette,
-  ShoppingCart,
+  Search,
   Smartphone,
+  Target,
+  Video,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -16,8 +16,8 @@ export default function ServiceSection() {
 
   const cards = [
     {
-      key: "social",
-      icon: Smartphone,
+      key: "ads",
+      icon: BadgeDollarSign,
       title: t("serviceGrid.card1Title"),
       desc: t("serviceGrid.card1Desc"),
       tags: [
@@ -28,7 +28,7 @@ export default function ServiceSection() {
     },
     {
       key: "ecommerce",
-      icon: ShoppingCart,
+      icon: Target,
       title: t("serviceGrid.card2Title"),
       desc: t("serviceGrid.card2Desc"),
       tags: [
@@ -39,7 +39,7 @@ export default function ServiceSection() {
     },
     {
       key: "creative",
-      icon: Palette,
+      icon: Video,
       title: t("serviceGrid.card3Title"),
       desc: t("serviceGrid.card3Desc"),
       tags: [
@@ -49,8 +49,8 @@ export default function ServiceSection() {
       ],
     },
     {
-      key: "email",
-      icon: Mail,
+      key: "social",
+      icon: Smartphone,
       title: t("serviceGrid.card4Title"),
       desc: t("serviceGrid.card4Desc"),
       tags: [
@@ -61,7 +61,7 @@ export default function ServiceSection() {
     },
     {
       key: "web",
-      icon: MonitorSmartphone,
+      icon: Search,
       title: t("serviceGrid.card5Title"),
       desc: t("serviceGrid.card5Desc"),
       tags: [
@@ -71,8 +71,8 @@ export default function ServiceSection() {
       ],
     },
     {
-      key: "ads",
-      icon: BadgeDollarSign,
+      key: "email",
+      icon: Mail,
       title: t("serviceGrid.card6Title"),
       desc: t("serviceGrid.card6Desc"),
       tags: [

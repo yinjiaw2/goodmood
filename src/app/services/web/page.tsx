@@ -7,9 +7,9 @@ import BeforeAfterCard from "@/components/charts/BeforeAfterCard";
 import ProgressChart from "@/components/charts/ProgressChart";
 
 export const metadata: Metadata = {
-  title: "Website Design",
+  title: "SEO",
   description:
-    "Conversion-first website and landing page design that turns visitors into customers.",
+    "Technical audits, on-page optimisation, and link building designed to grow qualified organic traffic.",
 };
 
 const case1Rows = [

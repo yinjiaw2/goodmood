@@ -7,9 +7,9 @@ import BeforeAfterCard from "@/components/charts/BeforeAfterCard";
 import AreaChart from "@/components/charts/AreaChart";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Growth",
+  title: "Meta Ads",
   description:
-    "Turn your online store into a revenue machine with conversion-focused design, SEO, landing pages, and data analytics.",
+    "Facebook and Instagram campaigns built for feeds, stories, retargeting, and lead generation.",
 };
 
 const case1Rows = [
@@ -21,7 +21,7 @@ const case1Rows = [
 export default function ServiceEcommercePage() {
   return (
     <>
-      <HeroSection namespace="serviceEcommerce" imageSrc="/ecommence.png" />
+      <HeroSection namespace="serviceEcommerce" imageSrc="/meta-ads.jpg" />
       <ServiceOverviewSection namespace="serviceEcommerce" />
       <ServiceSubFeaturesSection namespace="serviceEcommerce" />
       <CaseStudySection

@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Paid Advertising",
-    "titlePrefix": "Ads That Pay",
-    "titleHighlight": "For Themselves.",
-    "subtitle": "Targeted campaigns across Meta, Google, TikTok, and Xiaohongshu — built to acquire higher-quality customers with smarter budget allocation.",
+    "badge": "Google Ads",
+    "titlePrefix": "Capture Demand With",
+    "titleHighlight": "Google Ads.",
+    "subtitle": "Show up when your customers are actively searching. We build Google Ads campaigns that turn intent into measurable leads, sales, and revenue.",
     "cta": "Get Free Consultation",
     "ctaSecondary": "View All Services"
   },
@@ -11,29 +11,29 @@
     "badge": "Service Overview",
     "title": "What We Do & Why It Matters",
     "card1Title": "The Problem",
-    "card1Desc": "Burning ad budget on the wrong audiences. Most campaigns lack clear targeting, performance creative, or a coherent funnel strategy — resulting in high CPAs and low ROAS.",
+    "card1Desc": "High-intent searches are happening every day, but most accounts waste spend on weak keywords, broad targeting, and campaigns with no clear conversion structure.",
     "card2Title": "What We Do",
-    "card2Desc": "Full-funnel paid ad management — audience strategy, creative production, bidding optimisation, and cross-platform budget allocation working as one connected system.",
+    "card2Desc": "We plan, build, and manage Google Ads systems across Search, Shopping, and Performance Max with tighter keyword strategy, cleaner tracking, and disciplined budget control.",
     "card3Title": "What You Get",
-    "card3Desc": "Lower cost per acquisition, higher ROAS, and campaigns that compound in efficiency over time as data accumulates and targeting sharpens."
+    "card3Desc": "More qualified clicks, better visibility on revenue-driving searches, and clearer attribution from ad spend to enquiries, purchases, and return on ad spend."
   },
   "subFeatures": {
     "badge": "What's Included",
     "title": "Every Deliverable,",
     "titleHighlight": "Explained.",
     "count": "6",
-    "item1Title": "Meta Ads",
-    "item1Desc": "Facebook and Instagram campaigns covering awareness, retargeting, and conversion — with creative and audience strategy built in.",
-    "item2Title": "Google Ads",
-    "item2Desc": "Search, Shopping, and Performance Max campaigns targeting high-intent queries at the moment customers are ready to act.",
-    "item3Title": "TikTok Ads",
-    "item3Desc": "Short-form video ad campaigns built for TikTok's unique algorithm — reaching engaged audiences at scale with native-feeling creative.",
-    "item4Title": "Xiaohongshu (Little Red Book)",
-    "item4Desc": "Paid placements and influencer-adjacent content on Xiaohongshu to reach Chinese-speaking audiences in Australia and beyond.",
-    "item5Title": "Audience Targeting & Retargeting",
-    "item5Desc": "Precise audience segmentation, lookalike modelling, and retargeting sequences that follow potential customers through the funnel.",
-    "item6Title": "Campaign Reporting & Optimisation",
-    "item6Desc": "Weekly performance reviews with clear ROAS, CPA, and CPL data — plus ongoing creative and bid optimisation to improve results."
+    "item1Title": "Search Campaigns",
+    "item1Desc": "High-intent keyword targeting built around the terms your customers use when they are ready to enquire or buy.",
+    "item2Title": "Shopping Ads",
+    "item2Desc": "Product feed optimisation and Shopping campaign management that helps ecommerce brands win more visibility for revenue-driving products.",
+    "item3Title": "Performance Max",
+    "item3Desc": "Cross-network campaign management with asset, audience, and feed inputs structured for stronger machine-learning performance.",
+    "item4Title": "Keyword & Query Mapping",
+    "item4Desc": "Tighter account structure, match-type control, and search query review to reduce wasted spend and improve conversion quality.",
+    "item5Title": "Conversion Tracking",
+    "item5Desc": "Reliable event setup for leads, calls, purchases, and key actions so budget decisions are based on real outcomes, not vanity metrics.",
+    "item6Title": "Budget Optimisation",
+    "item6Desc": "Ongoing bid, budget, and creative refinements focused on cost efficiency, conversion growth, and sustainable account performance."
   },
   "caseStudy": {
     "badge": "Case Studies",
@@ -42,8 +42,8 @@
     "legendAfter": "After Good Mood",
     "case1Number": "01",
     "case1Client": "Ecommerce Retailer · Melbourne",
-    "case1Service": "Meta Ads + Google Ads",
-    "case1Problem": "Spending $8K/month on ads with a blended ROAS of 1.4. No retargeting, generic creative, and campaigns optimised for clicks rather than purchases.",
+    "case1Service": "Google Ads",
+    "case1Problem": "The brand was spending $8K per month with poor campaign structure, weak product feed setup, and limited control over wasted search terms. Revenue was inconsistent and ROAS stayed low.",
     "case1Metric1Label": "ROAS",
     "case1Metric1Value": "1.4 → 5.8",
     "case1Metric2Label": "CPA Reduction",
@@ -53,14 +53,14 @@
     "case1ChartLabel": "Monthly Ad Revenue (AUD)",
     "case2Number": "02",
     "case2Client": "Education Provider · Australia-wide",
-    "case2Service": "Google Ads + Retargeting",
-    "case2Problem": "Relying on organic traffic and referrals with no paid acquisition system. Seasonal enrolment peaks were being missed with no campaign infrastructure in place.",
+    "case2Service": "Google Ads",
+    "case2Problem": "There was no paid search system in place, so seasonal enrolment peaks were being missed. High-intent searches existed, but the brand had no reliable way to convert them into leads.",
     "case2Metric1Label": "Leads (Month 1)",
     "case2Metric1Value": "28",
     "case2Metric2Label": "Leads (Month 6)",
     "case2Metric2Value": "210",
     "case2Metric3Label": "Timeframe",
     "case2Metric3Value": "6 Months",
-    "case2ChartLabel": "Monthly Leads from Paid Ads"
+    "case2ChartLabel": "Monthly Leads from Google Ads"
   }
 }

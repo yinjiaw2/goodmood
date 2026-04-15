@@ -33,13 +33,19 @@ export default function DonutChart() {
   const cx = 100, cy = 100, R = 78, IR = 46;
   const total = SEGMENTS.reduce((s, seg) => s + seg.value, 0);
 
-  let cursor = 0;
-  const paths = SEGMENTS.map((seg) => {
-    const start = (cursor / total) * 360;
-    cursor += seg.value;
-    const end = (cursor / total) * 360;
-    return { ...seg, path: arcPath(cx, cy, R, IR, start, end) };
-  });
+  const paths = SEGMENTS.reduce<
+    Array<(typeof SEGMENTS)[number] & { path: string }>
+  >((acc, seg, index) => {
+    const previousValue = SEGMENTS.slice(0, index).reduce(
+      (sum, current) => sum + current.value,
+      0,
+    );
+    const start = (previousValue / total) * 360;
+    const end = ((previousValue + seg.value) / total) * 360;
+
+    acc.push({ ...seg, path: arcPath(cx, cy, R, IR, start, end) });
+    return acc;
+  }, []);
 
   return (
     <div className="flex h-full items-center gap-6">
