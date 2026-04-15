@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
+
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -53,13 +53,41 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/#hero" className="flex items-center gap-2 shrink-0">
-            <Image
-              src="/white.png"
-              alt="logo"
-              width={120}
-              height={40}
-              className="object-contain"
-            />
+            <svg
+              viewBox="0 0 1841 503"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-7 w-auto"
+              aria-label="Good Mood logo"
+            >
+              <defs>
+                <clipPath id="logo-reveal">
+                  <rect x="0" y="0" height="503" width="0">
+                    <animate
+                      attributeName="width"
+                      from="0"
+                      to="1841"
+                      dur="0.7s"
+                      begin="0s"
+                      fill="freeze"
+                      calcMode="spline"
+                      keyTimes="0;1"
+                      keySplines="0.4 0 0.2 1"
+                    />
+                  </rect>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#logo-reveal)">
+                <rect x="275" y="220" width="112" height="65" fill="#F9C110" />
+                <circle cx="250" cy="250" r="187.5" stroke="white" strokeWidth="125" />
+                <circle cx="690" cy="250" r="187.5" stroke="white" strokeWidth="125" />
+                <circle cx="1591" cy="250" r="187.5" stroke="white" strokeWidth="125" />
+                <circle cx="1115" cy="253" r="187.5" stroke="#F9C110" strokeWidth="125" />
+                <rect x="1326.5" y="20.5" width="123" height="465" fill="white" stroke="white" />
+                <path d="M644 316C679.928 344.402 700.072 343.332 736 316" stroke="white" strokeWidth="20" strokeLinecap="round" />
+                <path d="M1069 336.902C1104.93 308.5 1125.07 309.57 1161 336.902" stroke="white" strokeWidth="20" strokeLinecap="round" />
+              </g>
+            </svg>
           </Link>
 
           {/* Desktop nav */}
