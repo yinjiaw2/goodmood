@@ -75,7 +75,7 @@ export default function Header() {
               {t("nav.home")}
             </Link>
             <Link
-              href="/#core-services"
+              href="/services"
               className="px-4 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
               style={fontStyle}
             >
@@ -143,7 +143,7 @@ export default function Header() {
           {t("nav.home")}
         </Link>
         <Link
-          href="/#core-services"
+          href="/services"
           onClick={() => setMenuOpen(false)}
           className="py-4 text-base font-medium text-gray-300 border-b border-white/10 hover:text-white transition-colors duration-150"
           style={fontStyle}
