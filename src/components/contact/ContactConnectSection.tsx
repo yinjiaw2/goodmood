@@ -59,27 +59,40 @@ export default function ContactConnectSection() {
     setIsSubmitted(false);
     setSubmitError(null);
 
-    const payload = new URLSearchParams({
+    const payload = {
       firstName: values.firstName.trim(),
       lastName: values.lastName.trim(),
-      fullName: `${values.firstName} ${values.lastName}`.trim(),
       email: values.email.trim(),
       mobileNumber: values.mobileNumber.trim(),
       message: values.message.trim(),
-      source: "contact-page",
-    });
+    };
 
     try {
       const response = await fetch(GOOGLE_SCRIPT_ENDPOINT, {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          // Use a simple content type to avoid a browser CORS preflight,
+          // while still sending JSON for Apps Script to parse from postData.contents.
+          "Content-Type": "text/plain;charset=UTF-8",
         },
-        body: payload.toString(),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const result = (await response.json()) as {
+        result?: string;
+        error?: unknown;
+      };
+
+      if (result.result !== "success") {
+        throw new Error(
+          typeof result.error === "string"
+            ? result.error
+            : "Apps Script returned an error response.",
+        );
       }
 
       setIsSubmitted(true);
