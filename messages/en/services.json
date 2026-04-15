@@ -7,5 +7,23 @@
     "subtitle": "From social media and paid ads to SEO, ecommerce, and creative production — we build the complete customer journey that turns attention into revenue.",
     "cta": "Get Free Consultation",
     "ctaSecondary": "See Our Work"
+  },
+  "whyUs": {
+    "badge": "Why Choose Us",
+    "title": "Built for Brands That",
+    "titleHighlight": "Mean Business.",
+    "subtitle": "We combine local expertise, performance data, and full-funnel execution to deliver results you can actually measure.",
+    "item1Title": "Local Melbourne Team",
+    "item1Desc": "We're based in Melbourne and know the local market inside out — giving your brand a grounded, relevant edge.",
+    "item2Title": "Data-Driven Strategy",
+    "item2Desc": "Every campaign decision is backed by real performance data. No guesswork, no vanity metrics — just what works.",
+    "item3Title": "Measurable Results",
+    "item3Desc": "Clear KPIs from day one. We set benchmarks, report transparently, and hold ourselves accountable to your growth.",
+    "item4Title": "Full-Funnel Coverage",
+    "item4Desc": "From brand awareness to final conversion, we manage every touchpoint so nothing falls through the cracks.",
+    "item5Title": "Cross-Platform Expertise",
+    "item5Desc": "Proven performance across Meta, Google, TikTok, Xiaohongshu, SEO, and email — wherever your audience is.",
+    "item6Title": "True Partnership",
+    "item6Desc": "We work as an extension of your team, not just a vendor. Your growth goals become our goals."
   }
 }
