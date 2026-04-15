@@ -22,7 +22,7 @@ const case1Items = [
 export default function ServiceCreativePage() {
   return (
     <>
-      <HeroSection namespace="serviceCreative" />
+      <HeroSection namespace="serviceCreative" imageSrc="/ecommence.png" />
       <ServiceOverviewSection namespace="serviceCreative" />
       <ServiceSubFeaturesSection namespace="serviceCreative" />
       <CaseStudySection

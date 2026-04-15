@@ -4,6 +4,7 @@
   "formTitle": "发送消息",
   "formSubtitle": "填写以下表单，我们会尽快与您联系。",
   "successMessage": "感谢您的来信！我们将尽快与您联系。",
+  "submitErrorMessage": "提交失败。请稍后重试，或直接通过邮箱联系我们。",
   "submitButton": "发送消息",
   "submittingButton": "发送中…",
   "fields": {
