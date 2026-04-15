@@ -21,7 +21,7 @@ const case1Rows = [
 export default function ServiceEcommercePage() {
   return (
     <>
-      <HeroSection namespace="serviceEcommerce" />
+      <HeroSection namespace="serviceEcommerce" imageSrc="/ecommence.png" />
       <ServiceOverviewSection namespace="serviceEcommerce" />
       <ServiceSubFeaturesSection namespace="serviceEcommerce" />
       <CaseStudySection

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServiceSocialPage() {
   return (
     <>
-      <HeroSection />
+      <HeroSection namespace="serviceSocial" imageSrc="/meta-ads.jpg" />
       <ServiceOverviewSection namespace="serviceSocial" />
       <ServiceSubFeaturesSection namespace="serviceSocial" />
       <CaseStudySection namespace="serviceSocial" />

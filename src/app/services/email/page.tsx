@@ -22,7 +22,7 @@ const case1Items = [
 export default function ServiceEmailPage() {
   return (
     <>
-      <HeroSection namespace="serviceEmail" />
+      <HeroSection namespace="serviceEmail" imageSrc="/email-marketing.jpeg" />
       <ServiceOverviewSection namespace="serviceEmail" />
       <ServiceSubFeaturesSection namespace="serviceEmail" />
       <CaseStudySection
