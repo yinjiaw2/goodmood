@@ -42,30 +42,41 @@ export default function ServiceSubFeaturesSection({ namespace }: Props) {
         </div>
 
         {/* Feature chips grid */}
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/8 sm:grid-cols-2 xl:grid-cols-3">
-          {items.map(({ key, title, desc }) => (
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {items.map(({ key, title, desc }, i) => (
             <article
               key={key}
-              className="flex flex-col gap-3 bg-[#1A1A1A] px-7 py-6 transition-colors duration-200 hover:bg-[#222222]"
+              className="group relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-white/8 bg-[#242424] px-8 py-7 transition-colors duration-300 hover:border-[#F5C400]/30 hover:bg-[#2A2A2A]"
             >
-              <div className="flex items-center gap-2">
-                <span
-                  className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-                  style={{ backgroundColor: "#F5C400" }}
-                />
+              {/* Number + title row */}
+              <div className="flex items-start justify-between gap-4">
                 <h3
-                  className="text-[15px] font-bold text-white"
+                  className="text-[19px] font-bold leading-snug text-white"
                   style={fontStyle}
                 >
                   {title}
                 </h3>
+                <span
+                  className="shrink-0 text-[28px] font-extrabold leading-none tabular-nums"
+                  style={{ color: "rgba(245,196,0,0.18)", ...fontStyle }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
+
+              {/* Divider */}
+              <span className="block h-px w-full bg-white/8 group-hover:bg-[#F5C400]/20 transition-colors duration-300" />
+
+              {/* Description */}
               <p
-                className="text-[13px] leading-[1.75] text-white/50"
+                className="text-[15px] leading-[1.75] text-white/55"
                 style={fontStyle}
               >
                 {desc}
               </p>
+
+              {/* Yellow accent bar on hover */}
+              <span className="absolute left-0 top-0 h-full w-0.75 scale-y-0 rounded-r-full bg-[#F5C400] transition-transform duration-300 origin-top group-hover:scale-y-100" />
             </article>
           ))}
         </div>
