@@ -16,5 +16,33 @@
     "card2Desc": "我们构建完整的社交媒体体系：账号定位、内容制作、社群管理和付费推广——所有环节协同运转，直指商业目标。",
     "card3Title": "您能得到什么",
     "card3Desc": "一个真正会购买的受众群体。每月清晰可量化的KPI——粉丝增长、互动率、获客数量，以及可追踪的社交媒体销售贡献。"
+  },
+  "caseStudy": {
+    "badge": "案例结果展示",
+    "title": "真实客户，真实成果",
+    "legendBefore": "合作前",
+    "legendAfter": "合作后",
+    "case1Number": "01",
+    "case1Client": "时装精品店 · 墨尔本",
+    "case1Service": "社交媒体营销",
+    "case1Problem": "品牌发帖随意，缺乏策略。受众几乎没有增长，内容互动率接近零，没有任何内容在推动销售。",
+    "case1Metric1Label": "粉丝增长",
+    "case1Metric1Value": "+1,227%",
+    "case1Metric2Label": "互动率提升",
+    "case1Metric2Value": "4.8×",
+    "case1Metric3Label": "周期",
+    "case1Metric3Value": "5 个月",
+    "case1ChartLabel": "Instagram 月度粉丝数",
+    "case2Number": "02",
+    "case2Client": "连锁餐厅 · 3 家门店",
+    "case2Service": "社交媒体 + 内容制作",
+    "case2Problem": "社交媒体存在感几乎为零。业务完全依赖自然到店和口碑传播，没有任何线上获客体系，品牌认知度仅限于老顾客。",
+    "case2Metric1Label": "社媒营收（第1月）",
+    "case2Metric1Value": "$6.8K",
+    "case2Metric2Label": "社媒营收（第6月）",
+    "case2Metric2Value": "$43.5K",
+    "case2Metric3Label": "周期",
+    "case2Metric3Value": "6 个月",
+    "case2ChartLabel": "社交媒体月度营收（澳元）"
   }
 }

@@ -16,5 +16,33 @@
     "card2Desc": "We build end-to-end social media systems: account positioning, content production, community management, and paid amplification — all working together toward a clear commercial outcome.",
     "card3Title": "What You Get",
     "card3Desc": "A growing audience that actually buys. Measurable KPIs every month — follower growth, engagement rate, leads generated, and revenue attributed directly to social."
+  },
+  "caseStudy": {
+    "badge": "Case Studies",
+    "title": "Real Results for Real Businesses",
+    "legendBefore": "Before Good Mood",
+    "legendAfter": "After Good Mood",
+    "case1Number": "01",
+    "case1Client": "Fashion Boutique · Melbourne",
+    "case1Service": "Social Media Marketing",
+    "case1Problem": "The brand was posting sporadically with no clear strategy. Their audience wasn't growing, content had near-zero engagement, and nothing was converting to sales.",
+    "case1Metric1Label": "Follower Growth",
+    "case1Metric1Value": "+1,227%",
+    "case1Metric2Label": "Engagement Rate",
+    "case1Metric2Value": "4.8×",
+    "case1Metric3Label": "Timeframe",
+    "case1Metric3Value": "5 Months",
+    "case1ChartLabel": "Monthly Instagram Followers",
+    "case2Number": "02",
+    "case2Client": "Restaurant Group · 3 Locations",
+    "case2Service": "Social Media + Content Production",
+    "case2Problem": "Near-zero social presence. The business relied entirely on walk-ins with no system to reach new customers online. Brand recognition was limited to regulars.",
+    "case2Metric1Label": "Revenue (Month 1)",
+    "case2Metric1Value": "$6.8K",
+    "case2Metric2Label": "Revenue (Month 6)",
+    "case2Metric2Value": "$43.5K",
+    "case2Metric3Label": "Timeframe",
+    "case2Metric3Value": "6 Months",
+    "case2ChartLabel": "Monthly Revenue from Social (AUD)"
   }
 }
