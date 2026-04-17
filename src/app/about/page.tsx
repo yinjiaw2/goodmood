@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
 import CompanyIntroSection from "@/components/about/CompanyIntroSection";
+import CoreCapabilitiesSection from "@/components/about/CoreCapabilitiesSection";
 
 export const metadata: Metadata = {
   title: "about page",
@@ -11,6 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
+      <CoreCapabilitiesSection />
       <CompanyIntroSection />
     </>
   );

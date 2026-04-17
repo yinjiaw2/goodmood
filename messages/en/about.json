@@ -6,6 +6,25 @@
     "titleLine2Before": " with ",
     "titleLine2Accent": "purpose"
   },
+  "coreCapabilities": {
+    "badge": "Core Capabilities & Positioning",
+    "titleBefore": "What we do ",
+    "titleAccent": "exceptionally",
+    "titleAfter": " well",
+    "subtitle": "Six pillars that define how we think, operate, and deliver results for every client.",
+    "item1Title": "Strategic Brand Positioning",
+    "item1Desc": "We define where your brand stands in the market — crafting a clear, differentiated position that resonates with your target audience.",
+    "item2Title": "Creative Intelligence",
+    "item2Desc": "From concept to execution, our creative team blends cultural insight with bold ideas to produce work that truly stands out.",
+    "item3Title": "Cross-Border Reach",
+    "item3Desc": "With presence across Asia, Europe, and North America, we help brands expand seamlessly into new markets.",
+    "item4Title": "Data-Driven Growth",
+    "item4Desc": "Every campaign is backed by rigorous analytics — we measure what matters and continuously optimise for performance.",
+    "item5Title": "Talent & Network",
+    "item5Desc": "Our curated network of specialists, influencers, and partners gives clients access to the right people at the right time.",
+    "item6Title": "End-to-End Execution",
+    "item6Desc": "Strategy without execution is just theory. We own the full process — from brief to delivery — so nothing falls through the cracks."
+  },
   "companyIntro": {
     "badge": "Company Introduction",
     "titleBefore": "A ",

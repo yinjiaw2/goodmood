@@ -6,6 +6,25 @@
     "titleLine2Before": "并且有",
     "titleLine2Accent": "明确方向的品牌"
   },
+  "coreCapabilities": {
+    "badge": "核心能力与定位",
+    "titleBefore": "我们的",
+    "titleAccent": "核心优势",
+    "titleAfter": "所在",
+    "subtitle": "六大支柱，定义我们如何思考、运营并为每位客户创造实际价值。",
+    "item1Title": "品牌战略定位",
+    "item1Desc": "我们精准锚定品牌在市场中的位置，构建清晰、差异化的品牌主张，使其与目标受众产生深度共鸣。",
+    "item2Title": "创意智识",
+    "item2Desc": "从概念到落地，我们的创意团队融合文化洞察与大胆创意，打造真正令人过目难忘的作品。",
+    "item3Title": "跨境触达",
+    "item3Desc": "依托亚洲、欧洲及北美的多地布局，我们助力品牌无缝进入新市场，实现全球化扩张。",
+    "item4Title": "数据驱动增长",
+    "item4Desc": "每一次营销活动均以严谨的数据分析为基础，聚焦关键指标，持续优化执行效果。",
+    "item5Title": "人才与资源网络",
+    "item5Desc": "我们精心构建的专家、KOL 及合作伙伴网络，让客户在正确时机接触到正确的人。",
+    "item6Title": "端到端执行",
+    "item6Desc": "没有执行力的战略只是空谈。我们全程负责从简报到交付的每一个环节，确保万无一失。"
+  },
   "companyIntro": {
     "badge": "公司介绍",
     "titleBefore": "",
