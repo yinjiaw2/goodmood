@@ -9,7 +9,6 @@ import {
 import "./globals.css";
 import Header from "@/components/home/Header";
 import Footer from "@/components/shared/Footer";
-import Providers from "@/components/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 
@@ -58,11 +57,9 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
-          <Providers>
-            <Header />
-            <main className="pt-16 flex-1">{children}</main>
-            <Footer />
-          </Providers>
+          <Header />
+          <main className="pt-16 flex-1">{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
