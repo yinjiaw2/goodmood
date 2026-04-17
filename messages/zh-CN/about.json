@@ -5,5 +5,34 @@
     "titleLine2AccentFirst": "真正能行动",
     "titleLine2Before": "并且有",
     "titleLine2Accent": "明确方向的品牌"
+  },
+  "companyIntro": {
+    "badge": "公司介绍",
+    "titleBefore": "",
+    "titleAccent": "本地团队",
+    "titleAfter": "，全球布局",
+    "description": "我们拥有一支扎根本地的核心团队，同时在亚洲及全球范围内建立了广泛的合作伙伴网络，兼具本土洞察与国际视野。",
+    "localTeam": {
+      "title": "本地团队",
+      "desc": "核心团队深耕本地市场，具备跨文化沟通能力与快速响应机制，为客户提供高效、贴地的服务体验。",
+      "highlights": [
+        "深度理解本地市场动态与消费者行为",
+        "快速沟通，敏捷执行",
+        "每位客户配备专属客户经理",
+        "跨职能团队：策略、创意与技术一体化"
+      ]
+    },
+    "international": {
+      "title": "国际分布",
+      "desc": "我们的网络覆盖多个核心市场，助力客户触达全球各地的目标受众。",
+      "regions": [
+        { "city": "上海", "role": "总部 & 战略中心" },
+        { "city": "香港", "role": "金融 & 媒体" },
+        { "city": "新加坡", "role": "东南亚拓展" },
+        { "city": "洛杉矶", "role": "北美市场" },
+        { "city": "伦敦", "role": "欧洲市场" },
+        { "city": "悉尼", "role": "亚太地区" }
+      ]
+    }
   }
 }

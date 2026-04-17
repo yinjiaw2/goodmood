@@ -5,5 +5,34 @@
     "titleLine2AccentFirst": "move",
     "titleLine2Before": " with ",
     "titleLine2Accent": "purpose"
+  },
+  "companyIntro": {
+    "badge": "Company Introduction",
+    "titleBefore": "A ",
+    "titleAccent": "local team",
+    "titleAfter": " with global reach",
+    "description": "We are a tight-knit local team with an international footprint — combining deep cultural knowledge with a network of partners across Asia and beyond.",
+    "localTeam": {
+      "title": "Local Team",
+      "desc": "Our core team is based locally, giving us the cultural fluency and responsiveness that global agencies often lack.",
+      "highlights": [
+        "Native understanding of local market dynamics",
+        "Fast communication and agile execution",
+        "Dedicated account managers for every client",
+        "Cross-functional team: strategy, creative, and tech"
+      ]
+    },
+    "international": {
+      "title": "International Distribution",
+      "desc": "Our network extends across key markets, enabling clients to reach audiences wherever they are.",
+      "regions": [
+        { "city": "Shanghai", "role": "HQ & Strategy" },
+        { "city": "Hong Kong", "role": "Finance & Media" },
+        { "city": "Singapore", "role": "SEA Expansion" },
+        { "city": "Los Angeles", "role": "North America" },
+        { "city": "London", "role": "Europe" },
+        { "city": "Sydney", "role": "APAC" }
+      ]
+    }
   }
 }
