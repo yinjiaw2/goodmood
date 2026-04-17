@@ -6,6 +6,12 @@
     "titleLine2Before": "并且有",
     "titleLine2Accent": "明确方向的品牌"
   },
+  "officeMap": {
+    "badge": "全球办公室",
+    "title": "我们的",
+    "titleAccent": "全球布局",
+    "subtitle": "点击标记查看各办公室详情。"
+  },
   "coreCapabilities": {
     "badge": "核心能力与定位",
     "titleBefore": "我们的",

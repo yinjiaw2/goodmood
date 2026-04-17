@@ -5,7 +5,6 @@ import {
   Ma_Shan_Zheng,
   Outfit,
   Playfair_Display,
-  Open_Sans,
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/home/Header";
@@ -13,9 +12,6 @@ import Footer from "@/components/shared/Footer";
 import Providers from "@/components/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
-const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,11 +60,8 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Providers>
             <Header />
-            <main className="pt-16 flex-1">
-              {children}
-            </main>
+            <main className="pt-16 flex-1">{children}</main>
             <Footer />
-            {googleAnalyticsId ? <GoogleAnalytics gaId={googleAnalyticsId} /> : null}
           </Providers>
         </NextIntlClientProvider>
       </body>

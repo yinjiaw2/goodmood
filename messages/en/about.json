@@ -6,6 +6,12 @@
     "titleLine2Before": " with ",
     "titleLine2Accent": "purpose"
   },
+  "officeMap": {
+    "badge": "Global Offices",
+    "title": "Where we ",
+    "titleAccent": "operate",
+    "subtitle": "Click a pin to learn more about each office."
+  },
   "coreCapabilities": {
     "badge": "Core Capabilities & Positioning",
     "titleBefore": "What we do ",
