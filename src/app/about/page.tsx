@@ -15,7 +15,7 @@ export default function AboutPage() {
       <AboutHero />
       <CoreCapabilitiesSection />
       <CompanyIntroSection />
-      <OfficeMapSection />
+      {/* <OfficeMapSection /> */}
     </>
   );
 }
