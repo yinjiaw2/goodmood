@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { GoodMoodLogoAnimation } from "./GoodMoodAnimation";
 
 const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
@@ -11,26 +12,17 @@ export default function Footer() {
   return (
     <footer
       style={{ fontFamily: font, backgroundColor: "#111111" }}
-      className="text-white pt-12 pb-6" // 
+      className="text-white pt-12 pb-6" //
     >
       <div className="mx-auto max-w-7xl px-6">
-
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-[1fr_0.85fr_0.85fr_1fr]">
           {/* Brand */}
           <div className="lg:max-w-xs">
             <Link href="/#hero" className="mb-5 inline-flex items-center">
-              <Image
-                src="/white.png"
-                alt={t("logoAlt")}
-                width={170}
-                height={50}
-                className="h-auto w-auto object-contain"
-              />
+              <GoodMoodLogoAnimation />
             </Link>
 
-            <p className="text-sm leading-8 text-white/40">
-              {t("tagline")}
-            </p>
+            <p className="text-sm leading-8 text-white/40">{t("tagline")}</p>
           </div>
 
           {/* Navigation */}
