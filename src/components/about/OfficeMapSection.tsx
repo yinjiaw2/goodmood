@@ -88,6 +88,7 @@ export default function OfficeMapSection() {
         </div>
 
         {/* Map */}
+        <style>{`.gm-ui-hover-effect { display: none !important; }`}</style>
         <div
           className="overflow-hidden rounded-2xl border border-white/10"
           style={{ height: 480 }}
