@@ -6,7 +6,7 @@ const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const navLinkKeys = ["0", "1", "2", "3", "4"] as const;
+  const navLinkKeys = ["0", "1", "2", "3"] as const;
 
   return (
     <footer

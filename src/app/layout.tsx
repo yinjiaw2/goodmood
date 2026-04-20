@@ -7,7 +7,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/home/Header";
+import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
