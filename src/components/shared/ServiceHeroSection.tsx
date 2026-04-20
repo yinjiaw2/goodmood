@@ -15,7 +15,10 @@ interface Props {
   imageSrc?: string;
 }
 
-export default function HeroSection({ namespace = "serviceSocial", imageSrc }: Props) {
+export default function ServiceHeroSection({
+  namespace = "serviceSocial",
+  imageSrc,
+}: Props) {
   const t = useTranslations(`${namespace}.hero`);
 
   return (
@@ -23,13 +26,7 @@ export default function HeroSection({ namespace = "serviceSocial", imageSrc }: P
       {/* Right-side background image */}
       {imageSrc && (
         <div className="absolute inset-y-0 right-0 w-[48%]">
-          <Image
-            src={imageSrc}
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
+          <Image src={imageSrc} alt="" fill className="object-cover" priority />
           {/* Gradient: fades the image into the dark background on the left */}
           <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent" />
           {/* Subtle dark overlay to keep image from being too bright */}

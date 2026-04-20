@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/shared/HeroSection";
+import ServiceHeroSection from "@/components/shared/ServiceHeroSection";
 import ServiceOverviewSection from "@/components/shared/ServiceOverviewSection";
 import ServiceSubFeaturesSection from "@/components/shared/ServiceSubFeaturesSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
@@ -13,15 +13,18 @@ export const metadata: Metadata = {
 };
 
 const case1Rows = [
-  { label: "Conversion Rate", before: "0.8%",  after: "3.3%" },
-  { label: "Monthly Revenue", before: "$12K",  after: "$43K" },
-  { label: "Bounce Rate",     before: "68%",   after: "31%"  },
+  { label: "Conversion Rate", before: "0.8%", after: "3.3%" },
+  { label: "Monthly Revenue", before: "$12K", after: "$43K" },
+  { label: "Bounce Rate", before: "68%", after: "31%" },
 ];
 
 export default function ServiceEcommercePage() {
   return (
     <>
-      <HeroSection namespace="serviceEcommerce" imageSrc="/meta-ads.jpg" />
+      <ServiceHeroSection
+        namespace="serviceEcommerce"
+        imageSrc="/meta-ads.jpg"
+      />
       <ServiceOverviewSection namespace="serviceEcommerce" />
       <ServiceSubFeaturesSection namespace="serviceEcommerce" />
       <CaseStudySection

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/shared/HeroSection";
+import ServiceHeroSection from "@/components/shared/ServiceHeroSection";
 import ServiceOverviewSection from "@/components/shared/ServiceOverviewSection";
 import ServiceSubFeaturesSection from "@/components/shared/ServiceSubFeaturesSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 };
 
 const case2Items = [
-  { value: 210, suffix: "",   label: "Monthly Leads"          },
-  { value: 54,  prefix: "−", suffix: "%", label: "Cost Per Lead"   },
+  { value: 210, suffix: "", label: "Monthly Leads" },
+  { value: 54, prefix: "−", suffix: "%", label: "Cost Per Lead" },
   { value: 5.8, suffix: "×", label: "Return on Ad Spend", decimals: 1 },
-  { value: 4,   suffix: "",   label: "Months to Results"       },
+  { value: 4, suffix: "", label: "Months to Results" },
 ];
 
 export default function ServiceAdsPage() {
   return (
     <>
-      <HeroSection namespace="serviceAds" imageSrc="/google-ads.png" />
+      <ServiceHeroSection namespace="serviceAds" imageSrc="/google-ads.png" />
       <ServiceOverviewSection namespace="serviceAds" />
       <ServiceSubFeaturesSection namespace="serviceAds" />
       <CaseStudySection

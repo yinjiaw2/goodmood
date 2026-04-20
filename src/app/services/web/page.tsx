@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/shared/HeroSection";
+import ServiceHeroSection from "@/components/shared/ServiceHeroSection";
 import ServiceOverviewSection from "@/components/shared/ServiceOverviewSection";
 import ServiceSubFeaturesSection from "@/components/shared/ServiceSubFeaturesSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
@@ -13,22 +13,22 @@ export const metadata: Metadata = {
 };
 
 const case1Rows = [
-  { label: "Bounce Rate",       before: "78%",  after: "34%"  },
-  { label: "Weekly Leads",      before: "0.4",  after: "11"   },
+  { label: "Bounce Rate", before: "78%", after: "34%" },
+  { label: "Weekly Leads", before: "0.4", after: "11" },
   { label: "Avg. Session Time", before: "0:42", after: "2:18" },
 ];
 
 const case2Items = [
-  { label: "Trial Signups / mo",  before: 18, after: 94, max: 100, unit: "" },
-  { label: "Landing Page CVR",    before: 1,  after: 7,  max: 10,  unit: "%" },
-  { label: "Performance Score",   before: 40, after: 94, max: 100, unit: "" },
-  { label: "Mobile Score",        before: 52, after: 96, max: 100, unit: "" },
+  { label: "Trial Signups / mo", before: 18, after: 94, max: 100, unit: "" },
+  { label: "Landing Page CVR", before: 1, after: 7, max: 10, unit: "%" },
+  { label: "Performance Score", before: 40, after: 94, max: 100, unit: "" },
+  { label: "Mobile Score", before: 52, after: 96, max: 100, unit: "" },
 ];
 
 export default function ServiceWebPage() {
   return (
     <>
-      <HeroSection namespace="serviceWeb" imageSrc="/SEO.jpeg" />
+      <ServiceHeroSection namespace="serviceWeb" imageSrc="/SEO.jpeg" />
       <ServiceOverviewSection namespace="serviceWeb" />
       <ServiceSubFeaturesSection namespace="serviceWeb" />
       <CaseStudySection
