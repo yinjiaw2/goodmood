@@ -7,7 +7,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/shared/Header";
+import NavBar from "@/components/shared/NavBar";
 import Footer from "@/components/shared/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
@@ -57,7 +57,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
-          <Header />
+          <NavBar />
           <main className="pt-16 flex-1">{children}</main>
           <Footer />
         </NextIntlClientProvider>
