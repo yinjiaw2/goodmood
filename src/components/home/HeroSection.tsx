@@ -182,7 +182,7 @@ export default function HeroSection() {
           {/* CTA buttons */}
           <div className="flex gap-4 flex-wrap">
             <Link
-              href="/#core-services"
+              href="/#contact"
               className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#1a1a1a] transition hover:opacity-90 active:scale-95"
               style={{ backgroundColor: "#F5C400", ...fontStyle }}
             >
@@ -190,7 +190,7 @@ export default function HeroSection() {
               <ArrowRight size={17} />
             </Link>
             <Link
-              href="/#contact"
+              href="/about"
               className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white border border-white/20 transition hover:border-white/50 active:scale-95"
               style={fontStyle}
             >

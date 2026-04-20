@@ -68,14 +68,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/news"
-                  className="text-sm text-white/60 transition-colors duration-200 hover:text-[#F5C400]"
-                >
-                  {t("companyLinks.news")}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/contact"
                   className="text-sm text-white/60 transition-colors duration-200 hover:text-[#F5C400]"
                 >

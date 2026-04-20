@@ -13,8 +13,8 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <CoreCapabilitiesSection />
       <CompanyIntroSection />
+      <CoreCapabilitiesSection />
       {/* <OfficeMapSection /> */}
     </>
   );

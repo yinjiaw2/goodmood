@@ -10,52 +10,54 @@ export default function AboutHero() {
     : "var(--font-ma-shan-zheng)";
 
   return (
-    <section className="relative flex min-h-[80vh] w-full overflow-hidden bg-[#0D0D0D]">
-      {/* Left — text */}
-      <div className="relative z-10 flex w-full flex-col justify-end px-6 py-24 md:w-1/2 md:px-[8vw]">
-        <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm w-fit">
-          <span
-            className="w-2 h-2 rounded-full shrink-0"
-            style={{ backgroundColor: "#F5C400" }}
-          />
-          <span
-            className="text-xs font-semibold tracking-widest uppercase text-white/90"
+    <section className="relative min-h-[80vh] w-full overflow-hidden bg-[#0D0D0D]">
+      <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-7xl items-end justify-start px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
+        {/* Hero text */}
+        <div className="flex w-full max-w-3xl flex-col items-start text-left">
+          <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+            <span
+              className="w-2 h-2 rounded-full shrink-0"
+              style={{ backgroundColor: "#F5C400" }}
+            />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase text-white/90"
+              style={{
+                fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+              }}
+            >
+              {t("tag")}
+            </span>
+          </div>
+
+          <h1
+            className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
             style={{
               fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+              letterSpacing: "-0.03em",
             }}
           >
-            {t("tag")}
-          </span>
+            <span
+              className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
+            >
+              {t("titleLine1")}
+            </span>
+            <br />
+            <span
+              className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
+            >
+              <span style={{ fontFamily: accentFont }}>
+                {t("titleLine2AccentFirst")}
+              </span>
+              {t("titleLine2Before")}
+              <span style={{ color: "#F5C400", fontFamily: accentFont }}>
+                {t("titleLine2Accent")}
+              </span>
+            </span>
+          </h1>
         </div>
-
-        <h1
-          className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
-          style={{
-            fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
-            letterSpacing: "-0.03em",
-          }}
-        >
-          <span
-            className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
-          >
-            {t("titleLine1")}
-          </span>
-          <br />
-          <span
-            className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
-          >
-            <span style={{ fontFamily: accentFont }}>
-              {t("titleLine2AccentFirst")}
-            </span>
-            {t("titleLine2Before")}
-            <span style={{ color: "#F5C400", fontFamily: accentFont }}>
-              {t("titleLine2Accent")}
-            </span>
-          </span>
-        </h1>
       </div>
 
-      {/* Right — image with soft diagonal blend */}
+      {/* Right image with soft diagonal blend */}
       <div className="hidden md:block absolute inset-y-0 right-0 w-[60%]">
         <Image
           src="/about-us.jpeg"

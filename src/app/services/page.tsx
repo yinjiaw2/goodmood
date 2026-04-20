@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/services/HeroSection";
+import ServiceIntroSection from "@/components/services/ServiceIntroSection";
 import WhyUsSection from "@/components/services/WhyUsSection";
 import ServiceSection from "@/components/home/ServiceSection";
 
@@ -13,6 +14,7 @@ export default function ServicesPage() {
   return (
     <>
       <HeroSection />
+      <ServiceIntroSection />
       <WhyUsSection />
       <ServiceSection />
     </>

@@ -7,14 +7,12 @@
     "0": { "label": "Home", "href": "/#hero" },
     "1": { "label": "Our Services", "href": "/#core-services" },
     "2": { "label": "About Us", "href": "/about" },
-    "3": { "label": "News", "href": "/news" },
-    "4": { "label": "Contact Us", "href": "/contact" }
+    "3": { "label": "Contact Us", "href": "/contact" }
   },
 
   "companyLabel": "Company",
   "companyLinks": {
     "about": "About Us",
-    "news": "News",
     "contact": "Contact Us"
   },
 

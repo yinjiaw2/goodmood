@@ -13,8 +13,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full bg-secondary">
-      <div className="px-16 pt-36 pb-32 w-full">
-        <div className="max-w-2xl flex flex-col gap-8 ml-14">
+      <div className="mx-auto max-w-7xl px-6 pt-36 pb-32 md:px-10 lg:px-16">
+        <div className="max-w-2xl flex flex-col gap-8">
           {/* Badge */}
           <div className="inline-flex">
             <span
