@@ -183,11 +183,14 @@ export default function HeroSection() {
           <div className="flex gap-4 flex-wrap">
             <Link
               href="/#contact"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#1a1a1a] transition hover:opacity-90 active:scale-95"
+              className="group flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#1a1a1a] transition hover:opacity-90 active:scale-95"
               style={{ backgroundColor: "#F5C400", ...fontStyle }}
             >
               {t("hero.cta")}
-              <ArrowRight size={17} />
+              <ArrowRight
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </Link>
             <Link
               href="/about"
