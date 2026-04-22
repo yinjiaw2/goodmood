@@ -48,15 +48,11 @@
       ]
     },
     "international": {
-      "title": "International Distribution",
-      "desc": "Our network extends across key markets, enabling clients to reach audiences wherever they are.",
+      "title": "Melbourne and Chengdu",
+      "desc": "Our team connects Australian market insight with China-facing cultural fluency, supporting brands across both regions.",
       "regions": [
-        { "city": "Shanghai", "role": "HQ & Strategy" },
-        { "city": "Hong Kong", "role": "Finance & Media" },
-        { "city": "Singapore", "role": "SEA Expansion" },
-        { "city": "Los Angeles", "role": "North America" },
-        { "city": "London", "role": "Europe" },
-        { "city": "Sydney", "role": "APAC" }
+        { "city": "Melbourne", "role": "Australia Office" },
+        { "city": "Chengdu", "role": "China Office" }
       ]
     }
   }
