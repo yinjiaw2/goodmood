@@ -1,33 +1,85 @@
 {
   "sectionTitle": "Get in Touch",
-  "sectionSubtitle": "We'd love to hear from you. Send us a message and we'll get back to you shortly.",
-  "formTitle": "Send Us a Message",
-  "formSubtitle": "Fill in the form below and we'll be in touch.",
+  "sectionSubtitle": "Whether it is a new idea or a specific project, we are here to start the conversation.",
+  "formTitle": "Book a free strategy consultation.",
+  "formSubtitle": "Tell us what you are building and where you want to grow. We will review your details before the call.",
   "successMessage": "Thank you! We'll be in touch soon.",
   "submitErrorMessage": "Submission failed. Please try again, or contact us directly by email.",
-  "submitButton": "Send Message",
-  "submittingButton": "Sending…",
-  "fields": {
-    "firstName": {
-      "placeholder": "First name",
-      "errorRequired": "First name is required"
-    },
-    "lastName": {
-      "placeholder": "Last name",
-      "errorRequired": "Last name is required"
-    },
-    "email": {
-      "placeholder": "Email address",
-      "errorContact": "Please provide an email or phone number",
-      "errorInvalid": "Please enter a valid email address"
-    },
-    "mobileNumber": {
-      "placeholder": "Phone number",
-      "errorContact": "Please provide an email or phone number"
-    },
-    "message": {
-      "placeholder": "How can we help you?",
-      "errorRequired": "Message is required"
+  "submitButton": "Submit and book consultation ->",
+  "submittingButton": "Submitting...",
+  "consultationForm": {
+    "label": "Start a project",
+    "title": "Book a free strategy consultation",
+    "titleLine1": "Book a free",
+    "titleLine2": "strategy consultation",
+    "subtitle": "Fill in the form below and we will contact you within one business day to arrange a 30-minute video call.",
+    "privacyNote": "We reply within one business day | No spam, ever",
+    "serviceOptions": [
+      "Social Media Management",
+      "Ecommerce (website + SEO + data)",
+      "Creative (brand + video)",
+      "Email Marketing",
+      "Website Design",
+      "Paid Ads (Meta + RedNote)",
+      "Full-service marketing"
+    ],
+    "budgetOptions": [
+      "$2,000 - $5,000 AUD/month",
+      "$5,000 - $10,000 AUD/month",
+      "$10,000 - $30,000 AUD/month",
+      "$30,000+ AUD/month",
+      "Not sure yet, need advice"
+    ],
+    "referralOptions": [
+      "Google Search",
+      "RedNote",
+      "Friend referral",
+      "Social media",
+      "Other"
+    ],
+    "fields": {
+      "name": {
+        "label": "Name *",
+        "placeholder": "Your name",
+        "errorRequired": "Please enter your name"
+      },
+      "email": {
+        "label": "Email *",
+        "placeholder": "your@email.com",
+        "errorRequired": "Please enter your email",
+        "errorInvalid": "Please enter a valid email address"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+61 4xx xxx xxx"
+      },
+      "company": {
+        "label": "Company / brand name *",
+        "placeholder": "Your brand",
+        "errorRequired": "Please enter your company or brand name"
+      },
+      "website": {
+        "label": "Website",
+        "placeholder": "https://yourwebsite.com"
+      },
+      "service": {
+        "label": "Service you need *",
+        "placeholder": "Select your main service type",
+        "errorRequired": "Please select your main service type"
+      },
+      "budget": {
+        "label": "Monthly marketing budget",
+        "placeholder": "Select your budget range"
+      },
+      "challenge": {
+        "label": "What is your biggest marketing challenge? *",
+        "placeholder": "Tell us what you are struggling with right now and what you would like to improve...",
+        "errorRequired": "Please tell us about your main marketing challenge"
+      },
+      "referral": {
+        "label": "How did you hear about us?",
+        "placeholder": "Please select"
+      }
     }
   },
   "page": {
@@ -51,7 +103,7 @@
       },
       "office": {
         "label": "Office",
-        "value": "Tower 3, Level 9, 18–38 Siddeley St, Docklands VIC 3005"
+        "value": "Tower 3, Level 9, 18-38 Siddeley St, Docklands VIC 3005"
       },
       "hours": {
         "label": "Response window",

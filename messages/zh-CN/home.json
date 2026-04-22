@@ -94,6 +94,19 @@
     "step4Number": "04",
     "step4Label": "第四步",
     "step4Title": "衡量",
-    "step4Desc": "每月汇报分析、策略优化，基于真实数据持续改进。"
+    "step4Desc": "每月汇报分析、策略优化，基于真实数据持续改进。",
+    "deliverablesLabel": "Deliverables",
+    "step1Deliverable1": "Brand Health Diagnostic",
+    "step1Deliverable2": "Competitor Analysis",
+    "step1Deliverable3": "Audience Persona",
+    "step2Deliverable1": "Growth Strategy",
+    "step2Deliverable2": "Content Framework",
+    "step2Deliverable3": "Platform Roadmap",
+    "step3Deliverable1": "Creative Production",
+    "step3Deliverable2": "Campaign Launch",
+    "step3Deliverable3": "Platform Deployment",
+    "step4Deliverable1": "Performance Review",
+    "step4Deliverable2": "Optimisation Plan",
+    "step4Deliverable3": "Growth Roadmap"
   }
 }

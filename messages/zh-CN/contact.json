@@ -1,33 +1,85 @@
 {
   "sectionTitle": "联系我们",
-  "sectionSubtitle": "期待您的来信。请发送消息，我们将尽快回复您。",
-  "formTitle": "发送消息",
-  "formSubtitle": "填写以下表单，我们会尽快与您联系。",
-  "successMessage": "感谢您的来信！我们将尽快与您联系。",
+  "sectionSubtitle": "无论是新的想法，还是已经明确的项目，我们都可以从一次沟通开始。",
+  "formTitle": "预约免费策略咨询",
+  "formSubtitle": "告诉我们你的品牌正在做什么，以及下一步希望增长的方向。我们会在通话前先了解你的情况。",
+  "successMessage": "感谢提交！我们会尽快与你联系。",
   "submitErrorMessage": "提交失败。请稍后重试，或直接通过邮箱联系我们。",
-  "submitButton": "发送消息",
-  "submittingButton": "发送中…",
-  "fields": {
-    "firstName": {
-      "placeholder": "名",
-      "errorRequired": "请填写名字"
-    },
-    "lastName": {
-      "placeholder": "姓",
-      "errorRequired": "请填写姓氏"
-    },
-    "email": {
-      "placeholder": "电子邮箱",
-      "errorContact": "请提供邮箱或手机号码",
-      "errorInvalid": "请输入有效的电子邮箱地址"
-    },
-    "mobileNumber": {
-      "placeholder": "手机号码",
-      "errorContact": "请提供邮箱或手机号码"
-    },
-    "message": {
-      "placeholder": "我们能为您做什么？",
-      "errorRequired": "请填写消息内容"
+  "submitButton": "提交并预约咨询 ->",
+  "submittingButton": "提交中...",
+  "consultationForm": {
+    "label": "开始合作",
+    "title": "预约免费咨询",
+    "titleLine1": "预约免费",
+    "titleLine2": "策略咨询",
+    "subtitle": "填写下方表单，我们会在 1 个工作日内与你联系，安排一次 30 分钟的视频通话。",
+    "privacyNote": "我们会在 1 个工作日内回复 | 绝不发送垃圾邮件",
+    "serviceOptions": [
+      "Social Media Management",
+      "Ecommerce（网站 + SEO + 数据）",
+      "Creative（品牌 + 视频）",
+      "Email Marketing",
+      "Website Design",
+      "Paid Ads（Meta + 小红书）",
+      "全案营销服务"
+    ],
+    "budgetOptions": [
+      "$2,000 - $5,000 AUD/月",
+      "$5,000 - $10,000 AUD/月",
+      "$10,000 - $30,000 AUD/月",
+      "$30,000+ AUD/月",
+      "暂不确定，需要咨询"
+    ],
+    "referralOptions": [
+      "Google 搜索",
+      "小红书",
+      "朋友推荐",
+      "社交媒体",
+      "其他"
+    ],
+    "fields": {
+      "name": {
+        "label": "姓名 *",
+        "placeholder": "你的名字",
+        "errorRequired": "请填写姓名"
+      },
+      "email": {
+        "label": "邮箱 *",
+        "placeholder": "your@email.com",
+        "errorRequired": "请填写邮箱",
+        "errorInvalid": "请输入有效的邮箱地址"
+      },
+      "phone": {
+        "label": "电话",
+        "placeholder": "+61 4xx xxx xxx"
+      },
+      "company": {
+        "label": "公司 / 品牌名称 *",
+        "placeholder": "你的品牌",
+        "errorRequired": "请填写公司或品牌名称"
+      },
+      "website": {
+        "label": "网站地址",
+        "placeholder": "https://yourwebsite.com"
+      },
+      "service": {
+        "label": "你需要的服务 *",
+        "placeholder": "请选择主要服务类型",
+        "errorRequired": "请选择主要服务类型"
+      },
+      "budget": {
+        "label": "月度营销预算",
+        "placeholder": "请选择预算范围"
+      },
+      "challenge": {
+        "label": "你最大的营销挑战是什么？ *",
+        "placeholder": "告诉我们你目前面临的主要问题，以及希望在哪些方面看到改善...",
+        "errorRequired": "请填写你目前面临的主要问题"
+      },
+      "referral": {
+        "label": "你是如何了解到我们的？",
+        "placeholder": "请选择"
+      }
     }
   },
   "page": {
@@ -38,7 +90,7 @@
     "companyTitle": "公司简介",
     "companyBody": "我们是一支位于墨尔本的数字营销团队，专注于为品牌搭建务实可落地的增长系统。我们把品牌定位、创意表达与效果增长结合起来，让每一项执行都服务于明确的商业目标。",
     "servicesTitle": "服务概述",
-    "servicesBody": "我们的服务覆盖社交媒体营销、广告投放、电商增长、网站设计、邮件营销、SEO 与创意制作。我们关注的是完整客户旅程，而不是孤立地运营单一渠道。",
+    "servicesBody": "我们的服务覆盖社交媒体管理、广告投放、电商增长、网站设计、邮件营销、SEO 与创意制作。我们关注完整客户旅程，而不是孤立地运营单一渠道。",
     "approachTitle": "合作方式",
     "approachBody": "每一次合作都会先从理解你的业务目标、当前瓶颈与营收优先级开始，再据此制定一个精简、可衡量、适合你团队推进节奏的执行方案。",
     "connectBadge": "开始联系",
@@ -51,7 +103,7 @@
       },
       "office": {
         "label": "办公地址",
-        "value": "澳大利亚维多利亚州 Docklands Siddeley St 18–38 号 Tower 3 九楼"
+        "value": "澳大利亚维多利亚州 Docklands Siddeley St 18-38 号 Tower 3 九楼"
       },
       "hours": {
         "label": "回复时间",
