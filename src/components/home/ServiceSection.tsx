@@ -8,11 +8,12 @@ import {
   Target,
   Video,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default function ServiceSection() {
   const t = useTranslations("home");
+  const locale = useLocale();
 
   const cards = [
     {
@@ -87,15 +88,15 @@ export default function ServiceSection() {
     <section className="w-full bg-[#1A1A1A] py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="mb-12">
-          <div className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-[#F5C400]">
+          <div className="mb-4 text-[12px] font-bold uppercase tracking-[2px] text-[#F5C400]">
             {t("serviceGrid.badge")}
           </div>
 
-          <h2 className="mb-4 text-[34px] font-extrabold leading-[1.1] tracking-[-1px] text-white md:text-[46px]">
+          <h2 className="mb-4 text-[38px] font-extrabold leading-[1.1] tracking-[-1px] text-white md:text-[52px]">
             {t("serviceGrid.title")}
           </h2>
 
-          <p className="max-w-[520px] text-[18px] leading-[1.6] text-white font-bold">
+          <p className="max-w-[560px] text-[19px] font-bold leading-[1.6] text-white md:text-[20px]">
             {t("serviceGrid.subtitle")}
           </p>
         </div>
@@ -117,28 +118,30 @@ export default function ServiceSection() {
                   className="mb-5 h-11 w-11 rounded-lg bg-[rgba(245,196,0,0.12)] p-[10px] text-[#F5C400] transition-colors duration-300 group-hover:bg-black/10 group-hover:text-black"
                 />
 
-                <h3 className="mb-3 text-[20px] font-bold tracking-[-0.3px] text-white transition-colors duration-300 group-hover:text-black">
+                <h3 className="mb-3 text-[23px] font-bold tracking-[-0.3px] text-white transition-colors duration-300 group-hover:text-black">
                   {card.title}
                 </h3>
 
-                <p className="mb-5 text-[14.5px] leading-[1.65] text-white/50 transition-colors duration-300 group-hover:text-black/75">
+                <p className="mb-5 text-[15.5px] leading-[1.65] text-white/55 transition-colors duration-300 group-hover:text-black/75">
                   {card.desc}
                 </p>
 
-                <div className="mt-auto flex flex-wrap gap-2 pr-8">
+                <div className="mt-auto flex flex-nowrap gap-2 pr-8">
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center rounded-full border border-white/12 px-[10px] py-[4px] text-[11px] font-semibold leading-none whitespace-nowrap text-white/45 transition-all duration-300 group-hover:border-black/20 group-hover:text-black"
+                      className="inline-flex items-center whitespace-nowrap rounded-full border border-[#F5C400] px-[10px] py-[4px] text-[12px] font-semibold leading-none text-[#F5C400] transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="absolute bottom-0 right-0 text-[20px] text-white/30 transition-all duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] group-hover:text-black">
+                {locale !== "en" ? (
+                  <div className="absolute bottom-0 right-0 text-[20px] text-white/30 transition-all duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] group-hover:text-black">
                   ↗
-                </div>
+                  </div>
+                ) : null}
               </div>
             </Link>
           ))}
