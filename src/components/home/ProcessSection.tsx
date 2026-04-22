@@ -93,7 +93,11 @@ export default function ProcessSection() {
         </div>
 
         {/* Steps */}
-        <div className="relative grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-4">
+        <div
+          className={`relative grid grid-cols-1 gap-x-8 md:grid-cols-2 xl:grid-cols-4 ${
+            isChinese ? "gap-y-9" : "gap-y-12"
+          }`}
+        >
           <div className="absolute left-6 right-[calc(25%-24px)] top-6 hidden h-px xl:block bg-[repeating-linear-gradient(90deg,#F5C400_0,#F5C400_6px,transparent_6px,transparent_14px)]" />
           {steps.map((step) => (
             <div key={step.number} className="relative flex flex-col xl:pr-8">
@@ -106,29 +110,35 @@ export default function ProcessSection() {
               <h3 className="mb-3 text-[24px] font-extrabold tracking-[-0.02em] text-[#1A1A1A]">
                 {step.name}
               </h3>
-              <p className="text-[15px] leading-[1.7] text-[#7F7F7F] md:min-h-[96px] xl:min-h-[132px]">
+              <p
+                className={`text-[15px] leading-[1.7] text-[#7F7F7F] ${
+                  isChinese
+                    ? "md:min-h-[64px] xl:min-h-[86px]"
+                    : "md:min-h-[96px] xl:min-h-[132px]"
+                }`}
+              >
                 {step.desc}
               </p>
 
               <div
                 className={`border-t border-[#E8E8E8] ${
-                  isChinese ? "mt-4 pt-4" : "mt-5 pt-5"
+                  isChinese ? "mt-3 pt-3" : "mt-5 pt-5"
                 }`}
               >
                 <div
                   className={`font-extrabold uppercase tracking-[0.24em] text-[#1A1A1A] ${
-                    isChinese ? "mb-3 text-[10px]" : "mb-4 text-[11px]"
+                    isChinese ? "mb-2.5 text-[10px]" : "mb-4 text-[11px]"
                   }`}
                 >
                   {t("process.deliverablesLabel")}
                 </div>
-                <div className={`grid ${isChinese ? "gap-2.5" : "gap-3"}`}>
+                <div className={`grid ${isChinese ? "gap-2" : "gap-3"}`}>
                   {step.deliverables.map((deliverable) => (
                     <div
                       key={deliverable.label}
                       className={`flex items-center gap-3 rounded-xl border border-[#F5C400]/55 bg-white text-[#1A1A1A] shadow-[0_10px_22px_rgba(26,26,26,0.035)] ${
                         isChinese
-                          ? "min-h-[50px] px-2.5 py-2"
+                          ? "min-h-[46px] px-2 py-1.5"
                           : "min-h-[58px] px-3 py-3"
                       }`}
                     >
