@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useMessages, useTranslations } from "next-intl";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -41,7 +41,12 @@ const OFFICES = [
 
 export default function OfficeMapSection() {
   const t = useTranslations("about.officeMap");
+  const messages = useMessages();
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const rawSubtitle = messages.about?.officeMap?.subtitle;
+  const subtitleParagraphs = Array.isArray(rawSubtitle)
+    ? rawSubtitle
+    : [t("subtitle")];
 
   const toggle = (key: string) =>
     setActiveKey((prev) => (prev === key ? null : key));
@@ -63,10 +68,14 @@ export default function OfficeMapSection() {
             <span style={{ color: "#F5C400" }}>{t("titleAccent")}</span>
           </h2>
           <p
-            className="mt-4 text-[15px] leading-[1.8] text-[#9A9A9A]"
+            className="mt-4 max-w-5xl text-[15px] leading-[1.8] text-[#9A9A9A]"
             style={fontStyle}
           >
-            {t("subtitle")}
+            {subtitleParagraphs.map((paragraph, index) => (
+              <span key={`${index}-${paragraph}`} className="mb-4 block last:mb-0">
+                {paragraph}
+              </span>
+            ))}
           </p>
         </div>
 

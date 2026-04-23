@@ -6,7 +6,6 @@ import {
   Globe2,
   TrendingUp,
   Users,
-  Layers,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -14,7 +13,7 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-const icons = [Target, Lightbulb, Globe2, TrendingUp, Users, Layers];
+const icons = [Target, Lightbulb, Globe2, TrendingUp, Users];
 
 export default function CoreCapabilitiesSection() {
   const t = useTranslations("about.coreCapabilities");
@@ -24,7 +23,7 @@ export default function CoreCapabilitiesSection() {
       ? "var(--font-playfair-display), Georgia, serif"
       : "var(--font-ma-shan-zheng)";
 
-  const items = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+  const items = [1, 2, 3, 4, 5].map((n, i) => ({
     Icon: icons[i]!,
     title: t(`item${n}Title`),
     desc: t(`item${n}Desc`),
@@ -60,11 +59,13 @@ export default function CoreCapabilitiesSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 xl:grid-cols-3">
-          {items.map(({ Icon, title, desc }) => (
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 xl:grid-cols-6">
+          {items.map(({ Icon, title, desc }, index) => (
             <article
               key={title}
-              className="group flex flex-col gap-4 bg-white px-9 py-10 transition-colors duration-300 hover:bg-[#FFFBEE]"
+              className={`group flex flex-col gap-4 bg-white px-9 py-10 transition-colors duration-300 hover:bg-[#FFFBEE] ${
+                index < 3 ? "xl:col-span-2" : "xl:col-span-3"
+              } ${index === 4 ? "md:col-span-2 xl:col-span-3" : ""}`}
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(245,196,0,0.10)] transition-colors duration-300 group-hover:bg-[rgba(245,196,0,0.22)]">
                 <Icon

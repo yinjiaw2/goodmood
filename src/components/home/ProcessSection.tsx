@@ -1,5 +1,6 @@
 import {
   BarChart3,
+  ChevronDown,
   FileText,
   Layers,
   Map,
@@ -121,28 +122,49 @@ export default function ProcessSection() {
               </p>
 
               <div
-                className={`border-t border-[#E8E8E8] ${
+                className={`group/dropdown relative border-t border-[#E8E8E8] ${
                   isChinese ? "mt-3 pt-3" : "mt-5 pt-5"
                 }`}
               >
-                <div
-                  className={`font-extrabold uppercase tracking-[0.24em] text-[#1A1A1A] ${
-                    isChinese ? "mb-2.5 text-[10px]" : "mb-4 text-[11px]"
+                <button
+                  type="button"
+                  className={`relative flex w-full items-center rounded-full border border-[#F5C400] bg-[#F5C400] px-5 pr-12 text-left text-[#1A1A1A] shadow-[0_10px_22px_rgba(26,26,26,0.08)] transition duration-300 hover:bg-[#F5C400] hover:shadow-[0_14px_28px_rgba(245,196,0,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1A1A1A] ${
+                    isChinese ? "min-h-[48px] py-2" : "min-h-[58px] py-3"
                   }`}
                 >
-                  {t("process.deliverablesLabel")}
-                </div>
-                <div className={`grid ${isChinese ? "gap-2" : "gap-3"}`}>
+                  <span>
+                    <span
+                      className={`block font-extrabold uppercase tracking-[0.24em] text-[#1A1A1A] ${
+                        isChinese ? "text-[13px]" : "text-[14px]"
+                      }`}
+                    >
+                      {t("process.deliverablesLabel")}
+                    </span>
+                    <span className="mt-1 block text-[14px] font-bold leading-snug text-[#6F6A61]">
+                      {t("process.deliverablesHint")}
+                    </span>
+                  </span>
+                  <ChevronDown
+                    aria-hidden="true"
+                    className="absolute right-4 shrink-0 text-[#1A1A1A] transition duration-300 group-hover/dropdown:rotate-180 group-focus-within/dropdown:rotate-180"
+                    size={18}
+                  />
+                </button>
+                <div
+                  className={`pointer-events-none absolute left-0 right-0 top-full z-20 grid translate-y-2 gap-2 rounded-lg border border-[#F5C400]/55 bg-white p-2 opacity-0 shadow-[0_18px_36px_rgba(26,26,26,0.12)] transition duration-300 group-hover/dropdown:pointer-events-auto group-hover/dropdown:translate-y-3 group-hover/dropdown:opacity-100 group-focus-within/dropdown:pointer-events-auto group-focus-within/dropdown:translate-y-3 group-focus-within/dropdown:opacity-100 ${
+                    isChinese ? "mt-1" : "mt-2"
+                  }`}
+                >
                   {step.deliverables.map((deliverable) => (
                     <div
                       key={deliverable.label}
-                      className={`flex items-center gap-3 rounded-xl border border-[#F5C400]/55 bg-white text-[#1A1A1A] shadow-[0_10px_22px_rgba(26,26,26,0.035)] ${
+                      className={`flex items-center gap-3 rounded-md border border-[#F5C400] bg-[#F5C400] text-[#1A1A1A] ${
                         isChinese
-                          ? "min-h-[46px] px-2 py-1.5"
-                          : "min-h-[58px] px-3 py-3"
+                          ? "min-h-[42px] px-2 py-1.5"
+                          : "min-h-[50px] px-3 py-2"
                       }`}
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5C400]/12 text-[#6F6A61]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/24 text-[#1A1A1A]">
                         <deliverable.icon aria-hidden="true" size={16} />
                       </span>
                       <span className="text-[12.5px] font-extrabold leading-snug tracking-[-0.01em]">

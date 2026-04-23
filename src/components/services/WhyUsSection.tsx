@@ -4,7 +4,6 @@ import {
   CheckSquare,
   Layers,
   Globe,
-  Handshake,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -12,12 +11,12 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-const icons = [MapPin, BarChart2, CheckSquare, Layers, Globe, Handshake];
+const icons = [MapPin, BarChart2, CheckSquare, Layers, Globe];
 
 export default function WhyUsSection() {
   const t = useTranslations("services.whyUs");
 
-  const items = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+  const items = [1, 2, 3, 4, 5].map((n, i) => ({
     Icon: icons[i]!,
     title: t(`item${n}Title`),
     desc: t(`item${n}Desc`),
@@ -52,11 +51,11 @@ export default function WhyUsSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 xl:grid-cols-5">
           {items.map(({ Icon, title, desc }) => (
             <article
               key={title}
-              className="group flex flex-col gap-4 bg-white px-9 py-10 transition-colors duration-300 hover:bg-[#FFFBEE]"
+              className="group flex flex-col gap-4 bg-white px-7 py-10 transition-colors duration-300 hover:bg-[#FFFBEE]"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(245,196,0,0.10)] transition-colors duration-300 group-hover:bg-[rgba(245,196,0,0.22)]">
                 <Icon

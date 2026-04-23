@@ -13,7 +13,7 @@ export default function AboutHero() {
     <section className="relative min-h-[80vh] w-full overflow-hidden bg-[#0D0D0D]">
       <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-7xl items-end justify-start px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
         {/* Hero text */}
-        <div className="flex w-full max-w-3xl flex-col items-start text-left">
+        <div className="flex w-full max-w-none flex-col items-start text-left">
           <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
             <span
               className="w-2 h-2 rounded-full shrink-0"
@@ -30,21 +30,15 @@ export default function AboutHero() {
           </div>
 
           <h1
-            className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
+            className="max-w-[1180px] text-[44px] font-extrabold leading-[1.04] text-white md:text-[64px] lg:text-[78px]"
             style={{
               fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
               letterSpacing: "-0.03em",
             }}
           >
-            <span
-              className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
-            >
-              {t("titleLine1")}
-            </span>
-            <br />
-            <span
-              className={isEnglish ? "inline-block whitespace-nowrap" : undefined}
-            >
+            <span>{t("titleLine1")}</span>
+            {isEnglish ? " " : ""}
+            <span className="inline-block">
               <span style={{ fontFamily: accentFont }}>
                 {t("titleLine2AccentFirst")}
               </span>

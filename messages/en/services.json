@@ -1,34 +1,32 @@
 {
   "hero": {
     "badge": "Our Services · Melbourne",
-    "titlePrefix": "Full-Funnel",
-    "titleHighlight": "Growth",
-    "titleSuffix": "Solutions",
-    "subtitle": "From social media and paid ads to SEO, ecommerce, and creative production — we build the complete customer journey that turns attention into revenue.",
-    "cta": "Get Free Consultation",
+    "titlePrefix": "A More",
+    "titleHighlight": "Effective",
+    "titleSuffix": "Way to Grow",
+    "subtitle": "By merging precision marketing with elevated design, we deliver seamless customer experiences that turn digital interactions into measurable business value.",
+    "cta": "Contact Us",
     "ctaSecondary": "See Our Work"
   },
   "intro": {
     "badge": "Overview",
-    "title": "A single partner for every growth channel.",
-    "subtitle": "Our team builds paid ads, SEO, ecommerce, and creative campaigns that work together to move customers from discovery to purchase."
+    "title": "A complete methodology for measurable digital performance. ",
+    "subtitle": "We combine artistic synergy with data transparency to deliver transparent strategies that turn digital interest into actual business results."
   },
   "whyUs": {
     "badge": "Why Choose Us",
     "title": "Built for Brands That",
     "titleHighlight": "Mean Business.",
-    "subtitle": "We combine local expertise, performance data, and full-funnel execution to deliver results you can actually measure.",
-    "item1Title": "Local Melbourne Team",
-    "item1Desc": "We're based in Melbourne and know the local market inside out — giving your brand a grounded, relevant edge.",
-    "item2Title": "Data-Driven Strategy",
-    "item2Desc": "Every campaign decision is backed by real performance data. No guesswork, no vanity metrics — just what works.",
-    "item3Title": "Measurable Results",
-    "item3Desc": "Clear KPIs from day one. We set benchmarks, report transparently, and hold ourselves accountable to your growth.",
-    "item4Title": "Full-Funnel Coverage",
-    "item4Desc": "From brand awareness to final conversion, we manage every touchpoint so nothing falls through the cracks.",
-    "item5Title": "Cross-Platform Expertise",
-    "item5Desc": "Proven performance across Meta, Google, TikTok, Xiaohongshu, SEO, and email — wherever your audience is.",
-    "item6Title": "True Partnership",
-    "item6Desc": "We work as an extension of your team, not just a vendor. Your growth goals become our goals."
+    "subtitle": "We integrate local expertise and performance data with full funnel execution to provide tangible business growth.",
+    "item1Title": "Official Partnerships",
+    "item1Desc": "As official advertising partners, we provide direct access to premium tools and deep insights, ensuring your campaigns consistently lead market trends.",
+    "item2Title": "Audience Expertise",
+    "item2Desc": "We leverage deep cultural understanding and proven strategies to help brands reach high value diverse communities with precision and efficiency.",
+    "item3Title": "Creative Synergy",
+    "item3Desc": "We bridge the gap between artistic vision and technical data, creating aesthetic brand experiences while delivering measurable business growth.",
+    "item4Title": "Local Knowledge",
+    "item4Desc": "Located in the heart of Melbourne, our team brings local market intelligence and international expertise to every digital transformation project.",
+    "item5Title": "Result Orientated",
+    "item5Desc": "Our methodology is built on transparency and precision, focusing on high performance metrics to transform digital presence into real business revenue."
   }
 }
