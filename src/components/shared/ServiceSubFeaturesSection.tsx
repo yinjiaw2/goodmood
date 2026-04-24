@@ -43,7 +43,9 @@ export default function ServiceSubFeaturesSection({
                 {t("details.card2Title")}
               </span>
               <span className="block">{t("subFeatures.title")}</span>
-              <span style={{ color: "#F5C400" }}>{t("subFeatures.titleHighlight")}</span>
+              <span style={{ color: "#F5C400" }}>
+                {t("subFeatures.titleHighlight")}
+              </span>
             </h2>
             <div className="mt-8 max-w-[640px] space-y-5">
               <p
