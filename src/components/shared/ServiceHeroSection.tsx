@@ -22,70 +22,69 @@ export default function ServiceHeroSection({
   const t = useTranslations(`${namespace}.hero`);
 
   return (
-    <section className="relative w-full overflow-hidden bg-secondary">
-      {/* Right-side background image */}
-      {imageSrc && (
-        <div className="absolute inset-y-0 right-0 w-[48%]">
-          <Image src={imageSrc} alt="" fill className="object-cover" priority />
-          {/* Gradient: fades the image into the dark background on the left */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent" />
-          {/* Subtle dark overlay to keep image from being too bright */}
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-      )}
+    <section className="w-full bg-[#F7F4EF] pt-32 pb-18 md:pt-38 md:pb-24">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.85fr)] lg:gap-16">
+          <div className="flex flex-col items-start gap-8">
+            <div className="inline-flex items-center gap-3">
+              <span className="inline-block h-px w-9 shrink-0 bg-[#B10657]" />
+              <span
+                className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A8F88]"
+                style={fontStyle}
+              >
+                {t("badge")}
+              </span>
+            </div>
 
-      {/* Text content */}
-      <div className="relative z-10 px-16 pt-36 pb-32 w-full">
-        <div className="max-w-2xl flex flex-col gap-8 ml-14">
-          {/* Badge */}
-          <div className="inline-flex">
-            <span
-              className="text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
-              style={{
-                color: "#F5C400",
-                borderColor: "rgba(245,196,0,0.4)",
-                backgroundColor: "rgba(245,196,0,0.08)",
-                ...fontStyle,
-              }}
+            <h1
+              className="max-w-[760px] text-[44px] font-extrabold leading-[0.96] text-[#B10657] md:text-[64px] lg:text-[76px]"
+              style={{ ...fontStyle, letterSpacing: "-0.03em" }}
             >
-              {t("badge")}
-            </span>
-          </div>
+              <span className="block text-[#1A1A1A]">{t("titlePrefix")}</span>
+              <span className="block">{t("titleHighlight")}</span>
+            </h1>
 
-          {/* Headline */}
-          <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white"
-            style={{ ...fontStyle, letterSpacing: "-0.02em" }}
-          >
-            {t("titlePrefix")}{" "}
-            <span style={{ color: "#F5C400" }}>{t("titleHighlight")}</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className="text-lg text-gray-400 leading-relaxed"
-            style={fontStyle}
-          >
-            {t("subtitle")}
-          </p>
-
-          {/* CTA buttons */}
-          <div className="flex gap-4 flex-wrap">
-            <Link
-              href="/contact"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#1a1a1a] transition hover:opacity-90 active:scale-95"
-              style={{ backgroundColor: "#F5C400", ...fontStyle }}
-            >
-              {t("cta")}
-              <ArrowRight size={17} />
-            </Link>
-            <Link
-              href="/services"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white border border-white/20 transition hover:border-white/50 active:scale-95"
+            <p
+              className="max-w-[620px] text-[16px] leading-[1.9] text-[#5E5753] md:text-[17px]"
               style={fontStyle}
             >
-              {t("ctaSecondary")}
-            </Link>
+              {t("subtitle")}
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-sm bg-[#B10657] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#930449]"
+                style={fontStyle}
+              >
+                {t("cta")}
+                <ArrowRight size={15} />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-sm border border-[#D5CBC6] bg-white px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#4C4642] transition hover:border-[#B10657]/40 hover:text-[#B10657]"
+                style={fontStyle}
+              >
+                {t("ctaSecondary")}
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -left-6 -top-6 hidden h-20 w-20 border border-[#E2D8D3] bg-white lg:block" />
+            <div className="absolute -bottom-6 -right-6 hidden h-16 w-16 border border-[#E2D8D3] bg-[#B10657] lg:block" />
+            <div className="relative aspect-[4/5] overflow-hidden border border-[#D8CDC6] bg-[#EAE3DD] shadow-[0_28px_60px_rgba(58,38,42,0.10)]">
+              {imageSrc ? (
+                <Image
+                  src={imageSrc}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              ) : null}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/12 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
       </div>

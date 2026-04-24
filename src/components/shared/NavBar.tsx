@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { GoodMoodLogoAnimation } from "./GoodMoodAnimation";
 
@@ -23,6 +23,14 @@ export default function NavBar() {
     { label: t("nav.home"), href: "/#hero" },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.contact"), href: "/contact" },
+  ];
+  const serviceLinks = [
+    { label: t("nav.serviceSocial"), href: "/services/social" },
+    { label: t("nav.serviceAds"), href: "/services/ads" },
+    { label: t("nav.serviceCreative"), href: "/services/creative" },
+    { label: t("nav.serviceEcommerce"), href: "/services/ecommerce" },
+    { label: t("nav.serviceEmail"), href: "/services/email" },
+    { label: t("nav.serviceWeb"), href: "/services/web" },
   ];
 
   useEffect(() => {
@@ -64,13 +72,38 @@ export default function NavBar() {
             >
               {t("nav.home")}
             </Link>
-            <Link
-              href="/services"
-              className="px-4 py-2 text-base font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
-              style={fontStyle}
-            >
-              {t("nav.services")}
-            </Link>
+            <div className="group relative">
+              <Link
+                href="/services"
+                className="flex items-center gap-1 px-4 py-2 text-base font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
+                style={fontStyle}
+              >
+                {t("nav.services")}
+                <ChevronDown
+                  size={16}
+                  className="transition-transform duration-200 group-hover:rotate-180"
+                />
+              </Link>
+              <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 min-w-[220px] translate-y-2 rounded-xl border border-white/10 bg-[#0D1B2A]/98 p-2 opacity-0 shadow-[0_18px_42px_rgba(0,0,0,0.35)] transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                <Link
+                  href="/services"
+                  className="mb-1 block rounded-lg px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/8 hover:text-white"
+                  style={fontStyle}
+                >
+                  {t("nav.services")}
+                </Link>
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/8 hover:text-white"
+                    style={fontStyle}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             {navLinks.slice(1).map((link) => (
               <Link
@@ -140,6 +173,19 @@ export default function NavBar() {
         >
           {t("nav.services")}
         </Link>
+        <div className="pb-2 border-b border-white/10">
+          {serviceLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="block py-3 pl-4 text-base font-medium text-gray-400 hover:text-white transition-colors duration-150"
+              style={fontStyle}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
 
         <Link
           href="/about"

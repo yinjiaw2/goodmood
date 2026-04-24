@@ -27,7 +27,10 @@ export default function ServiceCreativePage() {
         imageSrc="/ecommence.png"
       />
       <ServiceOverviewSection namespace="serviceCreative" />
-      <ServiceSubFeaturesSection namespace="serviceCreative" />
+      <ServiceSubFeaturesSection
+        namespace="serviceCreative"
+        imageSrc="/ecommence.png"
+      />
       <CaseStudySection
         namespace="serviceCreative"
         chart1={<CounterCards items={case1Items} />}

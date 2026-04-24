@@ -24,7 +24,10 @@ export default function ServiceAdsPage() {
     <>
       <ServiceHeroSection namespace="serviceAds" imageSrc="/google-ads.png" />
       <ServiceOverviewSection namespace="serviceAds" />
-      <ServiceSubFeaturesSection namespace="serviceAds" />
+      <ServiceSubFeaturesSection
+        namespace="serviceAds"
+        imageSrc="/google-ads.png"
+      />
       <CaseStudySection
         namespace="serviceAds"
         chart1={<FunnelChart />}

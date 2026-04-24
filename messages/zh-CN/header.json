@@ -2,6 +2,12 @@
   "nav": {
     "home": "首页",
     "services": "我们的服务",
+    "serviceSocial": "社交媒体",
+    "serviceAds": "Google 广告",
+    "serviceCreative": "创意内容",
+    "serviceEcommerce": "Meta 广告",
+    "serviceEmail": "邮件营销",
+    "serviceWeb": "SEO",
     "serviceProcess": "服务流程",
     "successCases": "成功案例",
     "about": "关于我们",

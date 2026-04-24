@@ -27,7 +27,10 @@ export default function ServiceEmailPage() {
         imageSrc="/email-marketing.jpeg"
       />
       <ServiceOverviewSection namespace="serviceEmail" />
-      <ServiceSubFeaturesSection namespace="serviceEmail" />
+      <ServiceSubFeaturesSection
+        namespace="serviceEmail"
+        imageSrc="/email-marketing.jpeg"
+      />
       <CaseStudySection
         namespace="serviceEmail"
         chart1={<ProgressChart items={case1Items} />}

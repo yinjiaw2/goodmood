@@ -30,7 +30,10 @@ export default function ServiceWebPage() {
     <>
       <ServiceHeroSection namespace="serviceWeb" imageSrc="/SEO.jpeg" />
       <ServiceOverviewSection namespace="serviceWeb" />
-      <ServiceSubFeaturesSection namespace="serviceWeb" />
+      <ServiceSubFeaturesSection
+        namespace="serviceWeb"
+        imageSrc="/SEO.jpeg"
+      />
       <CaseStudySection
         namespace="serviceWeb"
         chart1={<BeforeAfterCard rows={case1Rows} />}

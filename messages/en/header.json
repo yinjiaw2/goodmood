@@ -2,6 +2,12 @@
   "nav": {
     "home": "Home",
     "services": "Our Services",
+    "serviceSocial": "Social Media",
+    "serviceAds": "Google Ads",
+    "serviceCreative": "Creative",
+    "serviceEcommerce": "Meta Ads",
+    "serviceEmail": "Email Marketing",
+    "serviceWeb": "SEO",
     "serviceProcess": "Service Process",
     "successCases": "Success Cases",
     "about": "About Us",

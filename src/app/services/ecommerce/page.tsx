@@ -26,7 +26,10 @@ export default function ServiceEcommercePage() {
         imageSrc="/meta-ads.jpg"
       />
       <ServiceOverviewSection namespace="serviceEcommerce" />
-      <ServiceSubFeaturesSection namespace="serviceEcommerce" />
+      <ServiceSubFeaturesSection
+        namespace="serviceEcommerce"
+        imageSrc="/meta-ads.jpg"
+      />
       <CaseStudySection
         namespace="serviceEcommerce"
         chart1={<BeforeAfterCard rows={case1Rows} />}
