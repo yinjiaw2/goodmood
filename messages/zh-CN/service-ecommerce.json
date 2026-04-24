@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Meta 广告",
+    "badge": "电子商务",
     "titlePrefix": "把注意力放大成",
-    "titleHighlight": "Meta 广告成果。",
-    "subtitle": "通过 Facebook 和 Instagram 精准触达目标受众，构建品牌曝光、再营销和获客表单等完整投放体系。",
+    "titleHighlight": "电子商务成果。",
+    "subtitle": "我们致力于构建并优化高转化率的电商环境，通过打造高影响力的落地页与战略性 SEO 布局，将潜在访客转化为真实买家。通过深度集成数据分析与用户行为洞察，我们持续精炼您的销售漏斗，确保业务表现无缝衔接，实现可扩展的长期增长。",
     "cta": "免费咨询",
     "ctaSecondary": "查看所有服务"
   },
@@ -21,18 +21,22 @@
     "badge": "服务内容",
     "title": "每一项交付物，",
     "titleHighlight": "清楚说明。",
-    "count": "6",
-    "item1Title": "信息流与故事",
-    "item1Desc": "围绕 Facebook 和 Instagram 的 feeds、stories、reels 等版位规划素材与投放策略。",
-    "item2Title": "再营销",
-    "item2Desc": "针对访问过网站、加购未买、看过视频或互动过的用户设计分层召回路径。",
-    "item3Title": "线索收集",
-    "item3Desc": "优化 Lead Form 和转化流程，在降低流失的同时尽可能保障线索质量。",
-    "item4Title": "受众测试",
-    "item4Desc": "系统测试冷启动人群、相似受众、兴趣包和暖受众，找到可持续放量的人群组合。",
-    "item5Title": "创意迭代",
-    "item5Desc": "快速测试不同钩子、形式、优惠和文案角度，避免广告表现过早见顶。",
-    "item6Title": "效果报告",
+    "count": "3",
+    "item1Title": "战略性网页架构与增长",
+    "item1Desc": "最大化挖掘网站潜力。通过优化落地页并精简转化漏斗，我们对您现有的基础设施进行深度分析与改良，以提升业务表现和用户参与度，为您构建一个专业、可扩展且结果导向的线上阵地。",
+    "item2Title": "搜索引擎优化 (SEO)",
+    "item2Desc": "将技术性 SEO 与价值导向的内容深度融合，提升您的品牌搜索排名。我们从精准关键词定位到全方位的网站审计，全方位优化您的自然搜索表现，提供将搜索用户转化为成单客户所需的曝光力。",
+    "item3Title": "性能分析与行为趋势洞察",
+    "item3Desc": "通过解读用户行为模式和漏斗表现，大幅提升营销效能。我们专注于对核心利润影响最大的关键指标，不断提炼您的数字化表现，确保每一次交互都能转化为更高的留存率和最大化的投资回报 (ROI)。"
+  },
+  "caseStudy": {
+    "badge": "案例结果展示",
+    "title": "真实客户，真实成果",
+    "legendBefore": "合作前",
+    "legendAfter": "合作后",
+    "case1Number": "01",
+    "case1Client": "健康品牌 · 墨尔本",
+    "case1Service": "Meta 广告",
     "item6Desc": "定期输出花费、CPL、CPA、ROAS 和创意学习结果，并给出下一步优化方向。"
   },
   "caseStudy": {

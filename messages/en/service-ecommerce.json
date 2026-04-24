@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Meta Ads",
+    "badge": "Ecommerce",
     "titlePrefix": "Scale Attention Into",
-    "titleHighlight": "Meta Ads Results.",
-    "subtitle": "Reach the right audiences across Facebook and Instagram with campaigns built for awareness, retargeting, and lead generation.",
+    "titleHighlight": "Ecommerce Results.",
+    "subtitle": "We build and optimize e-commerce environments that convert browsers into buyers through high-impact landing pages and strategic SEO (Search Engine Optimization). By integrating deep data analytics and user behavior insights, we refine your entire sales funnel to ensure seamless performance and scalable long-term growth.",
     "cta": "Get Free Consultation",
     "ctaSecondary": "View All Services"
   },
@@ -21,19 +21,13 @@
     "badge": "What's Included",
     "title": "Every Deliverable,",
     "titleHighlight": "Explained.",
-    "count": "6",
-    "item1Title": "Feeds & Stories",
-    "item1Desc": "Creative and placements tailored for Facebook and Instagram feeds, stories, reels, and other native Meta environments.",
-    "item2Title": "Retargeting",
-    "item2Desc": "Audience sequences that bring back warm visitors, cart abandoners, viewers, and engaged users with sharper messaging.",
-    "item3Title": "Lead Generation",
-    "item3Desc": "Lead forms and conversion flows designed to lower friction while maintaining lead quality and downstream sales potential.",
-    "item4Title": "Audience Testing",
-    "item4Desc": "Systematic testing across cold audiences, lookalikes, interest clusters, and warm segments to find scalable pockets of performance.",
-    "item5Title": "Creative Iteration",
-    "item5Desc": "Fast testing of hooks, formats, offers, and messaging angles so campaign performance improves rather than plateaus.",
-    "item6Title": "Performance Reporting",
-    "item6Desc": "Regular reporting on spend, CPL, CPA, ROAS, and creative learnings with clear next-step recommendations."
+    "count": "3",
+    "item1Title": "Strategic Web Structure & Growth",
+    "item1Desc": "Maximize your site’s potential by optimising landing pages and streamlining your conversion funnel. We analyse and refine your existing infrastructure to enhance performance and user engagement, creating a professional online presence that is built to scale and engineered for results.",
+    "item2Title": "Search Engine Optimization(SEO)",
+    "item2Desc": "Elevate your brand’s search ranking by blending technical SEO with value-driven content. We optimise every aspect of your site’s organic presence, from precise keyword targeting to comprehensive site audits, delivering the visibility needed to turn searchers into customers.",
+    "item3Title": "Performance Analytics & Behavioural Trends",
+    "item3Desc": "Elevate your marketing effectiveness by decoding user patterns and funnel performance. We focus on the metrics that matter most to your bottom line, refining your digital presence to ensure every interaction contributes to higher retention and maximum return on investment(ROI)."
   },
   "caseStudy": {
     "badge": "Case Studies",
