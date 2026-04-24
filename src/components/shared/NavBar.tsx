@@ -33,6 +33,7 @@ export default function NavBar() {
     { label: t("nav.serviceEcommerce"), href: "/services/ecommerce" },
     { label: t("nav.serviceEmail"), href: "/services/email" },
     { label: t("nav.serviceVideoProduction"), href: "/services/video-production" },
+    { label: t("nav.serviceWebsiteDevelopment"), href: "/services/website-development" },
   ];
 
   useEffect(() => {
