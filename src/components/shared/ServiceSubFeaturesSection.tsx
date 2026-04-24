@@ -54,12 +54,7 @@ export default function ServiceSubFeaturesSection({
               >
                 {t("details.card2Desc")}
               </p>
-              <p
-                className="text-[15px] leading-[1.9] text-[#817873]"
-                style={fontStyle}
-              >
-                {t("hero.subtitle")}
-              </p>
+
               <Link
                 href="/contact"
                 className="inline-flex rounded-sm bg-[#F5C400] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
@@ -104,7 +99,7 @@ export default function ServiceSubFeaturesSection({
               <span className="block h-px w-full bg-[#E8DED8] transition-colors duration-300 group-hover:bg-[#F5C400]/40" />
 
               <p
-                className="text-[15px] leading-[1.8] text-[#6B625D]"
+                className="whitespace-pre-line text-[15px] leading-[1.8] text-[#6B625D]"
                 style={fontStyle}
               >
                 {desc}
