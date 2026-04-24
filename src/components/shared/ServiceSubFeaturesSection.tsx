@@ -32,7 +32,7 @@ export default function ServiceSubFeaturesSection({
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] lg:gap-16">
           <div>
             <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A8F88]">
-              <span className="inline-block h-px w-7.5 shrink-0 bg-[#B10657]" />
+              <span className="inline-block h-px w-7.5 shrink-0 bg-[#F5C400]" />
               {t("subFeatures.badge")}
             </div>
             <h2
@@ -43,7 +43,7 @@ export default function ServiceSubFeaturesSection({
                 {t("details.card2Title")}
               </span>
               <span className="block">{t("subFeatures.title")}</span>
-              <span style={{ color: "#B10657" }}>{t("subFeatures.titleHighlight")}</span>
+              <span style={{ color: "#F5C400" }}>{t("subFeatures.titleHighlight")}</span>
             </h2>
             <div className="mt-8 max-w-[640px] space-y-5">
               <p
@@ -60,7 +60,7 @@ export default function ServiceSubFeaturesSection({
               </p>
               <Link
                 href="/contact"
-                className="inline-flex rounded-sm bg-[#B10657] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#930449]"
+                className="inline-flex rounded-sm bg-[#F5C400] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
                 style={fontStyle}
               >
                 {t("hero.cta")}
@@ -93,13 +93,13 @@ export default function ServiceSubFeaturesSection({
                 </h3>
                 <span
                   className="shrink-0 text-[28px] font-extrabold leading-none tabular-nums"
-                  style={{ color: "rgba(177,6,87,0.18)", ...fontStyle }}
+                  style={{ color: "rgba(245,196,0,0.34)", ...fontStyle }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <span className="block h-px w-full bg-[#E8DED8] transition-colors duration-300 group-hover:bg-[#B10657]/18" />
+              <span className="block h-px w-full bg-[#E8DED8] transition-colors duration-300 group-hover:bg-[#F5C400]/40" />
 
               <p
                 className="text-[15px] leading-[1.8] text-[#6B625D]"
@@ -108,7 +108,7 @@ export default function ServiceSubFeaturesSection({
                 {desc}
               </p>
 
-              <span className="absolute left-0 top-0 h-full w-1 scale-y-0 bg-[#B10657] transition-transform duration-300 origin-top group-hover:scale-y-100" />
+              <span className="absolute left-0 top-0 h-full w-1 scale-y-0 bg-[#F5C400] transition-transform duration-300 origin-top group-hover:scale-y-100" />
             </article>
           ))}
         </div>

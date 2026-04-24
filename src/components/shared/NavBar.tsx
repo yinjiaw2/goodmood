@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -17,7 +17,9 @@ export default function NavBar() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const nextLocale = locale === "zh-CN" ? "en" : "zh-CN";
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navLinks = [
     { label: t("nav.home"), href: "/#hero" },
@@ -52,6 +54,20 @@ export default function NavBar() {
     router.refresh();
   };
 
+  const openServicesMenu = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setServicesOpen(true);
+  };
+
+  const closeServicesMenu = () => {
+    closeTimerRef.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 220);
+  };
+
   return (
     <>
       <header
@@ -72,36 +88,58 @@ export default function NavBar() {
             >
               {t("nav.home")}
             </Link>
-            <div className="group relative">
-              <Link
-                href="/services"
+            <div
+              className="relative"
+              onMouseEnter={openServicesMenu}
+              onMouseLeave={closeServicesMenu}
+            >
+              <button
+                type="button"
+                onClick={() => {
+                  if (closeTimerRef.current) {
+                    clearTimeout(closeTimerRef.current);
+                    closeTimerRef.current = null;
+                  }
+                  setServicesOpen((prev) => !prev);
+                }}
+                aria-expanded={servicesOpen}
+                aria-haspopup="menu"
                 className="flex items-center gap-1 px-4 py-2 text-base font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
                 style={fontStyle}
               >
                 {t("nav.services")}
                 <ChevronDown
                   size={16}
-                  className="transition-transform duration-200 group-hover:rotate-180"
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
                 />
-              </Link>
-              <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 min-w-[220px] translate-y-2 rounded-xl border border-white/10 bg-[#0D1B2A]/98 p-2 opacity-0 shadow-[0_18px_42px_rgba(0,0,0,0.35)] transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                <Link
-                  href="/services"
-                  className="mb-1 block rounded-lg px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/8 hover:text-white"
-                  style={fontStyle}
-                >
-                  {t("nav.services")}
-                </Link>
-                {serviceLinks.map((link) => (
+              </button>
+              <div
+                className={`absolute left-0 top-full z-50 min-w-[220px] pt-2 transition duration-300 ${
+                  servicesOpen
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none translate-y-2 opacity-0"
+                }`}
+              >
+                <div className="rounded-xl border border-white/10 bg-[#0D1B2A]/98 p-2 shadow-[0_18px_42px_rgba(0,0,0,0.35)]">
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/8 hover:text-white"
+                    href="/services"
+                    className="mb-1 block rounded-lg px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/8 hover:text-white"
                     style={fontStyle}
                   >
-                    {link.label}
+                    {t("nav.services")}
                   </Link>
-                ))}
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/8 hover:text-white"
+                      style={fontStyle}
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
