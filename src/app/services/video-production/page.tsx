@@ -7,7 +7,7 @@ import BeforeAfterCard from "@/components/charts/BeforeAfterCard";
 import ProgressChart from "@/components/charts/ProgressChart";
 
 export const metadata: Metadata = {
-  title: "SEO",
+  title: "Video Production",
   description:
     "Technical audits, on-page optimisation, and link building designed to grow qualified organic traffic.",
 };
@@ -28,14 +28,14 @@ const case2Items = [
 export default function ServiceWebPage() {
   return (
     <>
-      <ServiceHeroSection namespace="serviceWeb" imageSrc="/SEO.jpeg" />
-      <ServiceOverviewSection namespace="serviceWeb" />
+      <ServiceHeroSection namespace="serviceVideoProduction" imageSrc="/SEO.jpeg" />
+      <ServiceOverviewSection namespace="serviceVideoProduction" />
       <ServiceSubFeaturesSection
-        namespace="serviceWeb"
+        namespace="serviceVideoProduction"
         imageSrc="/SEO.jpeg"
       />
       <CaseStudySection
-        namespace="serviceWeb"
+        namespace="serviceVideoProduction"
         chart1={<BeforeAfterCard rows={case1Rows} />}
         chart2={<ProgressChart items={case2Items} />}
       />

@@ -72,7 +72,7 @@ export default function ServiceSection() {
       ],
     },
     {
-      key: "web",
+      key: "video-production",
       icon: Search,
       title: t("serviceGrid.card6Title"),
       desc: t("serviceGrid.card6Desc"),
