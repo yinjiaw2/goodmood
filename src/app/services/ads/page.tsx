@@ -7,26 +7,26 @@ import FunnelChart from "@/components/charts/FunnelChart";
 import CounterCards from "@/components/charts/CounterCards";
 
 export const metadata: Metadata = {
-  title: "Google Ads",
+  title: "Meta Ads + RedNote Ads",
   description:
-    "Search, Shopping, and Performance Max campaigns built to capture high-intent demand and turn clicks into revenue.",
+    "Paid social campaigns across Meta and RedNote designed to turn attention into leads, sales, and scalable growth.",
 };
 
 const case2Items = [
   { value: 210, suffix: "", label: "Monthly Leads" },
-  { value: 54, prefix: "−", suffix: "%", label: "Cost Per Lead" },
-  { value: 5.8, suffix: "×", label: "Return on Ad Spend", decimals: 1 },
-  { value: 4, suffix: "", label: "Months to Results" },
+  { value: 54, prefix: "−", suffix: "%", label: "CPA Reduction" },
+  { value: 5.8, suffix: "×", label: "Paid Social ROAS", decimals: 1 },
+  { value: 6, suffix: "", label: "Months to Results" },
 ];
 
 export default function ServiceAdsPage() {
   return (
     <>
-      <ServiceHeroSection namespace="serviceAds" imageSrc="/google-ads.png" />
+      <ServiceHeroSection namespace="serviceAds" imageSrc="/meta-ads.jpg" />
       <ServiceOverviewSection namespace="serviceAds" />
       <ServiceSubFeaturesSection
         namespace="serviceAds"
-        imageSrc="/google-ads.png"
+        imageSrc="/meta-ads.jpg"
       />
       <CaseStudySection
         namespace="serviceAds"
