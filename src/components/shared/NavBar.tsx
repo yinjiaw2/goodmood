@@ -93,17 +93,8 @@ export default function NavBar() {
               onMouseEnter={openServicesMenu}
               onMouseLeave={closeServicesMenu}
             >
-              <button
-                type="button"
-                onClick={() => {
-                  if (closeTimerRef.current) {
-                    clearTimeout(closeTimerRef.current);
-                    closeTimerRef.current = null;
-                  }
-                  setServicesOpen((prev) => !prev);
-                }}
-                aria-expanded={servicesOpen}
-                aria-haspopup="menu"
+              <Link
+                href="/services"
                 className="flex items-center gap-1 px-4 py-2 text-base font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
                 style={fontStyle}
               >
@@ -112,7 +103,7 @@ export default function NavBar() {
                   size={16}
                   className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
                 />
-              </button>
+              </Link>
               <div
                 className={`absolute left-0 top-full z-50 min-w-[220px] pt-2 transition duration-300 ${
                   servicesOpen

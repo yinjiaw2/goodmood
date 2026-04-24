@@ -10,14 +10,14 @@
   "details": {
     "badge": "服务概述",
     "title": "我们做什么",
-    "card1Title": "账号策划",
-    "card1Desc": "我们基于品牌定位与用户洞察制定有针对性的沟通策略，从语气、叙事方式到价值表达与行动引导都系统规划，让每一条内容都更容易吸引注意、推动意向并带来可衡量的社交增长。",
-    "card2Title": "内容制作",
-    "card2Desc": "围绕您的品牌愿景持续输出统一且有辨识度的内容。我们的能力覆盖创意文案、平面设计与视频制作，以顺畅执行放大品牌声音，让每个渠道都保持一致且专业的表达。",
-    "card3Title": "社媒运营",
-    "card3Desc": "通过长期 Social Retainer 服务，为品牌建立稳定而专业的社交媒体体系。从日常排期到互动策略，我们持续维护各个平台的统一形象，以稳定频率、创意内容和专业运营帮助受众不断增长并保持活跃。",
-    "card4Title": "数据优化",
-    "card4Desc": "通过精细的数据分析与持续优化提升整体数字表现。我们把复杂数据转化为清晰策略，帮助您提高转化率与投放效率，让整个营销生态不断进化，并尽可能带来更高 ROI。"
+    "card1Title": "账号策划 Social Strategy",
+    "card1Desc": "We develop tailored messaging strategies based on positioning and user insights, shaping everything from tone and storytelling to value and call-to-action. Each piece of content is built to attract attention, guide intent, and contribute to measurable social growth.",
+    "card2Title": "内容制作 Content Creation",
+    "card2Desc": "Engage your audience with consistent, brand-driven content tailored to your vision. Our expertise spans creative copywriting, graphic design, and video production. Seamless execution designed to amplify your brand voice on every channel.",
+    "card3Title": "社媒运营 Social Retainer",
+    "card3Desc": "Secure your brand’s future with a dedicated Social Retainer that handles everything from daily scheduling to strategic interaction. We ensure a cohesive, professional presence across all platforms, delivering the consistency and creativity needed to keep your audience growing and engaged.",
+    "card4Title": "数据优化 Data Analytics & Optimising",
+    "card4Desc": "Master your digital performance with precision Data Analytics. We turn complex data into strategies that maximise conversion rates and ad efficiency, ensuring your marketing ecosystem is constantly evolving to deliver the highest possible ROI."
   },
   "subFeatures": {
     "badge": "服务内容",

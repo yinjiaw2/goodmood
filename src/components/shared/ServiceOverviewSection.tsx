@@ -21,6 +21,12 @@ export default function ServiceOverviewSection({ namespace }: Props) {
     desc: t(`details.card${n}Desc`),
   }));
   const hasFourCards = cards.length === 4;
+  const fourCardLabels = [
+    "Messaging & Positioning",
+    "Creative & Production",
+    "Retainer & Growth",
+    "Analytics & ROI",
+  ];
 
   return (
     <section className="w-full bg-[#F7F4EF] py-10 md:py-14">
@@ -36,63 +42,105 @@ export default function ServiceOverviewSection({ namespace }: Props) {
           {t("details.title")}
         </h2>
 
-        <div className="overflow-hidden border border-[#E0D5CF] bg-white shadow-[0_18px_36px_rgba(58,38,42,0.06)]">
-          <div
-            className={`grid grid-cols-1 ${
-              hasFourCards ? "md:grid-cols-2 xl:grid-cols-4" : "md:grid-cols-3"
-            }`}
-          >
-          {cards.map(({ key, title, desc }, i) => (
-            <article
-              key={key}
-              className={`flex min-h-[250px] flex-col gap-5 px-8 py-9 md:px-9 ${
-                hasFourCards
-                  ? i % 2 === 1
-                    ? "bg-[#1A1A1A] text-white"
-                    : "bg-[#F5C400] text-[#1A1A1A]"
-                  : i === 1
-                    ? "bg-[#1A1A1A] text-white"
-                    : "bg-[#F5C400] text-[#1A1A1A]"
-              }`}
-            >
-              <span
-                className={`text-[12px] font-semibold uppercase tracking-[0.16em] ${
-                  hasFourCards
-                    ? i % 2 === 1
-                      ? "text-[#F5C400]/80"
-                      : "text-[#1A1A1A]/70"
-                    : i === 1
-                      ? "text-[#F5C400]/80"
-                      : "text-[#1A1A1A]/70"
-                }`}
-                style={fontStyle}
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3
-                className="max-w-[220px] text-[22px] font-bold leading-[1.1]"
-                style={fontStyle}
-              >
-                {title}
-              </h3>
-              <p
-                className={`max-w-[260px] text-[14px] leading-[1.8] ${
-                  hasFourCards
-                    ? i % 2 === 1
-                      ? "text-white/88"
-                      : "text-[#1A1A1A]/82"
-                    : i === 1
-                      ? "text-white/88"
-                      : "text-[#1A1A1A]/82"
-                }`}
-                style={fontStyle}
-              >
-                {desc}
-              </p>
-            </article>
-          ))}
+        {hasFourCards ? (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {cards.map(({ key, title, desc }, i) => {
+              const darkCard = i === 1 || i === 2;
+              return (
+                <article
+                  key={key}
+                  className={`flex min-h-[320px] flex-col justify-between rounded-[8px] border px-8 py-8 shadow-[0_18px_36px_rgba(58,38,42,0.06)] md:px-10 md:py-9 ${
+                    darkCard
+                      ? "border-[#1A1A1A] bg-[#1A1A1A] text-white"
+                      : "border-[#E3D7B2] bg-[#F5C400] text-[#1A1A1A]"
+                  }`}
+                >
+                  <div className="flex flex-col gap-6">
+                    <div className="flex items-center justify-between gap-4">
+                      <span
+                        className={`text-[12px] font-semibold uppercase tracking-[0.16em] ${
+                          darkCard ? "text-[#F5C400]/85" : "text-[#1A1A1A]/65"
+                        }`}
+                        style={fontStyle}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        className={`h-px flex-1 ${
+                          darkCard ? "bg-white/12" : "bg-[#1A1A1A]/12"
+                        }`}
+                      />
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3
+                        className="max-w-[320px] text-[26px] font-bold leading-[1.02] tracking-[-0.02em]"
+                        style={fontStyle}
+                      >
+                        {title}
+                      </h3>
+                      <p
+                        className={`max-w-[520px] text-[14px] leading-[1.9] md:text-[15px] ${
+                          darkCard ? "text-white/88" : "text-[#1A1A1A]/82"
+                        }`}
+                        style={fontStyle}
+                      >
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] ${
+                      darkCard ? "text-white/72" : "text-[#1A1A1A]"
+                    }`}
+                    style={fontStyle}
+                  >
+                    {fourCardLabels[i] ?? "Service Detail"}
+                  </div>
+                </article>
+              );
+            })}
           </div>
-        </div>
+        ) : (
+          <div className="overflow-hidden border border-[#E0D5CF] bg-white shadow-[0_18px_36px_rgba(58,38,42,0.06)]">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              {cards.map(({ key, title, desc }, i) => (
+                <article
+                  key={key}
+                  className={`flex min-h-[250px] flex-col gap-5 px-8 py-9 md:px-9 ${
+                    i === 1
+                      ? "bg-[#1A1A1A] text-white"
+                      : "bg-[#F5C400] text-[#1A1A1A]"
+                  }`}
+                >
+                  <span
+                    className={`text-[12px] font-semibold uppercase tracking-[0.16em] ${
+                      i === 1 ? "text-[#F5C400]/80" : "text-[#1A1A1A]/70"
+                    }`}
+                    style={fontStyle}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3
+                    className="max-w-[220px] text-[22px] font-bold leading-[1.1]"
+                    style={fontStyle}
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    className={`max-w-[260px] text-[14px] leading-[1.8] ${
+                      i === 1 ? "text-white/88" : "text-[#1A1A1A]/82"
+                    }`}
+                    style={fontStyle}
+                  >
+                    {desc}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
