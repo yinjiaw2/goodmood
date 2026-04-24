@@ -8,14 +8,18 @@
     "ctaSecondary": "View All Services"
   },
   "details": {
-    "badge": "Service Overview",
-    "title": "What We Do & Why It Matters",
-    "card1Title": "The Problem",
-    "card1Desc": "Many sites publish content without a search strategy and miss basic technical issues that suppress visibility. Rankings stagnate and organic traffic never becomes a growth channel.",
-    "card2Title": "What We Do",
-    "card2Desc": "We improve SEO from the ground up through technical audits, on-page optimisation, keyword planning, and link-worthy content strategies tied to commercial intent.",
-    "card3Title": "What You Get",
-    "card3Desc": "Stronger rankings for revenue-driving searches, a healthier website foundation, and organic growth that compounds rather than resetting every month."
+    "badge": "Our Process",
+    "title": "A simple, streamlined process from idea to final delivery.",
+    "card1Title": "Step 1: Brief",
+    "card1Desc": "Tell us what you need.\n- Share your goals, style & references\n- We define scope, timeline & budget",
+    "card2Title": "Step 2: Concept",
+    "card2Desc": "We shape your vision.\n- Creative direction & video concept\n- Structure, shots & overall style",
+    "card3Title": "Step 3: Plan",
+    "card3Desc": "We get everything ready.\n- Schedule, script, location & crew\n- Equipment & production setup",
+    "card4Title": "Step 4: Shoot",
+    "card4Desc": "We bring it to life.\n- Professional filming\n- Direction & execution on set",
+    "card5Title": "Step 5: Edit & Delivery",
+    "card5Desc": "We craft and deliver your final video.\n- Editing, color & sound\n- Revisions included\n- Ready-to-use final files"
   },
   "subFeatures": {
     "badge": "What's Included",

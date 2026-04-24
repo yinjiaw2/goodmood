@@ -12,8 +12,8 @@ interface Props {
 
 export default function ServiceOverviewSection({ namespace }: Props) {
   const t = useTranslations(namespace);
-  const cardNumbers = [1, 2, 3, 4].filter(
-    (n) => t.has(`details.card${n}Title`) && t.has(`details.card${n}Desc`)
+  const cardNumbers = [1, 2, 3, 4, 5, 6].filter(
+    (n) => t.has(`details.card${n}Title`) && t.has(`details.card${n}Desc`),
   );
   const cards = cardNumbers.map((n) => ({
     key: `card${n}`,
@@ -21,6 +21,7 @@ export default function ServiceOverviewSection({ namespace }: Props) {
     desc: t(`details.card${n}Desc`),
   }));
   const hasFourCards = cards.length === 4;
+  const hasFiveCards = cards.length === 5;
   const fourCardLabels = [
     "Messaging & Positioning",
     "Creative & Production",
@@ -49,7 +50,7 @@ export default function ServiceOverviewSection({ namespace }: Props) {
               return (
                 <article
                   key={key}
-                  className={`flex min-h-[320px] flex-col justify-between rounded-[8px] border px-8 py-8 shadow-[0_18px_36px_rgba(58,38,42,0.06)] md:px-10 md:py-9 ${
+                  className={`flex min-h-[300px] flex-col justify-between rounded-[8px] border px-8 py-8 shadow-[0_18px_36px_rgba(58,38,42,0.06)] md:px-10 md:py-9 ${
                     darkCard
                       ? "border-[#1A1A1A] bg-[#1A1A1A] text-white"
                       : "border-[#E3D7B2] bg-[#F5C400] text-[#1A1A1A]"
@@ -103,42 +104,44 @@ export default function ServiceOverviewSection({ namespace }: Props) {
             })}
           </div>
         ) : (
-          <div className="overflow-hidden border border-[#E0D5CF] bg-white shadow-[0_18px_36px_rgba(58,38,42,0.06)]">
-            <div className="grid grid-cols-1 md:grid-cols-3">
-              {cards.map(({ key, title, desc }, i) => (
-                <article
-                  key={key}
-                  className={`flex min-h-[250px] flex-col gap-5 px-8 py-9 md:px-9 ${
-                    i === 1
-                      ? "bg-[#1A1A1A] text-white"
-                      : "bg-[#F5C400] text-[#1A1A1A]"
+          <div
+            className={`grid grid-cols-1 gap-5 md:grid-cols-2 ${
+              hasFiveCards ? "xl:grid-cols-5" : "xl:grid-cols-3"
+            }`}
+          >
+            {cards.map(({ key, title, desc }, i) => (
+              <article
+                key={key}
+                className={`flex min-h-[280px] flex-col gap-4 border px-6 py-7 shadow-[0_18px_36px_rgba(58,38,42,0.06)] xl:min-h-[340px] ${
+                  i % 2 === 1
+                    ? "border-[#1A1A1A] bg-[#1A1A1A] text-white"
+                    : "border-[#E3D7B2] bg-[#F5C400] text-[#1A1A1A]"
+                }`}
+              >
+                <span
+                  className={`text-[12px] font-semibold uppercase tracking-[0.16em] ${
+                    i % 2 === 1 ? "text-[#F5C400]/80" : "text-[#1A1A1A]/70"
                   }`}
+                  style={fontStyle}
                 >
-                  <span
-                    className={`text-[12px] font-semibold uppercase tracking-[0.16em] ${
-                      i === 1 ? "text-[#F5C400]/80" : "text-[#1A1A1A]/70"
-                    }`}
-                    style={fontStyle}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3
-                    className="max-w-[220px] text-[22px] font-bold leading-[1.1]"
-                    style={fontStyle}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    className={`max-w-[260px] text-[14px] leading-[1.8] ${
-                      i === 1 ? "text-white/88" : "text-[#1A1A1A]/82"
-                    }`}
-                    style={fontStyle}
-                  >
-                    {desc}
-                  </p>
-                </article>
-              ))}
-            </div>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3
+                  className="max-w-[220px] text-[21px] font-bold leading-[1.08] xl:text-[19px]"
+                  style={fontStyle}
+                >
+                  {title}
+                </h3>
+                <p
+                  className={`max-w-[260px] whitespace-pre-line text-[14px] leading-[1.75] xl:text-[13px] ${
+                    i % 2 === 1 ? "text-white/88" : "text-[#1A1A1A]/82"
+                  }`}
+                  style={fontStyle}
+                >
+                  {desc}
+                </p>
+              </article>
+            ))}
           </div>
         )}
       </div>
