@@ -13,10 +13,13 @@ const fontStyle = {
 function MetricPill({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-1 rounded-xl bg-[#F9F7F4] px-4 py-3">
-      <span className="text-[22px] font-extrabold tracking-tight text-[#1A1A1A]" style={fontStyle}>
+      <span
+        className="text-xl font-extrabold tracking-tight text-[#1A1A1A]"
+        style={fontStyle}
+      >
         {value}
       </span>
-      <span className="text-[11px] font-medium text-[#9A9A9A]" style={fontStyle}>
+      <span className="text-sm font-medium text-[#9A9A9A]" style={fontStyle}>
         {label}
       </span>
     </div>
@@ -24,7 +27,11 @@ function MetricPill({ label, value }: { label: string; value: string }) {
 }
 
 function TextCard({
-  number, client, service, problem, metrics,
+  number,
+  client,
+  service,
+  problem,
+  metrics,
 }: {
   number: string;
   client: string;
@@ -36,20 +43,30 @@ function TextCard({
     <div className="flex h-full flex-col justify-between gap-8 rounded-2xl bg-white p-8 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
       <div className="flex flex-col gap-5">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-widest text-[#9A9A9A]" style={fontStyle}>
+          <span
+            className="text-[11px] font-bold uppercase tracking-widest text-[#9A9A9A]"
+            style={fontStyle}
+          >
             {client}
           </span>
-          <span className="text-[38px] font-extrabold leading-none text-[#EBEBEB]" style={fontStyle}>
+          <span
+            className="text-lg font-extrabold leading-none text-[#EBEBEB]"
+            style={fontStyle}
+          >
             {number}
           </span>
         </div>
-          <span
-            className="inline-flex w-fit rounded-full px-3 py-1 text-sm font-semibold"
-            style={{ color: "#A07800", backgroundColor: "rgba(245,196,0,0.12)", ...fontStyle }}
-          >
+        <span
+          className="inline-flex w-fit rounded-full px-3 py-1 text-sm font-semibold"
+          style={{
+            color: "#A07800",
+            backgroundColor: "rgba(245,196,0,0.12)",
+            ...fontStyle,
+          }}
+        >
           {service}
         </span>
-        <p className="text-[14px] leading-[1.8] text-[#6B6B6B]" style={fontStyle}>
+        <p className="text-lg leading-[1.8] text-[#6B6B6B]" style={fontStyle}>
           {problem}
         </p>
       </div>
@@ -62,10 +79,19 @@ function TextCard({
   );
 }
 
-function ChartCard({ label, children }: { label: string; children: React.ReactNode }) {
+function ChartCard({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex h-full flex-col gap-4 rounded-2xl bg-white p-8 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
-      <p className="text-[11px] font-semibold uppercase tracking-widest text-[#9A9A9A]" style={fontStyle}>
+      <p
+        className="text-[11px] font-semibold uppercase tracking-widest text-[#9A9A9A]"
+        style={fontStyle}
+      >
         {label}
       </p>
       {children}
@@ -90,15 +116,33 @@ export default function CaseStudySection({ namespace, chart1, chart2 }: Props) {
   const resolvedChart2 = chart2 ?? <LineChart />;
 
   const case1Metrics = [
-    { label: t("caseStudy.case1Metric1Label"), value: t("caseStudy.case1Metric1Value") },
-    { label: t("caseStudy.case1Metric2Label"), value: t("caseStudy.case1Metric2Value") },
-    { label: t("caseStudy.case1Metric3Label"), value: t("caseStudy.case1Metric3Value") },
+    {
+      label: t("caseStudy.case1Metric1Label"),
+      value: t("caseStudy.case1Metric1Value"),
+    },
+    {
+      label: t("caseStudy.case1Metric2Label"),
+      value: t("caseStudy.case1Metric2Value"),
+    },
+    {
+      label: t("caseStudy.case1Metric3Label"),
+      value: t("caseStudy.case1Metric3Value"),
+    },
   ];
 
   const case2Metrics = [
-    { label: t("caseStudy.case2Metric1Label"), value: t("caseStudy.case2Metric1Value") },
-    { label: t("caseStudy.case2Metric2Label"), value: t("caseStudy.case2Metric2Value") },
-    { label: t("caseStudy.case2Metric3Label"), value: t("caseStudy.case2Metric3Value") },
+    {
+      label: t("caseStudy.case2Metric1Label"),
+      value: t("caseStudy.case2Metric1Value"),
+    },
+    {
+      label: t("caseStudy.case2Metric2Label"),
+      value: t("caseStudy.case2Metric2Value"),
+    },
+    {
+      label: t("caseStudy.case2Metric3Label"),
+      value: t("caseStudy.case2Metric3Value"),
+    },
   ];
 
   return (
