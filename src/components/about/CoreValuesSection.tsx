@@ -28,7 +28,7 @@ export default function CoreValuesSection() {
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="mb-14 grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.8fr)] lg:items-end">
           <div>
-            <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9A9A]">
+            <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A9A9A]">
               <span className="inline-block h-px w-7 shrink-0 bg-[#F5C400]" />
               {t("badge")}
             </div>

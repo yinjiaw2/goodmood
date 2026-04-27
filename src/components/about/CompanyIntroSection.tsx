@@ -24,7 +24,7 @@ export default function CompanyIntroSection() {
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 xl:gap-24">
           <div className="flex flex-col justify-start">
-            <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9A9A]">
+            <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A9A9A]">
               <span className="inline-block h-px w-7 shrink-0 bg-[#F5C400]" />
               {t("badge")}
             </div>

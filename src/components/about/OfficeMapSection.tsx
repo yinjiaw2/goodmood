@@ -23,7 +23,10 @@ const OFFICES = [
     left: "41.6%",
     top: "22.2%",
     // info card opens below-right (marker is in upper area)
-    cardStyle: { top: "calc(100% + 12px)", left: "-8px" } as React.CSSProperties,
+    cardStyle: {
+      top: "calc(100% + 12px)",
+      left: "-8px",
+    } as React.CSSProperties,
   },
   {
     key: "melbourne",
@@ -35,7 +38,10 @@ const OFFICES = [
     left: "58.4%",
     top: "78.2%",
     // info card opens above-left (marker is in lower area)
-    cardStyle: { bottom: "calc(100% + 12px)", right: "-8px" } as React.CSSProperties,
+    cardStyle: {
+      bottom: "calc(100% + 12px)",
+      right: "-8px",
+    } as React.CSSProperties,
   },
 ];
 
@@ -56,7 +62,7 @@ export default function OfficeMapSection() {
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div className="mb-12">
-          <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A9A9A]">
+          <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A9A9A]">
             <span className="inline-block h-px w-7 shrink-0 bg-[#F5C400]" />
             {t("badge")}
           </div>
@@ -72,7 +78,10 @@ export default function OfficeMapSection() {
             style={fontStyle}
           >
             {subtitleParagraphs.map((paragraph, index) => (
-              <span key={`${index}-${paragraph}`} className="mb-4 block last:mb-0">
+              <span
+                key={`${index}-${paragraph}`}
+                className="mb-4 block last:mb-0"
+              >
                 {paragraph}
               </span>
             ))}
@@ -101,22 +110,29 @@ export default function OfficeMapSection() {
               <div
                 key={office.key}
                 className="absolute"
-                style={{ left: office.left, top: office.top, transform: "translate(-50%, -50%)" }}
+                style={{
+                  left: office.left,
+                  top: office.top,
+                  transform: "translate(-50%, -50%)",
+                }}
               >
                 {/* Clickable dot — stops propagation so blank-click-to-close still works */}
                 <button
                   className="relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full focus:outline-none"
-                  onClick={(e) => { e.stopPropagation(); toggle(office.key); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggle(office.key);
+                  }}
                   aria-label={`${office.cityEn} office details`}
                 >
                   {/* Pulse ring */}
-                  <span
-                    className="absolute inset-0 rounded-full bg-[#F5C400] opacity-20 animate-ping"
-                  />
+                  <span className="absolute inset-0 rounded-full bg-[#F5C400] opacity-20 animate-ping" />
                   {/* Inner glow ring */}
                   <span
                     className={`absolute inset-1 rounded-full border-2 transition-all duration-300 ${
-                      isActive ? "border-[#F5C400] scale-110" : "border-[#F5C400]/40"
+                      isActive
+                        ? "border-[#F5C400] scale-110"
+                        : "border-[#F5C400]/40"
                     }`}
                   />
                   {/* Core dot */}
@@ -137,8 +153,12 @@ export default function OfficeMapSection() {
                   <p className="text-[13px] font-bold leading-tight text-white">
                     {office.cityEn}
                   </p>
-                  <p className="text-[11px] font-semibold text-[#F5C400]">{office.city}</p>
-                  <p className="mt-1.5 text-[10px] text-[#9A9A9A]">{office.country}</p>
+                  <p className="text-[11px] font-semibold text-[#F5C400]">
+                    {office.city}
+                  </p>
+                  <p className="mt-1.5 text-[10px] text-[#9A9A9A]">
+                    {office.country}
+                  </p>
                   <p className="mt-0.5 font-mono text-[9px] tracking-wider text-[#9A9A9A]">
                     {office.coords}
                   </p>
@@ -162,8 +182,12 @@ export default function OfficeMapSection() {
               <div key={office.key} className="flex items-center gap-3">
                 {i > 0 && <span className="h-4 w-px bg-white/20" />}
                 <span className="h-1.5 w-1.5 rounded-full bg-[#F5C400]" />
-                <span className="text-[11px] font-medium text-white">{office.cityEn}</span>
-                <span className="text-[10px] text-[#9A9A9A]">— {office.role}</span>
+                <span className="text-[11px] font-medium text-white">
+                  {office.cityEn}
+                </span>
+                <span className="text-[10px] text-[#9A9A9A]">
+                  — {office.role}
+                </span>
               </div>
             ))}
           </div>
