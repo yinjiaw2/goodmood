@@ -26,7 +26,8 @@ export default function AboutHero() {
             <span
               className="text-xs font-semibold tracking-widest uppercase text-white/90"
               style={{
-                fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+                fontFamily:
+                  "var(--font-app-sans), Arial, Helvetica, sans-serif",
               }}
             >
               {t("tag")}
@@ -41,12 +42,14 @@ export default function AboutHero() {
             }}
           >
             <span>{t("titleLine1")}</span>
-            <br />
+            {isEnglish ? <br /> : null}
+
             <span style={{ fontFamily: accentFont }}>
               {t("titleLine2AccentFirst")}
             </span>
+            {!isEnglish ? <br /> : null}
             {t("titleLine2Before")}
-            <br />
+            {isEnglish ? <br /> : null}
             <span style={{ color: "#F5C400", fontFamily: accentFont }}>
               {t("titleLine2Accent")}
             </span>
@@ -59,7 +62,9 @@ export default function AboutHero() {
         <div className="flex flex-col items-center gap-3 animate-bounce">
           <span
             className="text-xs font-semibold uppercase tracking-widest text-white"
-            style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}
+            style={{
+              fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+            }}
           >
             Scroll
           </span>
