@@ -54,7 +54,7 @@ export default function ServiceHeroSection({
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-sm bg-[#F5C400] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#F5C400] px-6 py-3 text-lg font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
                 style={fontStyle}
               >
                 {t("cta")}
@@ -62,7 +62,7 @@ export default function ServiceHeroSection({
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-sm border border-[#D5CBC6] bg-white px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#4C4642] transition hover:border-[#F5C400]/70 hover:text-[#1A1A1A]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#D5CBC6] bg-white px-6 py-3 text-lg font-semibold uppercase tracking-[0.18em] text-[#4C4642] transition hover:border-[#F5C400]/70 hover:text-[#1A1A1A]"
                 style={fontStyle}
               >
                 {t("ctaSecondary")}

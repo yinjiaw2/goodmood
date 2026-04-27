@@ -49,7 +49,7 @@ export default function ServiceSubFeaturesSection({
             </h2>
             <div className="mt-8 max-w-[640px] space-y-5">
               <p
-                className="text-[16px] leading-[1.9] text-[#56504C]"
+                className="text-lg leading-[1.9] text-[#56504C]"
                 style={fontStyle}
               >
                 {t("details.card2Desc")}
@@ -57,7 +57,7 @@ export default function ServiceSubFeaturesSection({
 
               <Link
                 href="/contact"
-                className="inline-flex rounded-sm bg-[#F5C400] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
+                className="inline-flex rounded-lg bg-[#F5C400] px-5 py-3 text-lg font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] transition hover:bg-[#E6B800]"
                 style={fontStyle}
               >
                 {t("hero.cta")}
