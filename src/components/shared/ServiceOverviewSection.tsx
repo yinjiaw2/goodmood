@@ -89,15 +89,6 @@ export default function ServiceOverviewSection({ namespace }: Props) {
                       </p>
                     </div>
                   </div>
-
-                  <div
-                    className={`mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] ${
-                      darkCard ? "text-white/72" : "text-[#1A1A1A]"
-                    }`}
-                    style={fontStyle}
-                  >
-                    {fourCardLabels[i] ?? "Service Detail"}
-                  </div>
                 </article>
               );
             })}
