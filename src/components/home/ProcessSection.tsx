@@ -140,7 +140,7 @@ export default function ProcessSection() {
                     >
                       {t("process.deliverablesLabel")}
                     </span>
-                    <span className="mt-1 block text-[14px] font-bold leading-snug text-[#6F6A61]">
+                    <span className="mt-1 block text-[14px] leading-snug text-[#6F6A61]">
                       {t("process.deliverablesHint")}
                     </span>
                   </span>
