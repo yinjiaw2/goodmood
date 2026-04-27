@@ -31,10 +31,10 @@
   },
   "companyIntro": {
     "badge": "Our Story",
-    "titleBefore": "A ",
-    "titleAccent": "local team",
-    "titleAfter": " with global reach",
-    "description": "Established in 2019 in Melbourne, we are a digital marketing and transformation agency specialising in brand evolution. We combine creative expression with a sophisticated understanding of data and business, delivering innovative solutions that help brands navigate the modern digital landscape with confidence and artistic excellence.",
+    "titleBefore": "Melbourne",
+    "titleAccent": " roots, global",
+    "titleAfter": "  standard",
+    "description": "Based in Melbourne, We are a digital agency driving brand evolution through digital marketing and business transformation. We fuse creative aesthetics with strategic insights to build measurable and sustainable growth paths for every brand.",
     "localTeam": {
       "title": "Local Team",
       "desc": "Our core team is based locally, giving us the cultural fluency and responsiveness that global agencies often lack.",
