@@ -142,9 +142,9 @@ export default function HeroSection() {
   }, [stat1Value, stat2Value, stat3Value, stat4Value]);
 
   return (
-    <section id="hero" className="relative w-full">
+    <section id="hero" className="relative w-full bg-secondary flex flex-col" style={{ minHeight: "calc(100vh - 4rem)" }}>
       {/* Main content */}
-      <div className="px-16 pt-36 pb-32 bg-secondary w-full">
+      <div className="px-16 pt-12 pb-8 w-full">
         <div className="max-w-2xl flex flex-col gap-8">
           {/* Badge */}
           <div className="inline-flex">
@@ -203,8 +203,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Stats card — overlaps into dark section from below */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 -mt-16 pb-0 justify-center items-center">
+      {/* Spacer to push stats card to bottom */}
+      <div className="flex-1" />
+
+      {/* Stats card — pinned to bottom */}
+      <div className="relative z-10 max-w-7xl mx-auto px-8 pb-8 w-full">
         <div
           id="numbers"
           ref={statsRef}
@@ -233,8 +236,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom padding so card sits flush */}
-      <div className="pb-10" />
     </section>
   );
 }
