@@ -17,7 +17,11 @@
     "card3Title": "Social Retainer",
     "card3Desc": "Secure your brand’s future with a dedicated Social Retainer that handles everything from daily scheduling to strategic interaction. We ensure a cohesive, professional presence across all platforms, delivering the consistency and creativity needed to keep your audience growing and engaged.",
     "card4Title": "Data Analytics & Optimising",
-    "card4Desc": "Master your digital performance with precision Data Analytics. We turn complex data into strategies that maximise conversion rates and ad efficiency, ensuring your marketing ecosystem is constantly evolving to deliver the highest possible ROI."
+    "card4Desc": "Master your digital performance with precision Data Analytics. We turn complex data into strategies that maximise conversion rates and ad efficiency, ensuring your marketing ecosystem is constantly evolving to deliver the highest possible ROI.",
+    "fourCardLabel1": "Messaging & Positioning",
+    "fourCardLabel2": "Creative & Production",
+    "fourCardLabel3": "Retainer & Growth",
+    "fourCardLabel4": "Analytics & ROI"
   },
   "subFeatures": {
     "badge": "What's Included",

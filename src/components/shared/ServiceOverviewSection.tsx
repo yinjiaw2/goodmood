@@ -22,12 +22,11 @@ export default function ServiceOverviewSection({ namespace }: Props) {
   }));
   const hasFourCards = cards.length === 4;
   const hasFiveCards = cards.length === 5;
-  const fourCardLabels = [
-    "Messaging & Positioning",
-    "Creative & Production",
-    "Retainer & Growth",
-    "Analytics & ROI",
-  ];
+  const fourCardLabels = [1, 2, 3, 4].map((n) =>
+    t.has(`details.fourCardLabel${n}`)
+      ? t(`details.fourCardLabel${n}`)
+      : "Service Detail",
+  );
 
   return (
     <section className="w-full bg-[#F7F4EF] py-10 md:py-14">
