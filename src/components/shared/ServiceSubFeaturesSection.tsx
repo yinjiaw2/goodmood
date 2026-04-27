@@ -39,7 +39,7 @@ export default function ServiceSubFeaturesSection({
               className="max-w-[760px] text-[38px] font-extrabold leading-[1.02] tracking-[-0.03em] text-[#1A1A1A] md:text-[54px]"
               style={fontStyle}
             >
-              <span className="block text-[13px] font-medium uppercase tracking-[0.18em] text-[#A39890]">
+              <span className="block mb-4 text-sm font-medium uppercase tracking-[0.18em] text-[#A39890]">
                 {t("details.card2Title")}
               </span>
               <span className="block">{t("subFeatures.title")}</span>
