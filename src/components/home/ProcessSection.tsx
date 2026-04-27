@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   BarChart3,
   ChevronDown,
@@ -16,6 +19,7 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 
 export default function ProcessSection() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const t = useTranslations("home");
   const locale = useLocale();
   const isChinese = locale === "zh-CN";
@@ -100,82 +104,104 @@ export default function ProcessSection() {
           }`}
         >
           <div className="absolute left-6 right-[calc(25%-24px)] top-6 hidden h-px xl:block bg-[repeating-linear-gradient(90deg,#F5C400_0,#F5C400_6px,transparent_6px,transparent_14px)]" />
-          {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col xl:pr-8">
-              <div className="relative z-10 mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5C400] text-[13px] font-bold text-[#1A1A1A] transition duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(245,196,0,0.4)]">
-                {step.number}
-              </div>
-              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#B0B0B0]">
-                {step.label}
-              </div>
-              <h3 className="mb-3 text-[24px] font-extrabold tracking-[-0.02em] text-[#1A1A1A]">
-                {step.name}
-              </h3>
-              <p
-                className={`text-[15px] leading-[1.7] text-[#7F7F7F] ${
-                  isChinese
-                    ? "md:min-h-[64px] xl:min-h-[86px]"
-                    : "md:min-h-[96px] xl:min-h-[132px]"
-                }`}
-              >
-                {step.desc}
-              </p>
+          {steps.map((step) => {
+            const isOpen = openDropdown === step.number;
 
-              <div
-                className={`group/dropdown relative border-t border-[#E8E8E8] ${
-                  isChinese ? "mt-3 pt-3" : "mt-5 pt-5"
-                }`}
-              >
-                <button
-                  type="button"
-                  className={`relative flex w-full items-center rounded-full border border-[#F5C400] bg-[#F5C400] px-5 pr-12 text-left text-[#1A1A1A] shadow-[0_10px_22px_rgba(26,26,26,0.08)] transition duration-300 hover:bg-[#F5C400] hover:shadow-[0_14px_28px_rgba(245,196,0,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1A1A1A] ${
-                    isChinese ? "min-h-[48px] py-2" : "min-h-[58px] py-3"
+            return (
+              <div key={step.number} className="relative flex flex-col xl:pr-8">
+                <div className="relative z-10 mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5C400] text-[13px] font-bold text-[#1A1A1A] transition duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(245,196,0,0.4)]">
+                  {step.number}
+                </div>
+                <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#B0B0B0]">
+                  {step.label}
+                </div>
+                <h3 className="mb-3 text-[24px] font-extrabold tracking-[-0.02em] text-[#1A1A1A]">
+                  {step.name}
+                </h3>
+                <p
+                  className={`text-[15px] leading-[1.7] text-[#7F7F7F] ${
+                    isChinese
+                      ? "md:min-h-[64px] xl:min-h-[86px]"
+                      : "md:min-h-[96px] xl:min-h-[132px]"
                   }`}
                 >
-                  <span>
-                    <span
-                      className={`block font-extrabold uppercase tracking-[0.24em] text-[#1A1A1A] ${
-                        isChinese ? "text-[13px]" : "text-[14px]"
-                      }`}
-                    >
-                      {t("process.deliverablesLabel")}
-                    </span>
-                    <span className="mt-1 block text-[14px] leading-snug text-[#6F6A61]">
-                      {t("process.deliverablesHint")}
-                    </span>
-                  </span>
-                  <ChevronDown
-                    aria-hidden="true"
-                    className="absolute right-4 shrink-0 text-[#1A1A1A] transition duration-300 group-hover/dropdown:rotate-180 group-focus-within/dropdown:rotate-180"
-                    size={18}
-                  />
-                </button>
+                  {step.desc}
+                </p>
+
                 <div
-                  className={`pointer-events-none absolute left-0 right-0 top-full z-20 grid translate-y-2 gap-2 rounded-lg border border-[#F5C400]/55 bg-white p-2 opacity-0 shadow-[0_18px_36px_rgba(26,26,26,0.12)] transition duration-300 group-hover/dropdown:pointer-events-auto group-hover/dropdown:translate-y-3 group-hover/dropdown:opacity-100 group-focus-within/dropdown:pointer-events-auto group-focus-within/dropdown:translate-y-3 group-focus-within/dropdown:opacity-100 ${
-                    isChinese ? "mt-1" : "mt-2"
+                  className={`relative border-t border-[#E8E8E8] ${
+                    isChinese ? "mt-3 pt-3" : "mt-5 pt-5"
                   }`}
                 >
-                  {step.deliverables.map((deliverable) => (
+                  <button
+                    type="button"
+                    onClick={() => setOpenDropdown(isOpen ? null : step.number)}
+                    className={`relative flex w-full items-center justify-between rounded-full border transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1A1A1A] ${
+                      isChinese
+                        ? "min-h-[48px] py-2 pl-5 pr-2.5"
+                        : "min-h-[58px] py-3 pl-6 pr-3"
+                    } ${
+                      isOpen
+                        ? "border-[#F5C400] bg-[#FFFBF0] shadow-[0_8px_24px_rgba(245,196,0,0.15)]"
+                        : "border-[#E8E8E8] bg-white hover:border-[#F5C400] hover:shadow-[0_8px_24px_rgba(245,196,0,0.1)]"
+                    }`}
+                  >
+                    <span className="flex flex-col text-left">
+                      <span
+                        className={`block font-extrabold uppercase tracking-[0.24em] text-[#1A1A1A] ${
+                          isChinese ? "text-[13px]" : "text-[14px]"
+                        }`}
+                      >
+                        {t("process.deliverablesLabel")}
+                      </span>
+                      <span className="mt-0.5 block text-[13px] leading-snug text-[#6F6A61]">
+                        {t("process.deliverablesHint")}
+                      </span>
+                    </span>
                     <div
-                      key={deliverable.label}
-                      className={`flex items-center gap-3 rounded-md border border-[#F5C400] bg-[#F5C400] text-[#1A1A1A] ${
-                        isChinese
-                          ? "min-h-[42px] px-2 py-1.5"
-                          : "min-h-[50px] px-3 py-2"
+                      className={`flex shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                        isChinese ? "h-8 w-8" : "h-10 w-10"
+                      } ${
+                        isOpen
+                          ? "rotate-180 bg-[#F5C400] text-[#1A1A1A]"
+                          : "bg-[#F7F7F7] text-[#8F8F8F]"
                       }`}
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/24 text-[#1A1A1A]">
-                        <deliverable.icon aria-hidden="true" size={16} />
-                      </span>
-                      <span className="text-[12.5px] font-extrabold leading-snug tracking-[-0.01em]">
-                        {deliverable.label}
-                      </span>
+                      <ChevronDown
+                        aria-hidden="true"
+                        size={isChinese ? 16 : 20}
+                      />
                     </div>
-                  ))}
+                  </button>
+                  <div
+                    className={`absolute left-0 right-0 top-full z-20 grid gap-2 rounded-2xl border border-[#F5C400]/30 bg-white p-2 shadow-[0_18px_36px_rgba(26,26,26,0.12)] transition-all duration-300 ${
+                      isOpen
+                        ? "pointer-events-auto translate-y-2 opacity-100"
+                        : "pointer-events-none translate-y-0 opacity-0"
+                    } ${isChinese ? "mt-1" : "mt-2"}`}
+                  >
+                    {step.deliverables.map((deliverable) => (
+                      <div
+                        key={deliverable.label}
+                        className={`flex items-center gap-3 rounded-xl border border-[#F5C400] bg-[#F5C400] text-[#1A1A1A] ${
+                          isChinese
+                            ? "min-h-[42px] px-2 py-1.5"
+                            : "min-h-[50px] px-4 py-2"
+                        }`}
+                      >
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/24 text-[#1A1A1A]">
+                          <deliverable.icon aria-hidden="true" size={16} />
+                        </span>
+                        <span className="text-[12.5px] font-extrabold leading-snug tracking-[-0.01em]">
+                          {deliverable.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
