@@ -95,7 +95,7 @@ export default function CoreValuesSection() {
 
                 <div className="mt-4">
                   <p
-                    className={`text-[15px] leading-[1.8] ${
+                    className={`text-lg leading-[1.8] ${
                       isDark ? "text-white/80" : "text-[#625B56]"
                     }`}
                     style={fontStyle}

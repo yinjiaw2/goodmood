@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Target,
-  Lightbulb,
-  Globe2,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { Target, Lightbulb, Globe2, TrendingUp, Users } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 const fontStyle = {
@@ -73,7 +67,7 @@ export default function CoreCapabilitiesSection({
               )}
             </h2>
             <p
-              className={`text-[15px] text-[#6B6B6B] lg:text-right ${
+              className={`text-lg text-[#6B6B6B] lg:text-right ${
                 variant === "whyUs"
                   ? "max-w-[420px] leading-[1.7]"
                   : "max-w-[400px] leading-[1.75]"
@@ -110,14 +104,14 @@ export default function CoreCapabilitiesSection({
               </div>
               <h3
                 className={`font-bold text-[#1A1A1A] ${
-                  variant === "whyUs" ? "text-[18px]" : "text-[17px]"
+                  variant === "whyUs" ? "text-xl" : "text-[17px]"
                 }`}
                 style={fontStyle}
               >
                 {title}
               </h3>
               <p
-                className={`text-[14px] text-[#6B6B6B] ${
+                className={`text-lg text-[#6B6B6B] ${
                   variant === "whyUs" ? "leading-[1.75]" : "leading-[1.8]"
                 }`}
                 style={fontStyle}
