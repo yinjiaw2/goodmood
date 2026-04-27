@@ -35,6 +35,28 @@
     "item5Title": "人才与资源网络",
     "item5Desc": "我们精心构建的专家、KOL 及合作伙伴网络，让客户在正确时机接触到正确的人。"
   },
+  "coreValues": {
+    "badge": "我们的价值",
+    "titleBefore": "支撑每一次交付的",
+    "titleAccent": "核心准则",
+    "titleAfter": "",
+    "description": "Good Mood 坚守的五大核心价值观。它们不仅代表我们的工作准则，更是我们推进每一个项目、制定每一次决策、交付每一项成果的根本基石。",
+    "item1Cn": "效能",
+    "item1En": "Performance",
+    "item1Desc": "我们专注于驱动可衡量的结果与高转化率，确保品牌实现规模化增长。",
+    "item2Cn": "卓越",
+    "item2En": "Excellence",
+    "item2Desc": "我们在创意设计与技术执行上均保持最高标准，交付卓越的品牌体验。",
+    "item3Cn": "洞察",
+    "item3En": "Insight",
+    "item3Desc": "我们将复杂的数据转化为清晰的战略方向，发掘数字领域中真正有价值的机遇。",
+    "item4Cn": "透明",
+    "item4En": "Transparency",
+    "item4Desc": "我们通过坦诚的沟通与清晰的报表建立持久信任，如实呈现推广表现的方方面面。",
+    "item5Cn": "本真",
+    "item5En": "Authenticity",
+    "item5Desc": "我们创作能够映射品牌真实灵魂的原创内容，与受众建立真诚且深层的连接。"
+  },
   "companyIntro": {
     "badge": "公司介绍",
     "titleBefore": "",

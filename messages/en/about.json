@@ -29,6 +29,28 @@
     "item5Title": "Talent & Network",
     "item5Desc": "Our curated network of specialists, influencers, and partners gives clients access to the right people at the right time."
   },
+  "coreValues": {
+    "badge": "Our Values",
+    "titleBefore": "The standards that shape",
+    "titleAccent": " every outcome",
+    "titleAfter": "",
+    "description": "Our five core values go beyond principles. They are the defining bedrock for every project, decision, and outcome we deliver.",
+    "item1Cn": "效能",
+    "item1En": "Performance",
+    "item1Desc": "We focus on driving measurable results and high conversion rates to ensure your brand achieves scalable growth.",
+    "item2Cn": "卓越",
+    "item2En": "Excellence",
+    "item2Desc": "We maintain the highest standards in both creative design and technical execution to deliver a premium brand experience.",
+    "item3Cn": "洞察",
+    "item3En": "Insight",
+    "item3Desc": "We translate complex data into clear strategic direction to identify meaningful opportunities in the digital landscape.",
+    "item4Cn": "透明",
+    "item4En": "Transparency",
+    "item4Desc": "We build lasting trust through honest communication and clear reporting on every aspect of your campaign performance.",
+    "item5Cn": "本真",
+    "item5En": "Authenticity",
+    "item5Desc": "We create original content that reflects the true soul of your brand to build genuine connections with your audience."
+  },
   "companyIntro": {
     "badge": "Our Story",
     "titleBefore": "Melbourne",
