@@ -24,7 +24,7 @@ export default function AboutHero() {
               style={{ backgroundColor: "#F5C400" }}
             />
             <span
-              className="text-xs font-semibold tracking-widest uppercase text-white/90"
+              className="text-sm font-semibold tracking-widest uppercase text-white/90"
               style={{
                 fontFamily:
                   "var(--font-app-sans), Arial, Helvetica, sans-serif",
