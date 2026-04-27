@@ -74,7 +74,7 @@ export default function OfficeMapSection() {
             <span style={{ color: "#F5C400" }}>{t("titleAccent")}</span>
           </h2>
           <p
-            className="mt-4 max-w-5xl text-[15px] leading-[1.8] text-[#9A9A9A]"
+            className="mt-4 max-w-5xl text-lg leading-[1.8] text-[#9A9A9A]"
             style={fontStyle}
           >
             {subtitleParagraphs.map((paragraph, index) => (
