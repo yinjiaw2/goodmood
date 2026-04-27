@@ -42,13 +42,13 @@ export default function CompanyIntroSection() {
 
           <div className="flex flex-col justify-center pt-2 lg:pt-8">
             <p
-              className="text-[16px] leading-[1.85] text-[#5F5854] md:text-[17px]"
+              className="text-lg leading-[1.85] text-[#5F5854] md:text-[17px]"
               style={fontStyle}
             >
               {descriptionParagraphs.map((paragraph, index) => (
                 <span
                   key={`${index}-${paragraph}`}
-                  className="mb-6 block last:mb-0"
+                  className="mb-6 block last:mb-0 text-lg"
                 >
                   {paragraph}
                 </span>

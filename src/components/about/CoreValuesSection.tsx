@@ -45,7 +45,7 @@ export default function CoreValuesSection() {
           </div>
 
           <p
-            className="max-w-[460px] text-[15px] leading-[1.85] text-[#5F5854] lg:justify-self-end"
+            className="max-w-[460px] text-lg leading-[1.85] text-[#5F5854] lg:justify-self-end"
             style={fontStyle}
           >
             {t("description")}
@@ -71,28 +71,29 @@ export default function CoreValuesSection() {
                     : "bg-[#FFFDF8] text-[#1A1A1A]"
                 }`}
               >
-                <div
-                  className={`mb-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border ${
-                    isDark
-                      ? "border-white/10 bg-white/6"
-                      : "border-[#E7DCCF] bg-[#F7F1E7]"
-                  }`}
-                >
-                  <Icon
-                    aria-hidden="true"
-                    size={24}
-                    className={isDark ? "text-[#F5C400]" : "text-[#AD8400]"}
-                  />
-                </div>
-
-                <div className="space-y-4">
+                <div className="flex flex-row items-center">
+                  <div
+                    className={`inline-flex mr-4 h-14 w-14 items-center justify-center rounded-2xl border ${
+                      isDark
+                        ? "border-white/10 bg-white/6"
+                        : "border-[#E7DCCF] bg-[#F7F1E7]"
+                    }`}
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      size={24}
+                      className={isDark ? "text-[#F5C400]" : "text-[#AD8400]"}
+                    />
+                  </div>
                   <h3
-                    className="text-[22px] font-bold leading-none tracking-[-0.02em] md:text-[24px]"
+                    className="text-2xl font-bold leading-none tracking-[-0.02em] md:text-[24px]"
                     style={fontStyle}
                   >
                     {title}
                   </h3>
+                </div>
 
+                <div className="mt-4">
                   <p
                     className={`text-[15px] leading-[1.8] ${
                       isDark ? "text-white/80" : "text-[#625B56]"
