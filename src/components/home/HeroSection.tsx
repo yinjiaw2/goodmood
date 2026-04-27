@@ -214,7 +214,7 @@ export default function HeroSection() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col gap-2 px-6 py-8 border-b border-r border-black/8 even:border-r-0 md:border-b-0 md:last:border-r-0 md:even:border-r md:nth-4:border-r-0 justify-center items-center"
+              className="flex flex-col gap-2 px-4 py-8 border-b border-r border-black/8 even:border-r-0 md:border-b-0 md:last:border-r-0 md:even:border-r md:nth-4:border-r-0 justify-center items-center"
             >
               <span
                 className="text-4xl md:text-5xl font-extrabold"
