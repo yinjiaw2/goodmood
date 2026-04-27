@@ -56,11 +56,16 @@ export default function AboutHero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center">
-        <div className="flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-xs uppercase tracking-widest text-white/30" style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}>
+        <div className="flex flex-col items-center gap-3 animate-bounce">
+          <span
+            className="text-xs font-semibold uppercase tracking-widest text-white"
+            style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}
+          >
             Scroll
           </span>
-          <ChevronDown size={20} className="text-white/30" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#F5C400]">
+            <ChevronDown size={20} style={{ color: "#F5C400" }} />
+          </div>
         </div>
       </div>
 

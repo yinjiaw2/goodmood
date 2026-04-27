@@ -78,11 +78,13 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="flex justify-center pb-10">
-        <div className="flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-xs uppercase tracking-widest text-white/30" style={fontStyle}>
+        <div className="flex flex-col items-center gap-3 animate-bounce">
+          <span className="text-xs font-semibold uppercase tracking-widest text-white" style={fontStyle}>
             Scroll
           </span>
-          <ChevronDown size={20} className="text-white/30" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#F5C400]">
+            <ChevronDown size={20} style={{ color: "#F5C400" }} />
+          </div>
         </div>
       </div>
     </section>
