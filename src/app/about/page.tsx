@@ -14,6 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
+
       <CompanyIntroSection />
       <CoreValuesSection />
       <OfficeMapSection />

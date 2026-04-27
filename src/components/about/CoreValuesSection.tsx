@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Activity,
-  Gem,
-  LineChart,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { Activity, Gem, LineChart, ShieldCheck, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 const fontStyle = {
@@ -58,57 +52,65 @@ export default function CoreValuesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-10">
-          {items.map(({ Icon, title, desc }, index) => (
-            <article
-              key={title}
-              className={`group relative overflow-hidden rounded-[28px] border border-black/8 px-7 py-8 shadow-[0_18px_50px_rgba(58,38,42,0.06)] transition-all duration-300 hover:-translate-y-1 ${
-                index === 0 || index === 3
-                  ? "bg-[#1A1A1A] text-white xl:col-span-4"
-                  : index === 4
-                    ? "bg-[#FFFDF8] text-[#1A1A1A] md:col-span-2 xl:col-span-4"
-                    : "bg-[#FFFDF8] text-[#1A1A1A] xl:col-span-3"
-              }`}
-            >
-              <div
-                className={`mb-12 inline-flex h-12 w-12 items-center justify-center rounded-2xl border ${
-                  index === 0 || index === 3
-                    ? "border-white/10 bg-white/6"
-                    : "border-[#E7DCCF] bg-[#F7F1E7]"
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-6">
+          {items.map(({ Icon, title, desc }, index) => {
+            const isDark = index === 3;
+            const colSpanClass =
+              index < 2
+                ? "xl:col-span-3"
+                : index === 4
+                  ? "md:col-span-2 xl:col-span-2"
+                  : "xl:col-span-2";
+
+            return (
+              <article
+                key={title}
+                className={`group relative overflow-hidden rounded-[28px] border border-black/8 px-8 py-10 shadow-[0_18px_50px_rgba(58,38,42,0.06)] transition-all duration-300 hover:-translate-y-1 ${colSpanClass} ${
+                  isDark
+                    ? "bg-[#1A1A1A] text-white"
+                    : "bg-[#FFFDF8] text-[#1A1A1A]"
                 }`}
               >
-                <Icon
-                  aria-hidden="true"
-                  size={20}
-                  className={index === 0 || index === 3 ? "text-[#F5C400]" : "text-[#AD8400]"}
-                />
-              </div>
-
-              <div className="space-y-3">
-                <h3
-                  className="text-[24px] font-bold leading-none tracking-[-0.02em]"
-                  style={fontStyle}
-                >
-                  {title}
-                </h3>
-
-                <p
-                  className={`max-w-[360px] text-[14px] leading-[1.85] ${
-                    index === 0 || index === 3 ? "text-white/82" : "text-[#625B56]"
+                <div
+                  className={`mb-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border ${
+                    isDark
+                      ? "border-white/10 bg-white/6"
+                      : "border-[#E7DCCF] bg-[#F7F1E7]"
                   }`}
-                  style={fontStyle}
                 >
-                  {desc}
-                </p>
-              </div>
+                  <Icon
+                    aria-hidden="true"
+                    size={24}
+                    className={isDark ? "text-[#F5C400]" : "text-[#AD8400]"}
+                  />
+                </div>
 
-              <span
-                className={`absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
-                  index === 0 || index === 3 ? "bg-[#F5C400]" : "bg-[#D8B448]"
-                }`}
-              />
-            </article>
-          ))}
+                <div className="space-y-4">
+                  <h3
+                    className="text-[22px] font-bold leading-none tracking-[-0.02em] md:text-[24px]"
+                    style={fontStyle}
+                  >
+                    {title}
+                  </h3>
+
+                  <p
+                    className={`text-[15px] leading-[1.8] ${
+                      isDark ? "text-white/80" : "text-[#625B56]"
+                    }`}
+                    style={fontStyle}
+                  >
+                    {desc}
+                  </p>
+                </div>
+
+                <span
+                  className={`absolute bottom-0 left-0 h-1.5 w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
+                    isDark ? "bg-[#F5C400]" : "bg-[#D8B448]"
+                  }`}
+                />
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
