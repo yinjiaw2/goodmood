@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/services/HeroSection";
 import ServiceIntroSection from "@/components/services/ServiceIntroSection";
-import WhyUsSection from "@/components/services/WhyUsSection";
+
 import ServiceSection from "@/components/home/ServiceSection";
+import CoreCapabilitiesSection from "@/components/about/CoreCapabilitiesSection";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -15,7 +16,7 @@ export default function ServicesPage() {
     <>
       <HeroSection />
       <ServiceIntroSection />
-      <WhyUsSection />
+      <CoreCapabilitiesSection />
       <ServiceSection />
     </>
   );
