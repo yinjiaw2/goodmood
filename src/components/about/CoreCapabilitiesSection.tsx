@@ -15,8 +15,16 @@ const fontStyle = {
 
 const icons = [Target, Lightbulb, Globe2, TrendingUp, Users];
 
-export default function CoreCapabilitiesSection() {
-  const t = useTranslations("about.coreCapabilities");
+interface Props {
+  namespace?: string;
+  variant?: "about" | "whyUs";
+}
+
+export default function CoreCapabilitiesSection({
+  namespace = "about.coreCapabilities",
+  variant = "about",
+}: Props) {
+  const t = useTranslations(namespace);
   const locale = useLocale();
   const accentFont =
     locale === "en"
@@ -40,17 +48,36 @@ export default function CoreCapabilitiesSection() {
           </div>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <h2
-              className="max-w-[560px] text-[32px] font-extrabold leading-tight tracking-[-0.03em] text-[#1A1A1A] md:text-[46px]"
+              className={`max-w-[560px] font-extrabold tracking-[-0.03em] text-[#1A1A1A] ${
+                variant === "whyUs"
+                  ? "text-[38px] leading-none md:text-[52px]"
+                  : "text-[32px] leading-tight md:text-[46px]"
+              }`}
               style={fontStyle}
             >
-              {t("titleBefore")}
-              <span style={{ color: "#F5C400", fontFamily: accentFont }}>
-                {t("titleAccent")}
-              </span>
-              {t("titleAfter")}
+              {variant === "whyUs" ? (
+                <>
+                  <span className="block">{t("title")}</span>
+                  <span className="block" style={{ color: "#F5C400" }}>
+                    {t("titleHighlight")}
+                  </span>
+                </>
+              ) : (
+                <>
+                  {t("titleBefore")}
+                  <span style={{ color: "#F5C400", fontFamily: accentFont }}>
+                    {t("titleAccent")}
+                  </span>
+                  {t("titleAfter")}
+                </>
+              )}
             </h2>
             <p
-              className="max-w-[400px] text-[15px] leading-[1.75] text-[#6B6B6B] lg:text-right"
+              className={`text-[15px] text-[#6B6B6B] lg:text-right ${
+                variant === "whyUs"
+                  ? "max-w-[420px] leading-[1.7]"
+                  : "max-w-[400px] leading-[1.75]"
+              }`}
               style={fontStyle}
             >
               {t("subtitle")}
@@ -58,14 +85,21 @@ export default function CoreCapabilitiesSection() {
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 xl:grid-cols-6">
+        <div
+          className={`grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/8 bg-black/8 md:grid-cols-2 ${
+            variant === "whyUs" ? "xl:grid-cols-5" : "xl:grid-cols-6"
+          }`}
+        >
           {items.map(({ Icon, title, desc }, index) => (
             <article
               key={title}
               className={`group flex flex-col gap-4 bg-white px-9 py-10 transition-colors duration-300 hover:bg-[#FFFBEE] ${
-                index < 3 ? "xl:col-span-2" : "xl:col-span-3"
-              } ${index === 4 ? "md:col-span-2 xl:col-span-3" : ""}`}
+                variant === "whyUs"
+                  ? "px-7"
+                  : `${index < 3 ? "xl:col-span-2" : "xl:col-span-3"} ${
+                      index === 4 ? "md:col-span-2 xl:col-span-3" : ""
+                    }`
+              }`}
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(245,196,0,0.10)] transition-colors duration-300 group-hover:bg-[rgba(245,196,0,0.22)]">
                 <Icon
@@ -75,13 +109,17 @@ export default function CoreCapabilitiesSection() {
                 />
               </div>
               <h3
-                className="text-[17px] font-bold text-[#1A1A1A]"
+                className={`font-bold text-[#1A1A1A] ${
+                  variant === "whyUs" ? "text-[18px]" : "text-[17px]"
+                }`}
                 style={fontStyle}
               >
                 {title}
               </h3>
               <p
-                className="text-[14px] leading-[1.8] text-[#6B6B6B]"
+                className={`text-[14px] text-[#6B6B6B] ${
+                  variant === "whyUs" ? "leading-[1.75]" : "leading-[1.8]"
+                }`}
                 style={fontStyle}
               >
                 {desc}

@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <>
       <HeroSection />
       <ServiceIntroSection />
-      <CoreCapabilitiesSection />
+      <CoreCapabilitiesSection namespace="services.whyUs" variant="whyUs" />
       <ServiceSection />
     </>
   );
