@@ -7,7 +7,7 @@ import CounterCards from "@/components/charts/CounterCards";
 import DonutChart from "@/components/charts/DonutChart";
 
 export const metadata: Metadata = {
-  title: "TikTok Ads",
+  title: "Creative Services",
   description:
     "In-Feed Ads, Spark Ads, and creative testing built for new audience reach on TikTok.",
 };

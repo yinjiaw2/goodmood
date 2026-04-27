@@ -7,9 +7,9 @@ import BeforeAfterCard from "@/components/charts/BeforeAfterCard";
 import AreaChart from "@/components/charts/AreaChart";
 
 export const metadata: Metadata = {
-  title: "Meta Ads",
+  title: "E-commerce Services",
   description:
-    "Facebook and Instagram campaigns built for feeds, stories, retargeting, and lead generation.",
+    "E-commerce services designed to help brands grow through strategy, creative, and performance-driven campaigns.",
 };
 
 const case1Rows = [
