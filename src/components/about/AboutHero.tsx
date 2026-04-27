@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import { ChevronDown } from "lucide-react";
 
 export default function AboutHero() {
   const t = useTranslations("about.hero");
@@ -10,8 +11,11 @@ export default function AboutHero() {
     : "var(--font-ma-shan-zheng)";
 
   return (
-    <section className="relative min-h-[80vh] w-full overflow-hidden bg-[#0D0D0D]">
-      <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-7xl items-end justify-start px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
+    <section
+      className="relative w-full overflow-hidden bg-[#0D0D0D]"
+      style={{ marginTop: "-4rem", minHeight: "100vh", paddingTop: "4rem" }}
+    >
+      <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-7xl items-center justify-start px-6 pb-72 pt-16 md:px-10 lg:px-16">
         {/* Hero text */}
         <div className="flex w-full max-w-none flex-col items-start text-left">
           <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
@@ -30,24 +34,33 @@ export default function AboutHero() {
           </div>
 
           <h1
-            className="max-w-[1180px] text-[44px] font-extrabold leading-[1.04] text-white md:text-[64px] lg:text-[78px]"
+            className="text-[44px] font-extrabold leading-[1.04] text-white md:text-[64px] lg:text-[78px]"
             style={{
               fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
               letterSpacing: "-0.03em",
             }}
           >
             <span>{t("titleLine1")}</span>
-            {isEnglish ? " " : ""}
-            <span className="inline-block">
-              <span style={{ fontFamily: accentFont }}>
-                {t("titleLine2AccentFirst")}
-              </span>
-              {t("titleLine2Before")}
-              <span style={{ color: "#F5C400", fontFamily: accentFont }}>
-                {t("titleLine2Accent")}
-              </span>
+            <br />
+            <span style={{ fontFamily: accentFont }}>
+              {t("titleLine2AccentFirst")}
+            </span>
+            {t("titleLine2Before")}
+            <br />
+            <span style={{ color: "#F5C400", fontFamily: accentFont }}>
+              {t("titleLine2Accent")}
             </span>
           </h1>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center">
+        <div className="flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-xs uppercase tracking-widest text-white/30" style={{ fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" }}>
+            Scroll
+          </span>
+          <ChevronDown size={20} className="text-white/30" />
         </div>
       </div>
 
