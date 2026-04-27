@@ -142,9 +142,13 @@ export default function HeroSection() {
   }, [stat1Value, stat2Value, stat3Value, stat4Value]);
 
   return (
-    <section id="hero" className="relative w-full bg-secondary flex flex-col" style={{ minHeight: "calc(100vh - 4rem)" }}>
+    <section
+      id="hero"
+      className="relative w-full bg-secondary flex flex-col"
+      style={{ marginTop: "-4rem", minHeight: "100vh", paddingTop: "4rem" }}
+    >
       {/* Main content */}
-      <div className="px-16 pt-12 pb-8 w-full">
+      <div className="px-16 pt-10 pb-8 w-full">
         <div className="max-w-2xl flex flex-col gap-8">
           {/* Badge */}
           <div className="inline-flex">
