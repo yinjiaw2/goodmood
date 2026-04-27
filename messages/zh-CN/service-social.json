@@ -9,15 +9,15 @@
   },
   "details": {
     "badge": "服务概述",
-    "title": "我们做什么",
-    "card1Title": "账号策划 Social Strategy",
-    "card1Desc": "We develop tailored messaging strategies based on positioning and user insights, shaping everything from tone and storytelling to value and call-to-action. Each piece of content is built to attract attention, guide intent, and contribute to measurable social growth.",
-    "card2Title": "内容制作 Content Creation",
-    "card2Desc": "Engage your audience with consistent, brand-driven content tailored to your vision. Our expertise spans creative copywriting, graphic design, and video production. Seamless execution designed to amplify your brand voice on every channel.",
-    "card3Title": "社媒运营 Social Retainer",
-    "card3Desc": "Secure your brand’s future with a dedicated Social Retainer that handles everything from daily scheduling to strategic interaction. We ensure a cohesive, professional presence across all platforms, delivering the consistency and creativity needed to keep your audience growing and engaged.",
-    "card4Title": "数据优化 Data Analytics & Optimising",
-    "card4Desc": "Master your digital performance with precision Data Analytics. We turn complex data into strategies that maximise conversion rates and ad efficiency, ensuring your marketing ecosystem is constantly evolving to deliver the highest possible ROI."
+    "title": "我们的业务范围",
+    "card1Title": "账号策划",
+    "card1Desc": "我们根据品牌定位和用户洞察，制定量身定制的策略信息，涵盖从语调设定、故事讲述到价值传递和行动号召的方方面面。每一份内容都旨在吸引关注、引导用户意图，并助力实现可衡量的社交媒体增长。",
+    "card2Title": "内容制作",
+    "card2Desc": "通过高度契合品牌愿景的一致性内容吸引目标受众。我们的专业能力涵盖创意文案、平面设计和视频制作。通过流畅的执行力，在每个频道上放大您的品牌声音。",
+    "card3Title": "社媒运营",
+    "card3Desc": "通过专业的社媒年度服务保障您的品牌未来，涵盖从日常排期发布到战略性互动的全方位管理。我们确保品牌在所有平台上呈现出统一、专业的形象，并提供持续的创意支持，保持受众的活跃与增长。",
+    "card4Title": "数据优化",
+    "card4Desc": "通过精准的数据分析掌握您的数字化表现。我们将复杂的数据转化为优化转化率和广告效率的实操策略，确保您的营销生态系统不断进化，从而实现最高的投资回报率（ROI）。"
   },
   "subFeatures": {
     "badge": "服务内容",
