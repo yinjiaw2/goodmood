@@ -51,24 +51,6 @@
     "titleBefore": "Melbourne",
     "titleAccent": " roots, global",
     "titleAfter": "  standard",
-    "description": "Based in Melbourne, We are a digital agency driving brand evolution through digital marketing and business transformation. We fuse creative aesthetics with strategic insights to build measurable and sustainable growth paths for every brand.",
-    "localTeam": {
-      "title": "Local Team",
-      "desc": "Our core team is based locally, giving us the cultural fluency and responsiveness that global agencies often lack.",
-      "highlights": [
-        "Native understanding of local market dynamics",
-        "Fast communication and agile execution",
-        "Dedicated account managers for every client",
-        "Cross-functional team: strategy, creative, and tech"
-      ]
-    },
-    "international": {
-      "title": "Melbourne and Chengdu",
-      "desc": "Our team connects Australian market insight with China-facing cultural fluency, supporting brands across both regions.",
-      "regions": [
-        { "city": "Melbourne", "role": "Australia Office" },
-        { "city": "Chengdu", "role": "China Office" }
-      ]
-    }
+    "description": "Based in Melbourne, We are a digital agency driving brand evolution through digital marketing and business transformation. We fuse creative aesthetics with strategic insights to build measurable and sustainable growth paths for every brand."
   }
 }
