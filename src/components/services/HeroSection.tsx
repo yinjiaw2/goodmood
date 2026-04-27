@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const fontStyle = {
@@ -12,8 +12,12 @@ export default function HeroSection() {
   const t = useTranslations("services.hero");
 
   return (
-    <section className="relative w-full bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 pt-36 pb-32 md:px-10 lg:px-16">
+    <section
+      className="relative w-full bg-secondary flex flex-col"
+      style={{ marginTop: "-4rem", minHeight: "100vh", paddingTop: "4rem" }}
+    >
+      {/* Main content */}
+      <div className="mx-auto max-w-7xl w-full px-6 pt-24 pb-16 md:px-10 lg:px-16">
         <div className="max-w-2xl flex flex-col gap-8">
           {/* Badge */}
           <div className="inline-flex">
@@ -66,6 +70,19 @@ export default function HeroSection() {
               {t("ctaSecondary")}
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
+
+      {/* Scroll indicator */}
+      <div className="flex justify-center pb-10">
+        <div className="flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-xs uppercase tracking-widest text-white/30" style={fontStyle}>
+            Scroll
+          </span>
+          <ChevronDown size={20} className="text-white/30" />
         </div>
       </div>
     </section>

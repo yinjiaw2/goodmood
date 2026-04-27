@@ -148,7 +148,7 @@ export default function HeroSection() {
       style={{ marginTop: "-4rem", minHeight: "100vh", paddingTop: "4rem" }}
     >
       {/* Main content */}
-      <div className="px-16 pt-10 pb-8 w-full">
+      <div className="mx-auto max-w-7xl w-full px-6 pt-10 pb-8 md:px-10 lg:px-16">
         <div className="max-w-2xl flex flex-col gap-8">
           {/* Badge */}
           <div className="inline-flex">
