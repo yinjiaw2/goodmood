@@ -32,8 +32,14 @@ export default function NavBar() {
     { label: t("nav.serviceCreative"), href: "/services/creative" },
     { label: t("nav.serviceEcommerce"), href: "/services/ecommerce" },
     { label: t("nav.serviceEmail"), href: "/services/email" },
-    { label: t("nav.serviceVideoProduction"), href: "/services/video-production" },
-    { label: t("nav.serviceWebsiteDevelopment"), href: "/services/website-development" },
+    {
+      label: t("nav.serviceVideoProduction"),
+      href: "/services/video-production",
+    },
+    {
+      label: t("nav.serviceWebsiteDevelopment"),
+      href: "/services/website-development",
+    },
   ];
 
   useEffect(() => {
@@ -113,13 +119,6 @@ export default function NavBar() {
                 }`}
               >
                 <div className="rounded-xl border border-white/10 bg-[#0D1B2A]/98 p-2 shadow-[0_18px_42px_rgba(0,0,0,0.35)]">
-                  <Link
-                    href="/services"
-                    className="mb-1 block rounded-lg px-3 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/8 hover:text-white"
-                    style={fontStyle}
-                  >
-                    {t("nav.services")}
-                  </Link>
                   {serviceLinks.map((link) => (
                     <Link
                       key={link.href}
