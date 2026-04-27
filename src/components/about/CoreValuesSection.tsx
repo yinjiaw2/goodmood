@@ -25,8 +25,7 @@ export default function CoreValuesSection() {
 
   const items = [1, 2, 3, 4, 5].map((n, i) => ({
     Icon: icons[i]!,
-    cn: t(`item${n}Cn`),
-    en: t(`item${n}En`),
+    title: t(`item${n}Title`),
     desc: t(`item${n}Desc`),
   }));
 
@@ -60,9 +59,9 @@ export default function CoreValuesSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-10">
-          {items.map(({ Icon, cn, en, desc }, index) => (
+          {items.map(({ Icon, title, desc }, index) => (
             <article
-              key={en}
+              key={title}
               className={`group relative overflow-hidden rounded-[28px] border border-black/8 px-7 py-8 shadow-[0_18px_50px_rgba(58,38,42,0.06)] transition-all duration-300 hover:-translate-y-1 ${
                 index === 0 || index === 3
                   ? "bg-[#1A1A1A] text-white xl:col-span-4"
@@ -86,22 +85,12 @@ export default function CoreValuesSection() {
               </div>
 
               <div className="space-y-3">
-                <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
-                  <h3
-                    className="text-[24px] font-bold leading-none tracking-[-0.02em]"
-                    style={fontStyle}
-                  >
-                    {cn}
-                  </h3>
-                  <span
-                    className={`text-[12px] font-semibold uppercase tracking-[0.18em] ${
-                      index === 0 || index === 3 ? "text-[#F5C400]/78" : "text-[#8B827B]"
-                    }`}
-                    style={fontStyle}
-                  >
-                    {en}
-                  </span>
-                </div>
+                <h3
+                  className="text-[24px] font-bold leading-none tracking-[-0.02em]"
+                  style={fontStyle}
+                >
+                  {title}
+                </h3>
 
                 <p
                   className={`max-w-[360px] text-[14px] leading-[1.85] ${
