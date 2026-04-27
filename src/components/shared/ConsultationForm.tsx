@@ -115,7 +115,7 @@ export default function ConsultationForm() {
   return (
     <div className="rounded-[28px] border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:p-8">
       <div className="mb-8">
-        <div className="mb-4 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#8A8378]">
+        <div className="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.25em] text-[#8A8378]">
           <span className="inline-block h-px w-[30px] bg-[#F5C400]" />
           {t("consultationForm.label")}
         </div>

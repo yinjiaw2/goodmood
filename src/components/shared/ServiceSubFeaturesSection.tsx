@@ -31,7 +31,7 @@ export default function ServiceSubFeaturesSection({
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] lg:gap-16">
           <div>
-            <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A8F88]">
+            <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A8F88]">
               <span className="inline-block h-px w-7.5 shrink-0 bg-[#F5C400]" />
               {t("subFeatures.badge")}
             </div>

@@ -29,7 +29,7 @@ export default function ServiceHeroSection({
             <div className="inline-flex items-center gap-3">
               <span className="inline-block h-px w-9 shrink-0 bg-[#F5C400]" />
               <span
-                className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A8F88]"
+                className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9A8F88]"
                 style={fontStyle}
               >
                 {t("badge")}

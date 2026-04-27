@@ -86,7 +86,7 @@ export default function ProcessSection() {
           }`}
         >
           <div>
-            <div className="mb-5 flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-[#9A9A9A]">
+            <div className="mb-5 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A9A9A]">
               <span className="inline-block h-px w-[30px] bg-[#F5C400]" />
               {t("process.badge")}
             </div>

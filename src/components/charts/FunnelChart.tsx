@@ -81,7 +81,7 @@ export default function FunnelChart() {
       {/* ROAS callout */}
       <div className="mt-4 flex items-center justify-center gap-2">
         <span
-          className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[12px] font-bold"
+          className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-bold"
           style={{ backgroundColor: "rgba(245,196,0,0.12)", color: "#A07800", ...fontStyle }}
         >
           Final ROAS: 5.8×

@@ -15,7 +15,7 @@ export default function ContactFaqSection() {
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <span
-            className="inline-flex rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-widest"
+            className="inline-flex rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-widest"
             style={{
               color: "#F5C400",
               borderColor: "rgba(245,196,0,0.3)",

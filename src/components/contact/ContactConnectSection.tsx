@@ -22,7 +22,7 @@ export default function ContactConnectSection() {
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
           <span
-            className="inline-flex rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-widest"
+            className="inline-flex rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-widest"
             style={{
               color: "#F5C400",
               borderColor: "rgba(245,196,0,0.35)",

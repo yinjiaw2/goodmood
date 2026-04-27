@@ -31,7 +31,7 @@ export default function ServiceOverviewSection({ namespace }: Props) {
   return (
     <section className="w-full bg-[#F7F4EF] py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
-        <div className="mb-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-[#9A8F88]">
+        <div className="mb-8 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-[#9A8F88]">
           <span className="inline-block h-px w-7.5 shrink-0 bg-[#F5C400]" />
           {t("details.badge")}
         </div>

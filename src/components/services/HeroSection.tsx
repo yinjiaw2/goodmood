@@ -22,7 +22,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex">
             <span
-              className="text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
+              className="text-sm font-semibold uppercase tracking-widest px-4 py-2 rounded-full border"
               style={{
                 color: "#F5C400",
                 borderColor: "rgba(245,196,0,0.4)",

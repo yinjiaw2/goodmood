@@ -88,7 +88,7 @@ export default function ServiceSection() {
     <section className="w-full bg-[#1A1A1A] py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="mb-12">
-          <div className="mb-4 text-[12px] font-bold uppercase tracking-[2px] text-[#F5C400]">
+          <div className="mb-4 text-sm font-bold uppercase tracking-[2px] text-[#F5C400]">
             {t("serviceGrid.badge")}
           </div>
 
@@ -130,7 +130,7 @@ export default function ServiceSection() {
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center whitespace-nowrap rounded-full border border-[#F5C400] px-[10px] py-[4px] text-[12px] font-semibold leading-none text-[#F5C400] transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white"
+                      className="inline-flex items-center whitespace-nowrap rounded-full border border-[#F5C400] px-[10px] py-[4px] text-sm font-semibold leading-none text-[#F5C400] transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white"
                     >
                       {tag}
                     </span>
