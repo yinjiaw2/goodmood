@@ -13,6 +13,10 @@
     "titleLine1": "预约免费",
     "titleLine2": "策略咨询",
     "subtitle": "填写下方表单，我们会在 1 个工作日内与你联系，安排一次 30 分钟的视频通话。",
+    "stepOneLabel": "第 1 步，共 2 步",
+    "stepTwoLabel": "第 2 步，共 2 步",
+    "nextButton": "下一步",
+    "backButton": "返回上一步",
     "privacyNote": "我们会在 1 个工作日内回复 | 绝不发送垃圾邮件",
     "serviceOptions": [
       "Social Media Management",
@@ -50,8 +54,9 @@
         "errorInvalid": "请输入有效的邮箱地址"
       },
       "phone": {
-        "label": "电话",
-        "placeholder": "+61 4xx xxx xxx"
+        "label": "电话 *",
+        "placeholder": "+61 4xx xxx xxx",
+        "errorRequired": "请填写电话"
       },
       "company": {
         "label": "公司 / 品牌名称 *",
