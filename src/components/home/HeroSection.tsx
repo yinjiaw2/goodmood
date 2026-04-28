@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ParticleG from "../shared/ParticleG";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -148,8 +149,8 @@ export default function HeroSection() {
       style={{ marginTop: "-4rem", minHeight: "100vh", paddingTop: "4rem" }}
     >
       {/* Main content */}
-      <div className="mx-auto max-w-7xl w-full px-6 pt-10 pb-8 md:px-10 lg:px-16">
-        <div className="max-w-2xl flex flex-col gap-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-8 pt-10 md:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-16">
+        <div className="flex w-full flex-col lg:w-[min(62rem,68%)] lg:flex-none">
           {/* Badge */}
           <div className="inline-flex">
             <span
@@ -167,7 +168,7 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white"
+            className="mt-6 text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl"
             style={{ ...fontStyle, letterSpacing: "-0.02em" }}
           >
             {t("hero.titlePrefix")}
@@ -177,14 +178,14 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-lg text-gray-400 leading-relaxed"
+            className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-400"
             style={fontStyle}
           >
             {t("hero.subtitle")}
           </p>
 
           {/* CTA buttons */}
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-4 flex-wrap mt-6">
             <Link
               href="/#contact"
               className="group flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#1a1a1a] transition hover:opacity-90 active:scale-95"
@@ -204,6 +205,10 @@ export default function HeroSection() {
               {t("hero.ctaSecondary")}
             </Link>
           </div>
+        </div>
+
+        <div className="hidden lg:block lg:min-w-0 lg:flex-1">
+          <ParticleG />
         </div>
       </div>
 
@@ -239,7 +244,6 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-
     </section>
   );
 }
