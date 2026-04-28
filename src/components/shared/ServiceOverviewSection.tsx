@@ -80,7 +80,7 @@ export default function ServiceOverviewSection({ namespace }: Props) {
                         {title}
                       </h3>
                       <p
-                        className={`max-w-[520px] text-[14px] leading-[1.9] md:text-[15px] ${
+                        className={`max-w-[520px] text-lg leading-[1.9] md:text-[15px] ${
                           darkCard ? "text-white/88" : "text-[#1A1A1A]/82"
                         }`}
                         style={fontStyle}
@@ -123,7 +123,7 @@ export default function ServiceOverviewSection({ namespace }: Props) {
                   {title}
                 </h3>
                 <p
-                  className={`max-w-[260px] whitespace-pre-line text-[14px] leading-[1.75] xl:text-[13px] ${
+                  className={`max-w-[260px] whitespace-pre-line text-lg leading-[1.75] xl:text-[13px] ${
                     i % 2 === 1 ? "text-white/88" : "text-[#1A1A1A]/82"
                   }`}
                   style={fontStyle}

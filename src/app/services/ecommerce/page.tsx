@@ -23,12 +23,12 @@ export default function ServiceEcommercePage() {
     <>
       <ServiceHeroSection
         namespace="serviceEcommerce"
-        imageSrc="/meta-ads.jpg"
+        imageSrc="/ecommerce1.png"
       />
       <ServiceOverviewSection namespace="serviceEcommerce" />
       <ServiceSubFeaturesSection
         namespace="serviceEcommerce"
-        imageSrc="/meta-ads.jpg"
+        imageSrc="/ecommerce2.png"
       />
       <CaseStudySection
         namespace="serviceEcommerce"

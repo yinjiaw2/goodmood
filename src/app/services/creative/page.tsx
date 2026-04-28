@@ -24,12 +24,12 @@ export default function ServiceCreativePage() {
     <>
       <ServiceHeroSection
         namespace="serviceCreative"
-        imageSrc="/ecommence.png"
+        imageSrc="/creative1.jpeg"
       />
       <ServiceOverviewSection namespace="serviceCreative" />
       <ServiceSubFeaturesSection
         namespace="serviceCreative"
-        imageSrc="/ecommence.png"
+        imageSrc="/creative2.jpeg"
       />
       <CaseStudySection
         namespace="serviceCreative"

@@ -20,7 +20,7 @@ export default function ServiceSocialPage() {
       <ServiceOverviewSection namespace="serviceSocial" />
       <ServiceSubFeaturesSection
         namespace="serviceSocial"
-        imageSrc="/social-media.png"
+        imageSrc="/social-media2.png"
       />
       <CaseStudySection namespace="serviceSocial" />
     </>

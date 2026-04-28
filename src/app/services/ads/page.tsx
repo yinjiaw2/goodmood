@@ -22,11 +22,11 @@ const case2Items = [
 export default function ServiceAdsPage() {
   return (
     <>
-      <ServiceHeroSection namespace="serviceAds" imageSrc="/meta-ads.jpg" />
+      <ServiceHeroSection namespace="serviceAds" imageSrc="/paid-ads.png" />
       <ServiceOverviewSection namespace="serviceAds" />
       <ServiceSubFeaturesSection
         namespace="serviceAds"
-        imageSrc="/meta-ads.jpg"
+        imageSrc="/paid-ads2.jpeg"
       />
       <CaseStudySection
         namespace="serviceAds"

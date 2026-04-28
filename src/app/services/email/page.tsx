@@ -29,7 +29,7 @@ export default function ServiceEmailPage() {
       <ServiceOverviewSection namespace="serviceEmail" />
       <ServiceSubFeaturesSection
         namespace="serviceEmail"
-        imageSrc="/email-marketing.jpeg"
+        imageSrc="/email-marketing2.png"
       />
       <CaseStudySection
         namespace="serviceEmail"
