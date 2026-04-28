@@ -133,8 +133,8 @@ export default function ConsultationForm() {
   const errorClass = "mt-2 text-xs text-red-600";
 
   return (
-    <div className="rounded-[28px] border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:p-8">
-      <div className="mb-8">
+    <div className="rounded-xl border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A]  md:p-8 items-center justify-center">
+      <div className="mb-8 items-center justify-center">
         <h2
           className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] md:text-[46px]"
           style={fontStyle}
