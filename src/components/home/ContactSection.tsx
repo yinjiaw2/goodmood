@@ -16,7 +16,7 @@ export default function ContactSection() {
       className="w-full bg-[#1A1A1A] px-6 py-24 text-white md:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-7xl gap-12 flex flex-row items-center">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6  w-3/7">
           <span
             className="inline-flex w-fit rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-widest"
             style={{

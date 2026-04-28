@@ -133,10 +133,10 @@ export default function ConsultationForm() {
   const errorClass = "mt-2 text-xs text-red-600";
 
   return (
-    <div className="rounded-xl border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A]  md:p-8 items-center justify-center">
+    <div className="w-full rounded-xl border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A]  md:p-8 items-center justify-center">
       <div className="mb-8 items-center justify-center">
         <h2
-          className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] md:text-[46px]"
+          className="text-3xl font-extrabold text-[#1A1A1A]"
           style={fontStyle}
         >
           {t("consultationForm.title")}
@@ -252,13 +252,6 @@ export default function ConsultationForm() {
           </p>
         ) : null}
       </form>
-
-      <p
-        className="mt-4 text-center text-[12px] text-[#8A8378]"
-        style={fontStyle}
-      >
-        {t("consultationForm.privacyNote")}
-      </p>
     </div>
   );
 }
