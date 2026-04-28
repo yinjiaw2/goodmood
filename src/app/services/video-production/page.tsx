@@ -35,7 +35,7 @@ export default function ServiceWebPage() {
       <ServiceOverviewSection namespace="serviceVideoProduction" />
       <ServiceSubFeaturesSection
         namespace="serviceVideoProduction"
-        imageSrc="/video2.jpeg"
+        imageSrc="/video2.jpg"
       />
       <CaseStudySection
         namespace="serviceVideoProduction"
