@@ -59,7 +59,7 @@ export default function AboutHero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center">
-        <div className="flex flex-col items-center gap-3 animate-bounce">
+        <a href="#company-intro" className="flex flex-col items-center gap-3 animate-bounce cursor-pointer">
           <span
             className="text-xs font-semibold uppercase tracking-widest text-white"
             style={{
@@ -71,7 +71,7 @@ export default function AboutHero() {
           <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#F5C400]">
             <ChevronDown size={20} style={{ color: "#F5C400" }} />
           </div>
-        </div>
+        </a>
       </div>
 
       {/* Right image with soft diagonal blend */}

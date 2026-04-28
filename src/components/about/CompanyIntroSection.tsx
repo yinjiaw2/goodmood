@@ -20,7 +20,7 @@ export default function CompanyIntroSection() {
     : [t("description")];
 
   return (
-    <section className="w-full bg-white py-24 md:py-32">
+    <section id="company-intro" className="w-full bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 xl:gap-24">
           <div className="flex flex-col justify-start">
