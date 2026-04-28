@@ -143,13 +143,22 @@ export default function CoreCapabilitiesSection({
         </div>
 
         {variant === "whyUs" ? (
-          <div className="chalkboard relative overflow-hidden rounded-[32px] border border-[#1B2A25] bg-[#13211C] px-5 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.32)] md:px-8 md:py-10 xl:px-10 xl:py-12">
+          <div className="chalkboard relative overflow-hidden rounded-[32px] border border-[#1B2A25] bg-[#13211C] px-5 py-8 pb-16 shadow-[0_30px_80px_rgba(0,0,0,0.32)] md:px-8 md:py-10 md:pb-20 xl:px-10 xl:py-12 xl:pb-24">
             <div className="pointer-events-none absolute inset-0 opacity-100">
               <div className="absolute left-[8%] top-[10%] h-28 w-28 rounded-full bg-white/[0.03] blur-3xl" />
               <div className="absolute bottom-[12%] right-[10%] h-36 w-36 rounded-full bg-[#F5C400]/[0.05] blur-3xl" />
               <div className="absolute left-[18%] top-[16%] h-px w-24 bg-white/10 rotate-[8deg]" />
               <div className="absolute right-[16%] top-[24%] h-px w-20 bg-white/10 -rotate-[14deg]" />
               <div className="absolute bottom-[22%] left-[12%] h-px w-28 bg-white/10 rotate-[5deg]" />
+            </div>
+            <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-end md:bottom-5">
+              <div className="relative h-3 w-28 rounded-full bg-[#6D4C36] shadow-[0_6px_14px_rgba(0,0,0,0.28)] md:w-36">
+                <span className="absolute inset-x-3 top-[2px] h-px rounded-full bg-white/25" />
+                <span className="absolute left-6 -top-3 h-2.5 w-11 rotate-[11deg] rounded-full bg-[#F7C3D9] shadow-[0_2px_8px_rgba(0,0,0,0.25)]" />
+                <span className="absolute left-14 -top-2 h-2.5 w-10 -rotate-[8deg] rounded-full bg-[#F5F1E8] shadow-[0_2px_8px_rgba(0,0,0,0.22)]" />
+                <span className="absolute left-5 -top-4 h-3 w-3 rounded-full bg-white/12 blur-[2px]" />
+                <span className="absolute left-16 -top-3 h-2.5 w-2.5 rounded-full bg-white/10 blur-[2px]" />
+              </div>
             </div>
             <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-6">
             {items.map(({ Icon, title, desc }, index) => {
