@@ -11,6 +11,8 @@ const palette = [
   "#ffffff",
 ];
 
+const backgroundColor = "#1a1a1a";
+
 type Particle = {
   color: string;
   opacity: number;
@@ -75,7 +77,7 @@ export default function ParticleG() {
     }
 
     function animate() {
-      ctx.fillStyle = "rgba(10,10,10,0.18)";
+      ctx.fillStyle = "rgba(26,26,26,0.18)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       for (const p of particles) {
         p.vx += (p.tx - p.x) * 0.06;
@@ -133,7 +135,7 @@ export default function ParticleG() {
         display: "block",
         width: "100%",
         height: "400px",
-        background: "#0a0a0a",
+        background: backgroundColor,
         borderRadius: "12px",
         cursor: "crosshair",
       }}
