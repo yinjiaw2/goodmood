@@ -30,12 +30,12 @@ export default function ServiceWebsiteDevelopmentPage() {
     <>
       <ServiceHeroSection
         namespace="serviceWebsiteDevelopment"
-        imageSrc="/world-trade-center.jpg"
+        imageSrc="/website-dev1.jpg"
       />
       <ServiceOverviewSection namespace="serviceWebsiteDevelopment" />
       <ServiceSubFeaturesSection
         namespace="serviceWebsiteDevelopment"
-        imageSrc="/world-trade-center.jpg"
+        imageSrc="/website-dev2.jpg"
       />
       <CaseStudySection
         namespace="serviceWebsiteDevelopment"

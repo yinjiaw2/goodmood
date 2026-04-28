@@ -4,27 +4,21 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
+import ConsultationFormStepOne from "./ConsultationFormStepOne";
+import ConsultationFormStepTwo from "./ConsultationFormStepTwo";
+import type { ContactFormValues } from "./consultationForm.types";
+
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-const GOOGLE_SCRIPT_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbwSmNPxkhmDBlJciBbJNJheN9es25iD9n_CIi-9SqPZjVbilquKEi24l2ZByB5tgL7F/exec";
-
-type ContactFormValues = {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  website: string;
-  service: string;
-  budget: string;
-  challenge: string;
-  referral: string;
-};
+const GOOGLE_SCRIPT_ENDPOINT = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_ENDPOINT;
 
 export default function ConsultationForm() {
   const t = useTranslations("contact");
+  const [step, setStep] = useState<1 | 2>(1);
+  const [hasTriedStepOne, setHasTriedStepOne] = useState(false);
+  const [hasTriedStepTwo, setHasTriedStepTwo] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -32,6 +26,7 @@ export default function ConsultationForm() {
     register,
     handleSubmit,
     reset,
+    trigger,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     defaultValues: {
@@ -56,6 +51,24 @@ export default function ConsultationForm() {
     setSubmitError(null);
   };
 
+  const handleNextStep = async () => {
+    setHasTriedStepOne(true);
+
+    const isStepValid = await trigger([
+      "name",
+      "email",
+      "phone",
+      "company",
+      "website",
+    ]);
+
+    if (isStepValid) {
+      setHasTriedStepOne(false);
+      setHasTriedStepTwo(false);
+      setStep(2);
+    }
+  };
+
   const onSubmit = async (values: ContactFormValues) => {
     setIsSubmitted(false);
     setSubmitError(null);
@@ -73,6 +86,10 @@ export default function ConsultationForm() {
     };
 
     try {
+      if (!GOOGLE_SCRIPT_ENDPOINT) {
+        throw new Error("Missing NEXT_PUBLIC_GOOGLE_SCRIPT_ENDPOINT");
+      }
+
       const response = await fetch(GOOGLE_SCRIPT_ENDPOINT, {
         method: "POST",
         headers: {
@@ -99,6 +116,9 @@ export default function ConsultationForm() {
       }
 
       setIsSubmitted(true);
+      setHasTriedStepOne(false);
+      setHasTriedStepTwo(false);
+      setStep(1);
       reset();
     } catch (error) {
       console.error("Contact form submission failed:", error);
@@ -113,12 +133,8 @@ export default function ConsultationForm() {
   const errorClass = "mt-2 text-xs text-red-600";
 
   return (
-    <div className="rounded-[28px] border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:p-8">
-      <div className="mb-8">
-        <div className="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.25em] text-[#8A8378]">
-          <span className="inline-block h-px w-[30px] bg-[#F5C400]" />
-          {t("consultationForm.label")}
-        </div>
+    <div className="rounded-xl border border-white/10 bg-[#F5F2EB] p-6 text-[#1A1A1A]  md:p-8 items-center justify-center">
+      <div className="mb-8 items-center justify-center">
         <h2
           className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] md:text-[46px]"
           style={fontStyle}
@@ -134,208 +150,95 @@ export default function ConsultationForm() {
       </div>
 
       <form className="space-y-5" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="grid gap-5 md:grid-cols-2">
-          <div>
-            <label className={labelClass} htmlFor="contact-name">
-              {t("consultationForm.fields.name.label")}
-            </label>
-            <input
-              id="contact-name"
-              type="text"
-              placeholder={t("consultationForm.fields.name.placeholder")}
-              aria-invalid={errors.name ? "true" : "false"}
-              className={inputClass}
-              style={fontStyle}
-              {...register("name", {
-                required: t("consultationForm.fields.name.errorRequired"),
-                onChange: clearFormStatus,
-              })}
-            />
-            {errors.name ? (
-              <p className={errorClass} style={fontStyle}>
-                {errors.name.message}
-              </p>
-            ) : null}
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="contact-email">
-              {t("consultationForm.fields.email.label")}
-            </label>
-            <input
-              id="contact-email"
-              type="email"
-              placeholder={t("consultationForm.fields.email.placeholder")}
-              aria-invalid={errors.email ? "true" : "false"}
-              className={inputClass}
-              style={fontStyle}
-              {...register("email", {
-                required: t("consultationForm.fields.email.errorRequired"),
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: t("consultationForm.fields.email.errorInvalid"),
-                },
-                onChange: clearFormStatus,
-              })}
-            />
-            {errors.email ? (
-              <p className={errorClass} style={fontStyle}>
-                {errors.email.message}
-              </p>
-            ) : null}
-          </div>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2">
-          <div>
-            <label className={labelClass} htmlFor="contact-phone">
-              {t("consultationForm.fields.phone.label")}
-            </label>
-            <input
-              id="contact-phone"
-              type="tel"
-              placeholder={t("consultationForm.fields.phone.placeholder")}
-              className={inputClass}
-              style={fontStyle}
-              {...register("phone", { onChange: clearFormStatus })}
-            />
-          </div>
-
-          <div>
-            <label className={labelClass} htmlFor="contact-company">
-              {t("consultationForm.fields.company.label")}
-            </label>
-            <input
-              id="contact-company"
-              type="text"
-              placeholder={t("consultationForm.fields.company.placeholder")}
-              aria-invalid={errors.company ? "true" : "false"}
-              className={inputClass}
-              style={fontStyle}
-              {...register("company", {
-                required: t("consultationForm.fields.company.errorRequired"),
-                onChange: clearFormStatus,
-              })}
-            />
-            {errors.company ? (
-              <p className={errorClass} style={fontStyle}>
-                {errors.company.message}
-              </p>
-            ) : null}
-          </div>
-        </div>
-
-        <div>
-          <label className={labelClass} htmlFor="contact-website">
-            {t("consultationForm.fields.website.label")}
-          </label>
-          <input
-            id="contact-website"
-            type="url"
-            placeholder={t("consultationForm.fields.website.placeholder")}
-            className={inputClass}
-            style={fontStyle}
-            {...register("website", { onChange: clearFormStatus })}
+        <div className="flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[#8A8378]">
+          <span
+            className={`h-2.5 w-2.5 rounded-full ${
+              step === 1 ? "bg-[#F5C400]" : "bg-[#1A1A1A]/20"
+            }`}
+          />
+          <span>
+            {step === 1
+              ? t("consultationForm.stepOneLabel")
+              : t("consultationForm.stepTwoLabel")}
+          </span>
+          <span
+            className={`h-px flex-1 ${
+              step === 2 ? "bg-[#F5C400]" : "bg-[#1A1A1A]/10"
+            }`}
+          />
+          <span
+            className={`h-2.5 w-2.5 rounded-full ${
+              step === 2 ? "bg-[#F5C400]" : "bg-[#1A1A1A]/20"
+            }`}
           />
         </div>
 
-        <div>
-          <label className={labelClass} htmlFor="contact-service">
-            {t("consultationForm.fields.service.label")}
-          </label>
-          <select
-            id="contact-service"
-            aria-invalid={errors.service ? "true" : "false"}
-            className={`${inputClass} appearance-none`}
-            style={fontStyle}
-            {...register("service", {
-              required: t("consultationForm.fields.service.errorRequired"),
-              onChange: clearFormStatus,
-            })}
-          >
-            <option value="">
-              {t("consultationForm.fields.service.placeholder")}
-            </option>
-            {serviceOptions.map((option) => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
-          {errors.service ? (
-            <p className={errorClass} style={fontStyle}>
-              {errors.service.message}
-            </p>
-          ) : null}
-        </div>
-
-        <div>
-          <label className={labelClass} htmlFor="contact-budget">
-            {t("consultationForm.fields.budget.label")}
-          </label>
-          <select
-            id="contact-budget"
-            className={`${inputClass} appearance-none`}
-            style={fontStyle}
-            {...register("budget", { onChange: clearFormStatus })}
-          >
-            <option value="">
-              {t("consultationForm.fields.budget.placeholder")}
-            </option>
-            {budgetOptions.map((option) => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label className={labelClass} htmlFor="contact-challenge">
-            {t("consultationForm.fields.challenge.label")}
-          </label>
-          <textarea
-            id="contact-challenge"
-            rows={6}
-            placeholder={t("consultationForm.fields.challenge.placeholder")}
-            aria-invalid={errors.challenge ? "true" : "false"}
-            className={`${inputClass} min-h-[150px] resize-y leading-6`}
-            style={fontStyle}
-            {...register("challenge", {
-              required: t("consultationForm.fields.challenge.errorRequired"),
-              onChange: clearFormStatus,
-            })}
+        {step === 1 ? (
+          <ConsultationFormStepOne
+            clearFormStatus={clearFormStatus}
+            errorClass={errorClass}
+            errors={errors}
+            fontStyle={fontStyle}
+            inputClass={inputClass}
+            labelClass={labelClass}
+            register={register}
+            showErrors={hasTriedStepOne}
+            t={t}
           />
-          {errors.challenge ? (
-            <p className={errorClass} style={fontStyle}>
-              {errors.challenge.message}
-            </p>
+        ) : (
+          <ConsultationFormStepTwo
+            budgetOptions={budgetOptions}
+            clearFormStatus={clearFormStatus}
+            errorClass={errorClass}
+            errors={errors}
+            fontStyle={fontStyle}
+            inputClass={inputClass}
+            labelClass={labelClass}
+            referralOptions={referralOptions}
+            register={register}
+            serviceOptions={serviceOptions}
+            showErrors={hasTriedStepTwo}
+            t={t}
+          />
+        )}
+
+        <div className="flex flex-col gap-3 sm:flex-row">
+          {step === 2 ? (
+            <button
+              type="button"
+              onClick={() => {
+                setHasTriedStepOne(false);
+                setHasTriedStepTwo(false);
+                setStep(1);
+              }}
+              className="inline-flex w-full items-center justify-center rounded-full border border-[#1A1A1A]/12 bg-white px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5"
+              style={fontStyle}
+            >
+              {t("consultationForm.backButton")}
+            </button>
           ) : null}
-        </div>
 
-        <div>
-          <label className={labelClass} htmlFor="contact-referral">
-            {t("consultationForm.fields.referral.label")}
-          </label>
-          <select
-            id="contact-referral"
-            className={`${inputClass} appearance-none`}
-            style={fontStyle}
-            {...register("referral", { onChange: clearFormStatus })}
-          >
-            <option value="">
-              {t("consultationForm.fields.referral.placeholder")}
-            </option>
-            {referralOptions.map((option) => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
+          {step === 1 ? (
+            <button
+              type="button"
+              onClick={handleNextStep}
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#F5C400] px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(245,196,0,0.28)]"
+              style={fontStyle}
+            >
+              {t("consultationForm.nextButton")}
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              onClick={() => setHasTriedStepTwo(true)}
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#F5C400] px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(245,196,0,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
+              style={fontStyle}
+            >
+              {isSubmitting ? t("submittingButton") : t("submitButton")}
+            </button>
+          )}
         </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="inline-flex w-full items-center justify-center rounded-full bg-[#F5C400] px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(245,196,0,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
-          style={fontStyle}
-        >
-          {isSubmitting ? t("submittingButton") : t("submitButton")}
-        </button>
 
         {isSubmitted ? (
           <p className="text-center text-sm text-emerald-700" style={fontStyle}>
@@ -350,7 +253,10 @@ export default function ConsultationForm() {
         ) : null}
       </form>
 
-      <p className="mt-4 text-center text-[12px] text-[#8A8378]" style={fontStyle}>
+      <p
+        className="mt-4 text-center text-[12px] text-[#8A8378]"
+        style={fontStyle}
+      >
         {t("consultationForm.privacyNote")}
       </p>
     </div>

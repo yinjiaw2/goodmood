@@ -28,11 +28,14 @@ const case2Items = [
 export default function ServiceWebPage() {
   return (
     <>
-      <ServiceHeroSection namespace="serviceVideoProduction" imageSrc="/SEO.jpeg" />
+      <ServiceHeroSection
+        namespace="serviceVideoProduction"
+        imageSrc="/video1.png"
+      />
       <ServiceOverviewSection namespace="serviceVideoProduction" />
       <ServiceSubFeaturesSection
         namespace="serviceVideoProduction"
-        imageSrc="/SEO.jpeg"
+        imageSrc="/video2.jpg"
       />
       <CaseStudySection
         namespace="serviceVideoProduction"
