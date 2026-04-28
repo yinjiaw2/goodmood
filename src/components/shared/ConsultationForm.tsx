@@ -9,7 +9,7 @@ const fontStyle = {
 };
 
 const GOOGLE_SCRIPT_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbwSmNPxkhmDBlJciBbJNJheN9es25iD9n_CIi-9SqPZjVbilquKEi24l2ZByB5tgL7F/exec";
+  process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_ENDPOINT;
 
 type ContactFormValues = {
   name: string;
@@ -73,6 +73,10 @@ export default function ConsultationForm() {
     };
 
     try {
+      if (!GOOGLE_SCRIPT_ENDPOINT) {
+        throw new Error("Missing NEXT_PUBLIC_GOOGLE_SCRIPT_ENDPOINT");
+      }
+
       const response = await fetch(GOOGLE_SCRIPT_ENDPOINT, {
         method: "POST",
         headers: {
