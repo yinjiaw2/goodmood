@@ -15,6 +15,7 @@ type ConsultationFormStepOneProps = {
   inputClass: string;
   labelClass: string;
   register: UseFormRegister<ContactFormValues>;
+  showErrors: boolean;
   t: (key: string) => string;
 };
 
@@ -38,6 +39,7 @@ export default function ConsultationFormStepOne({
   inputClass,
   labelClass,
   register,
+  showErrors,
   t,
 }: ConsultationFormStepOneProps) {
   return (
@@ -51,7 +53,7 @@ export default function ConsultationFormStepOne({
             id="contact-name"
             type="text"
             placeholder={t("consultationForm.fields.name.placeholder")}
-            aria-invalid={errors.name ? "true" : "false"}
+            aria-invalid={showErrors && errors.name ? "true" : "false"}
             className={inputClass}
             style={fontStyle}
             {...withOnChange(
@@ -61,7 +63,7 @@ export default function ConsultationFormStepOne({
               clearFormStatus,
             )}
           />
-          {errors.name ? (
+          {showErrors && errors.name ? (
             <p className={errorClass} style={fontStyle}>
               {errors.name.message}
             </p>
@@ -76,7 +78,7 @@ export default function ConsultationFormStepOne({
             id="contact-email"
             type="email"
             placeholder={t("consultationForm.fields.email.placeholder")}
-            aria-invalid={errors.email ? "true" : "false"}
+            aria-invalid={showErrors && errors.email ? "true" : "false"}
             className={inputClass}
             style={fontStyle}
             {...withOnChange(
@@ -90,7 +92,7 @@ export default function ConsultationFormStepOne({
               clearFormStatus,
             )}
           />
-          {errors.email ? (
+          {showErrors && errors.email ? (
             <p className={errorClass} style={fontStyle}>
               {errors.email.message}
             </p>
@@ -107,7 +109,7 @@ export default function ConsultationFormStepOne({
             id="contact-phone"
             type="tel"
             placeholder={t("consultationForm.fields.phone.placeholder")}
-            aria-invalid={errors.phone ? "true" : "false"}
+            aria-invalid={showErrors && errors.phone ? "true" : "false"}
             className={inputClass}
             style={fontStyle}
             {...withOnChange(
@@ -117,7 +119,7 @@ export default function ConsultationFormStepOne({
               clearFormStatus,
             )}
           />
-          {errors.phone ? (
+          {showErrors && errors.phone ? (
             <p className={errorClass} style={fontStyle}>
               {errors.phone.message}
             </p>
@@ -132,7 +134,7 @@ export default function ConsultationFormStepOne({
             id="contact-company"
             type="text"
             placeholder={t("consultationForm.fields.company.placeholder")}
-            aria-invalid={errors.company ? "true" : "false"}
+            aria-invalid={showErrors && errors.company ? "true" : "false"}
             className={inputClass}
             style={fontStyle}
             {...withOnChange(
@@ -142,7 +144,7 @@ export default function ConsultationFormStepOne({
               clearFormStatus,
             )}
           />
-          {errors.company ? (
+          {showErrors && errors.company ? (
             <p className={errorClass} style={fontStyle}>
               {errors.company.message}
             </p>

@@ -18,6 +18,8 @@ const GOOGLE_SCRIPT_ENDPOINT =
 export default function ConsultationForm() {
   const t = useTranslations("contact");
   const [step, setStep] = useState<1 | 2>(1);
+  const [hasTriedStepOne, setHasTriedStepOne] = useState(false);
+  const [hasTriedStepTwo, setHasTriedStepTwo] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -51,6 +53,8 @@ export default function ConsultationForm() {
   };
 
   const handleNextStep = async () => {
+    setHasTriedStepOne(true);
+
     const isStepValid = await trigger([
       "name",
       "email",
@@ -60,6 +64,8 @@ export default function ConsultationForm() {
     ]);
 
     if (isStepValid) {
+      setHasTriedStepOne(false);
+      setHasTriedStepTwo(false);
       setStep(2);
     }
   };
@@ -111,6 +117,8 @@ export default function ConsultationForm() {
       }
 
       setIsSubmitted(true);
+      setHasTriedStepOne(false);
+      setHasTriedStepTwo(false);
       setStep(1);
       reset();
     } catch (error) {
@@ -179,6 +187,7 @@ export default function ConsultationForm() {
             inputClass={inputClass}
             labelClass={labelClass}
             register={register}
+            showErrors={hasTriedStepOne}
             t={t}
           />
         ) : (
@@ -193,6 +202,7 @@ export default function ConsultationForm() {
             referralOptions={referralOptions}
             register={register}
             serviceOptions={serviceOptions}
+            showErrors={hasTriedStepTwo}
             t={t}
           />
         )}
@@ -201,7 +211,11 @@ export default function ConsultationForm() {
           {step === 2 ? (
             <button
               type="button"
-              onClick={() => setStep(1)}
+              onClick={() => {
+                setHasTriedStepOne(false);
+                setHasTriedStepTwo(false);
+                setStep(1);
+              }}
               className="inline-flex w-full items-center justify-center rounded-full border border-[#1A1A1A]/12 bg-white px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5"
               style={fontStyle}
             >
@@ -222,6 +236,7 @@ export default function ConsultationForm() {
             <button
               type="submit"
               disabled={isSubmitting}
+              onClick={() => setHasTriedStepTwo(true)}
               className="inline-flex w-full items-center justify-center rounded-full bg-[#F5C400] px-6 py-4 text-[15px] font-bold text-[#1A1A1A] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(245,196,0,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
               style={fontStyle}
             >

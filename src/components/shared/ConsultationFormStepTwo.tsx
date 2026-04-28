@@ -18,6 +18,7 @@ type ConsultationFormStepTwoProps = {
   referralOptions: string[];
   register: UseFormRegister<ContactFormValues>;
   serviceOptions: string[];
+  showErrors: boolean;
   t: (key: string) => string;
 };
 
@@ -44,6 +45,7 @@ export default function ConsultationFormStepTwo({
   referralOptions,
   register,
   serviceOptions,
+  showErrors,
   t,
 }: ConsultationFormStepTwoProps) {
   return (
@@ -54,7 +56,7 @@ export default function ConsultationFormStepTwo({
         </label>
         <select
           id="contact-service"
-          aria-invalid={errors.service ? "true" : "false"}
+          aria-invalid={showErrors && errors.service ? "true" : "false"}
           className={`${inputClass} appearance-none`}
           style={fontStyle}
           {...withOnChange(
@@ -71,7 +73,7 @@ export default function ConsultationFormStepTwo({
             <option key={option}>{option}</option>
           ))}
         </select>
-        {errors.service ? (
+        {showErrors && errors.service ? (
           <p className={errorClass} style={fontStyle}>
             {errors.service.message}
           </p>
@@ -105,7 +107,7 @@ export default function ConsultationFormStepTwo({
           id="contact-challenge"
           rows={6}
           placeholder={t("consultationForm.fields.challenge.placeholder")}
-          aria-invalid={errors.challenge ? "true" : "false"}
+          aria-invalid={showErrors && errors.challenge ? "true" : "false"}
           className={`${inputClass} min-h-[150px] resize-y leading-6`}
           style={fontStyle}
           {...withOnChange(
@@ -115,7 +117,7 @@ export default function ConsultationFormStepTwo({
             clearFormStatus,
           )}
         />
-        {errors.challenge ? (
+        {showErrors && errors.challenge ? (
           <p className={errorClass} style={fontStyle}>
             {errors.challenge.message}
           </p>
