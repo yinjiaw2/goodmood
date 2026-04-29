@@ -5,19 +5,14 @@
   "navLinks": {
     "0": { "label": "首页", "href": "/#hero" },
     "1": { "label": "我们的服务", "href": "/#core-services" },
-    "2": { "label": "关于我们", "href": "/about" },
-    "3": { "label": "联系我们", "href": "/contact" }
+    "2": { "label": "关于我们", "href": "/about" }
   },
   "companyLabel": "公司",
   "companyLinks": {
-    "about": "关于我们",
-    "contact": "联系我们"
+    "about": "关于我们"
   },
-  "contactLabel": "联系",
-  "address": "墨尔本，澳大利亚",
-  "email": "hello@yourcompany.com",
-  "wechat": "微信：your_wechat",
-  "xiaohongshu": "小红书：@yourbrand",
+  "contactLabel": "地址",
+  "address": "Level 9 Tower 3/18-38 Siddeley St",
   "copyrightName": "Your Company",
   "copyrightSuffix": "GoodMood版权所有。",
   "location": "隐私政策 · 服务条款"

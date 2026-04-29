@@ -1,13 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GoodMoodLogoAnimation } from "./GoodMoodAnimation";
 
 const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
+const googleMapsHref =
+  "https://www.google.com/maps/search/?api=1&query=Level%209%20Tower%203%2F18-38%20Siddeley%20St";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const navLinkKeys = ["0", "1", "2", "3"] as const;
+  const navLinkKeys = ["0", "1", "2"] as const;
 
   return (
     <footer
@@ -15,9 +16,9 @@ export default function Footer() {
       className="text-white pt-12 pb-6" //
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-[1fr_0.85fr_0.85fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           {/* Brand */}
-          <div className="lg:max-w-xs">
+          <div className="lg:max-w-sm">
             <Link href="/#hero" className="mb-5 inline-flex items-center">
               <GoodMoodLogoAnimation />
             </Link>
@@ -26,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="lg:pl-20">
+          <div className="lg:justify-self-center">
             <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
               {t("navLabel")}
             </p>
@@ -44,48 +45,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="lg:pl-24">
-            <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
-              {t("companyLabel")}
-            </p>
-            <ul className="flex flex-col gap-4">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-white/60 transition-colors duration-200 hover:text-[#F5C400]"
-                >
-                  {t("companyLinks.about")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-white/60 transition-colors duration-200 hover:text-[#F5C400]"
-                >
-                  {t("companyLinks.contact")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="lg:pl-28">
+          {/* Address */}
+          <div className="lg:justify-self-center lg:max-w-xs lg:pl-6">
             <p className="mb-6 text-xs font-bold uppercase tracking-[1.5px] text-white/90">
               {t("contactLabel")}
             </p>
             <ul className="flex flex-col gap-4 text-sm text-white/60">
-              <li>{t("address")}</li>
               <li>
                 <a
-                  href={`mailto:${t("email")}`}
-                  className="transition-colors duration-200 hover:text-[#F5C400]"
+                  href={googleMapsHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="leading-7 transition-colors duration-200 hover:text-[#F5C400]"
                 >
-                  {t("email")}
+                  {t("address")}
                 </a>
               </li>
-              <li>{t("wechat")}</li>
-              <li>{t("xiaohongshu")}</li>
             </ul>
           </div>
         </div>

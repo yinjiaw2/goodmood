@@ -6,21 +6,16 @@
   "navLinks": {
     "0": { "label": "Home", "href": "/#hero" },
     "1": { "label": "Our Services", "href": "/#core-services" },
-    "2": { "label": "About Us", "href": "/about" },
-    "3": { "label": "Contact Us", "href": "/contact" }
+    "2": { "label": "About Us", "href": "/about" }
   },
 
   "companyLabel": "Company",
   "companyLinks": {
-    "about": "About Us",
-    "contact": "Contact Us"
+    "about": "About Us"
   },
 
-  "contactLabel": "Contact",
-  "address": "Melbourne, VIC, Australia",
-  "email": "hello@yourcompany.com",
-  "wechat": "WeChat: your_wechat",
-  "xiaohongshu": "RED: @yourbrand",
+  "contactLabel": "Address",
+  "address": "Level 9 Tower 3/18-38 Siddeley St",
 
   "copyrightName": "Good Mood",
   "copyrightSuffix": "All rights reserved.",
