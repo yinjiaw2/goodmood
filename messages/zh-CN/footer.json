@@ -1,19 +1,32 @@
 {
   "logoAlt": "公司标志",
   "tagline": "转化率是唯一重要的指标。我们用数据驱动每一个营销决策。",
-  "navLabel": "导航",
-  "navLinks": {
-    "0": { "label": "首页", "href": "/#hero" },
-    "1": { "label": "我们的服务", "href": "/#core-services" },
-    "2": { "label": "关于我们", "href": "/about" }
-  },
-  "companyLabel": "公司",
-  "companyLinks": {
-    "about": "关于我们"
-  },
+
+  "connectLabel": "联系我们",
   "contactLabel": "地址",
   "address": "Level 9 Tower 3/18-38 Siddeley St",
-  "copyrightName": "Your Company",
-  "copyrightSuffix": "GoodMood版权所有。",
-  "location": "隐私政策 · 服务条款"
+
+  "servicesLabel": "我们的服务",
+  "serviceLinks": {
+    "social":    { "label": "社交媒体",   "href": "/services/social" },
+    "ads":       { "label": "付费广告",   "href": "/services/ads" },
+    "creative":  { "label": "创意制作",   "href": "/services/creative" },
+    "ecommerce": { "label": "电商运营",   "href": "/services/ecommerce" },
+    "email":     { "label": "邮件营销",   "href": "/services/email" },
+    "video":     { "label": "视频制作",   "href": "/services/video-production" },
+    "website":   { "label": "网站开发",   "href": "/services/website-development" }
+  },
+
+  "companyLabel": "公司",
+  "companyLinks": {
+    "home":     { "label": "首页",         "href": "/#hero" },
+    "services": { "label": "服务列表",     "href": "/services" },
+    "about":    { "label": "关于我们",     "href": "/about" },
+    "contact":  { "label": "联系我们",     "href": "/contact" },
+    "privacy":  { "label": "隐私政策与条款", "href": "/privacy" }
+  },
+
+  "copyrightName": "Good Mood",
+  "copyrightSuffix": "版权所有。",
+  "legal": "隐私政策 · 服务条款"
 }

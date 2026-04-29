@@ -1,23 +1,32 @@
 {
   "logoAlt": "Good Mood Logo",
-  "tagline": "Conversion is the only metric that matters. Every strategy, every creative, and every optimisation is built to drive real results.",
-  
-  "navLabel": "Navigation",
-  "navLinks": {
-    "0": { "label": "Home", "href": "/#hero" },
-    "1": { "label": "Our Services", "href": "/#core-services" },
-    "2": { "label": "About Us", "href": "/about" }
+  "tagline": "Conversion is the only metric that matters.\nEvery strategy, every creative, and every optimisation\nis built to drive real results.",
+
+  "connectLabel": "Connect With Us",
+  "contactLabel": "Address",
+  "address": "Level 9 Tower 3/18-38 Siddeley St",
+
+  "servicesLabel": "What We Do",
+  "serviceLinks": {
+    "social":    { "label": "Social Media",          "href": "/services/social" },
+    "ads":       { "label": "Paid Ads",              "href": "/services/ads" },
+    "creative":  { "label": "Creative",              "href": "/services/creative" },
+    "ecommerce": { "label": "Ecommerce",             "href": "/services/ecommerce" },
+    "email":     { "label": "Email Marketing",       "href": "/services/email" },
+    "video":     { "label": "Video Production",      "href": "/services/video-production" },
+    "website":   { "label": "Website Development",   "href": "/services/website-development" }
   },
 
   "companyLabel": "Company",
   "companyLinks": {
-    "about": "About Us"
+    "home":     { "label": "Home",                      "href": "/#hero" },
+    "services": { "label": "Our Services",              "href": "/services" },
+    "about":    { "label": "About Us",                  "href": "/about" },
+    "contact":  { "label": "Contact Us",                "href": "/contact" },
+    "privacy":  { "label": "Privacy Policy & Terms",    "href": "/privacy" }
   },
-
-  "contactLabel": "Address",
-  "address": "Level 9 Tower 3/18-38 Siddeley St",
 
   "copyrightName": "Good Mood",
   "copyrightSuffix": "All rights reserved.",
-  "location": "Privacy Policy & Terms and Conditions"
+  "legal": "Privacy Policy & Terms and Conditions"
 }
