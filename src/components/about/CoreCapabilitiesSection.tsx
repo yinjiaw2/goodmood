@@ -107,7 +107,7 @@ export default function CoreCapabilitiesSection({
             <h2
               className={`max-w-[560px] font-extrabold tracking-[-0.03em] ${
                 variant === "whyUs"
-                  ? "text-[38px] leading-none text-[#F6F1E8] md:text-[52px]"
+                  ? "text-[38px] leading-none text-[#1A1A1A] md:text-[52px]"
                   : "text-[32px] leading-tight text-[#1A1A1A] md:text-[46px]"
               }`}
               style={fontStyle}
